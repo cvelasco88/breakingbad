@@ -26,7 +26,7 @@ if (function_exists('ini_set')) {
 }
 
 // Nodo actual
-define('GOTEO_NODE', 'p1');
+define('GOTEO_NODE', 'breaking');
 
 define('PEAR', GOTEO_PATH . 'library' . '/' . 'pear' . '/');
 if (function_exists('ini_set')) {
@@ -84,8 +84,8 @@ define('GOTEO_MAIL', 'hola@gmail.com');
 define('GOTEO_DEFAULT_LANG', 'es');
 
 // url
-define('SITE_URL', '');
-define('SRC_URL', '');
+define('SITE_URL', 'http://p1.multimedia.com/');
+define('SRC_URL', 'http://p1.multimedia.com/');
 
 // Cron params
 define('CRON_PARAM', '');
