@@ -45,7 +45,7 @@ include 'view/header.html.php';
 ?>
 	<div id="sub-header-secondary">
 		<div class="clearfix">
-			<h2><a href="/blog">BREAKING<span class="red">BAD</span></a></h2>
+			<h2><a href="/blog">Breaking Bad <span class="red">BLOG</span></a></h2>
             <?php echo new View('view/header/share.html.php') ?>
 		</div>
 	</div>

@@ -71,6 +71,7 @@ namespace Goteo\Controller {
                     'content' => $page->content
                 )
              );
+
         }
         
     }

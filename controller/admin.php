@@ -64,7 +64,7 @@ namespace Goteo\Controller {
 
 
         /*
-         * GestiÛn de p·ginas institucionales
+         * Gesti√≥n de p√°ginas institucionales
          */
 		public function pages ($action = 'list', $id = null) {
 

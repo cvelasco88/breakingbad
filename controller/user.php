@@ -84,7 +84,6 @@ namespace Goteo\Controller {
             throw new Redirection('/');
             die;
         }
-        
         /**
          * Registro de usuario.
          */

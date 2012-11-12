@@ -60,10 +60,16 @@ namespace Goteo\Controller {
                         unset($banners[$id]);
                     }
                 }
-			
+
             $post = isset($_GET['post']) ? $_GET['post'] : reset($posts)->id;
 
-            return new View('view/index.html.php');
+            return new View('view/index.html.php',
+                array(
+                    'banners'  => $banners,
+                    'posts'    => $posts,
+                    'promotes' => $promotes
+                )
+            );
             
         }
         
