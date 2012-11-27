@@ -46,7 +46,7 @@ body {
 
 body, td, th, a, a:link, a:visited, a:active, a:hover, input, textarea, button {    
     font-size: 12px;
-    color: #14681E;
+    color: red; /*14681E*/
 }
 
 img {
