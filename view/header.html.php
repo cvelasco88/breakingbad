@@ -35,7 +35,7 @@ use Goteo\Library\Text,
                     <li><a href="/"><?php echo "pagina principal"; //echo Text::get('regular-header-about'); ?></a></li>
                     <li><a href="/about"><?php echo "argument"; //echo Text::get('regular-header-blog'); ?></a></li>
                     <!--  <li><a href="/blog"><?php echo "blog & talk"; //echo Text::get('regular-header-faq'); ?></a></li>-->
-                    <li><a href="/cast"><?php echo "actors"; //echo Text::get('regular-header-faq'); ?></a></li>  
+                    <li><a href="/press"><?php echo "actors"; //echo Text::get('regular-header-faq'); ?></a></li>  
                     <li><a href="/episodes"><?php echo "episodis"; //echo Text::get('regular-header-faq'); ?></a></li>
                     <li><a href="/photos"><?php echo "imatges"; //echo Text::get('regular-header-faq'); ?></a></li> 
                     <li><a href="/video"><?php echo "videos"; //echo Text::get('regular-header-faq'); ?></a></li>                             
