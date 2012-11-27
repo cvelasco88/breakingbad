@@ -33,7 +33,7 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="sub-header-secondary">
 		<div class="clearfix">
-			<h2><a href="/about">Argument<span class="red">INFO</span></a></h2>
+			<h2><a href="/about">Argument</a></h2>
             <?php echo new View('view/header/share.html.php') ?>
 		</div>
 	</div>
@@ -41,78 +41,13 @@ $go_up = Text::get('regular-go_up');
 	<div id="main" class="threecols">
 		<div id="about-content">
             <h3 class="title"><?php echo Text::get('regular-header-about'); ?></h3>
-            <?php if (!empty($posts)) : ?>
+    
                 <div class="about-page">
-                <?php foreach ($posts as $post) : ?>
-                    <div class="post">
-                        <?php if (count($post->gallery) > 1) : ?>
-                        <script type="text/javascript" >
-                            $(function(){
-                                $('#post-gallery<?php echo $post->id ?>').slides({
-                                    container: 'post-gallery-container',
-                                    paginationClass: 'slderpag',
-                                    generatePagination: false,
-                                    play: 0
-                                });
-                            });
-                        </script>
-                        <?php endif; ?>
-                        <a name="info<?php echo $post->id  ?>"></a>
-                        <h4><?php echo $post->title; ?></h4>
-                        <p><?php echo $post->text; ?></p>
-                        <?php if (!empty($post->media->url)) :
-                                $embed = $post->media->getEmbedCode();
-                                if (!empty($embed))  : ?>
-                            <div class="embed"><?php echo $embed; ?></div>
-                        <?php endif; endif; ?>
-                        <?php if (!empty($post->legend)) : ?>
-                            <div class="embed-legend">
-                                <?php echo $post->legend; ?>
-                            </div>
-                        <?php endif; ?>
-                        <?php if (count($post->gallery) > 1) : ?>
-                		<div id="post-gallery<?php echo $post->id ?>" class="post-gallery">
-                            <div class="post-gallery-container">
-                                <?php $i = 1; foreach ($post->gallery as $image) : ?>
-                                <div class="gallery-image gallery-post<?php echo $post->id ?>" id="gallery-post<?php echo $post->id ?>-<?php echo $i ?>">
-                                    <img src="<?php echo $image->getLink(500, 285); ?>" alt="<?php echo $post->title; ?>" />
-                                </div>
-                                <?php $i++; endforeach; ?>
-                            </div>
-                            <!-- carrusel de imagenes si hay mas de una -->
-                                <a class="prev">prev</a>
-                                    <ul class="slderpag">
-                                        <?php $i = 1; foreach ($post->gallery as $image) : ?>
-                                        <li><a href="#" id="navi-gallery-post<?php echo $post->id ?>-<?php echo $i ?>" rel="gallery-post<?php echo $post->id ?>-<?php echo $i ?>" class="navi-gallery-post<?php echo $post->id ?>">
-                                    <?php echo htmlspecialchars($image->name) ?></a>
-                                        </li>
-                                        <?php $i++; endforeach ?>
-                                    </ul>
-                                <a class="next">next</a>
-                            <!-- carrusel de imagenes -->
-                        </div>
-                        <?php elseif (!empty($post->image)) : ?>
-                            <div class="gallery-image gallery-post<?php echo $post->id ?>" id="gallery-post<?php echo $post->id ?>-<?php echo $i ?>">
-                                <img src="<?php echo $post->image->getLink(500, 285); ?>" alt="<?php echo $post->title; ?>" />
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                    <a class="up" href="#"><?php echo $go_up; ?></a>
-                <?php endforeach; ?>
+                Walter White (Bryan Cranston) es un aplicado profesor de instituto, padre de un joven discapacitado y con una mujer (Anna Gunn) embarazada. Walt, además, trabaja en un lavadero de coches por las tardes. Cuando le diagnostican un cáncer pulmonar terminal se plantea qué pasará con su familia cuando él muera. En una redada de la DEA organizada por su cuñado (Dean Norris) reconoce a un antiguo alumno suyo Jesse Pinkman (Aaron Paul) a quien contacta para fabricar y vender metanfetamina y así asegurar el bienestar económico de su familia. Mientras tanto, el acercamiento al mundo de las drogas y el trato con traficantes y mafiosos contamina la personalidad de Walter, el cual va abandonando poco a poco su personalidad recta y predecible para convertirse en alguien sin demasiados escrúpulos cuando se trata de conseguir lo que quiere.
+                
                 </div>
-            <?php endif; ?>
 		</div>
-		<div id="about-sidebar">
-            <div class="widget about-sidebar-module">
-                <h3 class="supertitle"><?php echo Text::get('header-about-side'); ?></h3>
-                <ul>
-                    <?php foreach ($posts as $post) : ?>
-                    <li><a href="#info<?php echo $post->id; ?>"><?php echo $post->title; ?></a></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-		</div>
-
+	
 	</div>
     
 <?php
