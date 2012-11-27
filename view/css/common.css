@@ -31,7 +31,7 @@ html {
 
 html, body {        
     padding: 0;    
-    background-color: #e7e7e7;
+    background-color: blue;/*#e7e7e7*/
 	background-size:cover;
 }
 
