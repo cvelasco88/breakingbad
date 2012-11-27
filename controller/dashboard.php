@@ -37,7 +37,7 @@ namespace Goteo\Controller {
     class Dashboard extends \Goteo\Core\Controller {
 
         public function index ($section = null) {
-            throw new Redirection('/dashboard/activity');
+            throw new Redirection('/dashboard/profile');
         }
 
         /*

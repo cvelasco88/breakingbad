@@ -29,20 +29,16 @@ use Goteo\Library\Text,
     <div id="super-header">
 	   <?php //include 'view/header/highlights.html.php' ?>
     
-	   <div id="rightside" style="float:right;">
+	   <div id="rightside" style="float:left;">
            <div id="about">
                 <ul>
-                    <li><a href="/home"><?php echo "home"; //echo Text::get('regular-header-about'); ?></a></li>
-                    <li><a href="/about"><?php echo "about"; //echo Text::get('regular-header-blog'); ?></a></li>
-                    <li><a href="/blog"><?php echo "blog & talk"; //echo Text::get('regular-header-faq'); ?></a></li>
-                    <li><a href="/cast"><?php echo "cast"; //echo Text::get('regular-header-faq'); ?></a></li>  
-                    <li><a href="/episodes"><?php echo "episodes"; //echo Text::get('regular-header-faq'); ?></a></li>
-                    <li><a href="/newsletter"><?php echo "newsletter"; //echo Text::get('regular-header-faq'); ?></a></li>
-                    <li><a href="/photos"><?php echo "photos"; //echo Text::get('regular-header-faq'); ?></a></li>  
-                    <li><a href="/schedule"><?php echo "schedule"; //echo Text::get('regular-header-faq'); ?></a></li>
-                    <li><a href="/video"><?php echo "video"; //echo Text::get('regular-header-faq'); ?></a></li>                    
-                    <li><a href="/extra"><?php echo "extra"; //echo Text::get('regular-header-faq'); ?></a></li>                    
-                    <li><a href="/shop"><?php echo "shop"; //echo Text::get('regular-header-faq'); ?></a></li>           
+                    <li><a href="/"><?php echo "pagina principal"; //echo Text::get('regular-header-about'); ?></a></li>
+                    <li><a href="/about"><?php echo "argument"; //echo Text::get('regular-header-blog'); ?></a></li>
+                    <!--  <li><a href="/blog"><?php echo "blog & talk"; //echo Text::get('regular-header-faq'); ?></a></li>-->
+                    <li><a href="/cast"><?php echo "actors"; //echo Text::get('regular-header-faq'); ?></a></li>  
+                    <li><a href="/episodes"><?php echo "episodis"; //echo Text::get('regular-header-faq'); ?></a></li>
+                    <li><a href="/photos"><?php echo "imatges"; //echo Text::get('regular-header-faq'); ?></a></li> 
+                    <li><a href="/video"><?php echo "videos"; //echo Text::get('regular-header-faq'); ?></a></li>                             
                     <li id="lang"><a href="#" ><?php echo Lang::get(LANG)->short ?></a></li>
                     <script type="text/javascript">
                     jQuery(document).ready(function ($) {
