@@ -81,7 +81,7 @@ define('GOTEO_MAIL_SMTP_PASSWORD', '');
 define('GOTEO_MAIL', 'hola@gmail.com');
 
 // Language
-define('GOTEO_DEFAULT_LANG', 'es');
+define('GOTEO_DEFAULT_LANG', 'ca');
 
 // url
 define('SITE_URL', 'http://p1.multimedia.com/');

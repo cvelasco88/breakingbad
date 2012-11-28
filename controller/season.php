@@ -34,43 +34,27 @@ namespace Goteo\Controller {
         public function index ($id = null) {
 
             if (empty($id)) {
-                $id = 'about';
 
-                $posts = Model\Info::getAll(true, \GOTEO_NODE);
+                $temp = Model\Season::getAll();
 
                 return new View(
                 		'view/season/index.html.php',
                     array(
-                        'posts' => $posts
+                        'temporades' => $temp
                     )
                  );
             }
 
-            if ($id == 'faq' || $id == 'contact') {
-                throw new Redirection('/'.$id, Redirection::TEMPORARY);
-            }
-
-            $page = Page::get($id);
-
-            if ($id == 'howto') {
-                return new View(
-                    'view/about/howto.html.php',
-                    array(
-                        'name' => $page->name,
-                        'description' => $page->description,
-                        'content' => $page->content
-                    )
-                 );
-            }
-
+            $temp = Model\Season::get($id);
+            $episodes = Model\Episodes::get($id);
+            
             return new View(
-                'view/about/sample.html.php',
-                array(
-                    'name' => $page->name,
-                    'description' => $page->description,
-                    'content' => $page->content
-                )
-             );
+                    'view/season/temp.html.php',
+                    array(
+                        'temporada' => $temp,
+                        'episodes' => $episodes
+                    )
+            );
 
         }
         

@@ -24,18 +24,65 @@ namespace Goteo\Controller {
     use Goteo\Library\Page,
         Goteo\Core\Redirection,
         Goteo\Core\View,
-        Goteo\Library\Text;
+        Goteo\Library\Text,
+	    Goteo\Library\Message,
+	    Goteo\Model;
 
     class Cast extends \Goteo\Core\Controller {
         
-        public function index () {
+        public function index ($id = NULL) {
+        	
+        	/*if (!empty($post)) {
+        		$show = 'post';
+        		// -- Mensaje azul molesto para usuarios no registrados
+        		if (empty($_SESSION['user'])) {
+        			$_SESSION['jumpto'] = '/blog/' .  $post;
+        			Message::Info(Text::get('user-login-required'));
+        		}
+        	} else {
+        		$show = 'list';
+        	}*/
 
-            //$page = Page::get('cast');
+        	// obtenim personatge
+            $principals = Model\Cast::get('principal');
+            $secundaris = Model\Cast::get('secundari');
+           
 
-            return new View('view/cast/index.html.php');
+            if (!isset($principals) || !isset($secundaris)) {
+                throw new \Goteo\Core\Redirection('/');
+            }
+
+            return new View(
+            		'view/cast/index.html.php',
+            		array(
+                    'principals' => $principals,
+                    'secundaris' => $secundaris
+                )
+             );
 
         }
         
+        public function actor ($id = NULL) {
+        	 
+        	if (!empty($id)) {
+	        	// -- Mensaje azul molesto para usuarios no registrados
+	        	
+        		// obtenim personatge
+        		$actor = Model\Cast::getActor($id);
+        		
+        		return new View(
+        				'view/cast/actor.html.php',
+        				array(
+        						'actor' => $actor
+        				)
+        		);
+        		
+        	} else {
+	        	throw new \Goteo\Core\Redirection('/');
+	        }
+       
+        }
+
     }
     
 }

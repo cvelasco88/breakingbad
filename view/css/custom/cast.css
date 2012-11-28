@@ -1,0 +1,40 @@
+@CHARSET "ISO-8859-1";
+
+.cast-page
+{
+	display:inline;
+}
+
+.cast-page label
+{
+	
+	border: 1px solid gray;
+	padding:10px;
+}
+
+.cast-page label:hover
+{
+	background: lightgray;
+}
+
+.cast-page div
+{
+	padding:10px;
+	display:inline;
+}
+
+.cast-page img
+{
+	width:100px;
+	height:125px;
+	border:2px solid black;
+	margin-top:20px;
+	
+}
+
+
+
+.cast-page ul
+{
+	list-style:none;
+}
