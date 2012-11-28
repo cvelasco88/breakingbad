@@ -29,21 +29,16 @@ namespace Goteo\Controller {
         Goteo\Library\Mail,
         Goteo\Library\Template;
 
-    class Video extends \Goteo\Core\Controller {
+    class Story extends \Goteo\Core\Controller {
         
         public function index ($id = null) {
 
             if (empty($id)) {
                 $id = 'about';
 
-                $posts = Model\Info::getAll(true, \GOTEO_NODE);
+                //$posts = Model\Info::getAll(true, \GOTEO_NODE);
 
-                return new View(
-                		'view/video/index.html.php',
-                    array(
-                        'posts' => $posts
-                    )
-                 );
+                return new View('view/story/index.html.php');
             }
 
             if ($id == 'faq' || $id == 'contact') {

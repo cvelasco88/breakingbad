@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2012 a las 11:53:14
+-- Tiempo de generación: 28-11-2012 a las 12:30:35
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `acl` (
   KEY `role_FK` (`role_id`),
   KEY `user_FK` (`user_id`),
   KEY `node_FK` (`node_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=74 ;
 
 --
 -- Volcado de datos para la tabla `acl`
@@ -106,7 +106,9 @@ INSERT INTO `acl` (`id`, `node_id`, `role_id`, `user_id`, `url`, `allow`, `times
 (68, '*', '*', '*', '/cast/*', 1, '2012-11-27 20:00:11'),
 (69, '*', '*', '*', '/episodes/*', 1, '2012-11-28 10:46:45'),
 (70, '*', '*', '*', '/photos/*', 1, '2012-11-28 10:49:32'),
-(71, '*', '*', '*', '/video/*', 1, '2012-11-28 10:50:24');
+(71, '*', '*', '*', '/video/*', 1, '2012-11-28 10:50:24'),
+(72, '*', '*', '*', '/story/*', 1, '2012-11-28 11:01:16'),
+(73, '*', '*', '*', '/season/*', 1, '2012-11-28 11:23:31');
 
 -- --------------------------------------------------------
 
@@ -753,8 +755,8 @@ CREATE TABLE IF NOT EXISTS `lang` (
 INSERT INTO `lang` (`id`, `name`, `active`, `short`, `locale`) VALUES
 ('ca', 'Català', 1, 'CAT', 'ca_ES'),
 ('de', 'Deutsch', 0, NULL, NULL),
-('en', 'English', 1, 'ENG', 'en_GB'),
-('es', 'Español', 1, 'ES', 'es_ES'),
+('en', 'English', 0, 'ENG', 'en_GB'),
+('es', 'Español', 0, 'ES', 'es_ES'),
 ('eu', 'Euskara', 0, 'EUSK', 'eu_ES'),
 ('fr', 'Français', 0, NULL, NULL),
 ('gl', 'Galego', 0, NULL, NULL),

@@ -34,12 +34,11 @@ namespace Goteo\Controller {
         public function index ($id = null) {
 
             if (empty($id)) {
-                $id = 'about';
+                //$id = 'about';
 
-                $posts = Model\Info::getAll(true, \GOTEO_NODE);
+                //$posts = Model\Info::getAll(true, \GOTEO_NODE);
 
-                return new View(
-                    'view/about/info.html.php',
+               return new View('view/photos/index.html.php',
                     array(
                         'posts' => $posts
                     )

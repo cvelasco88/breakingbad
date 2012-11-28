@@ -29,7 +29,7 @@ namespace Goteo\Controller {
         Goteo\Library\Mail,
         Goteo\Library\Template;
 
-    class Video extends \Goteo\Core\Controller {
+    class Season extends \Goteo\Core\Controller {
         
         public function index ($id = null) {
 
@@ -39,7 +39,7 @@ namespace Goteo\Controller {
                 $posts = Model\Info::getAll(true, \GOTEO_NODE);
 
                 return new View(
-                		'view/video/index.html.php',
+                		'view/season/index.html.php',
                     array(
                         'posts' => $posts
                     )

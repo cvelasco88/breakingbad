@@ -30,16 +30,9 @@ namespace Goteo\Controller {
         
         public function index () {
 
-            $page = Page::get('cast');
+            //$page = Page::get('cast');
 
-            return new View(
-                'view/about/sample.html.php',
-                array(
-                    'name' => $page->name,
-                    'description' => $page->description,
-                    'content' => $page->content
-                )
-             );
+            return new View('view/cast/index.html.php');
 
         }
         
