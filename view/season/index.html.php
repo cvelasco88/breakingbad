@@ -43,15 +43,15 @@ $go_up = Text::get('regular-go_up');
             <h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>
     
                 <div class="about-page">
-                <div class="cast-page">
+                <div class="temp-page">
                	<ul>
                	<?php
                		if (!empty($temporades)) {
 	               		foreach ($temporades as $temporada) :?>
 	               		<li>
+	               		<span><a id="tempTitol" href="/season/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></span>	               	
 	               		<div>
-	                	<img src="/data/images/cast/<?php echo $temporada->id; ?>">
-	                	<label><a href="/season/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></label>
+	                	<a href="/season/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>"></a>
 	                	</div>
 	               		</li>
                         <?php endforeach;
@@ -59,6 +59,7 @@ $go_up = Text::get('regular-go_up');
                	?>
                 </ul>  
                 </div>
+                
                </div>
 		</div>
 	

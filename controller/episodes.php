@@ -31,46 +31,25 @@ namespace Goteo\Controller {
 
     class Episodes extends \Goteo\Core\Controller {
         
-        public function index ($id = null) {
+        public function index () {
 
-            if (empty($id)) {
-                //$id = 'about';
+         
 
-                //$posts = Model\Info::getAll(true, \GOTEO_NODE);
+                $episodis1 = Model\Episodes::get(1);
+                $episodis2 = Model\Episodes::get(2);
+                $episodis3 = Model\Episodes::get(3);
+                $episodis4 = Model\Episodes::get(4);
+                $episodis5 = Model\Episodes::get(5);
 
                 return new View('view/episodes/index.html.php',
                     array(
-                        'posts' => $posts
+                        'episodis1' => $episodis1,
+                    	'episodis2' => $episodis2,
+                    	'episodis3' => $episodis3,
+                    	'episodis4' => $episodis4,
+                    	'episodis5' => $episodis5
                     )
                  );
-            }
-
-            if ($id == 'faq' || $id == 'contact') {
-                throw new Redirection('/'.$id, Redirection::TEMPORARY);
-            }
-
-            $page = Page::get($id);
-
-            if ($id == 'howto') {
-                return new View(
-                    'view/about/howto.html.php',
-                    array(
-                        'name' => $page->name,
-                        'description' => $page->description,
-                        'content' => $page->content
-                    )
-                 );
-            }
-
-            return new View(
-                'view/about/sample.html.php',
-                array(
-                    'name' => $page->name,
-                    'description' => $page->description,
-                    'content' => $page->content
-                )
-             );
-
         }
         
     }

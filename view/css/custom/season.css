@@ -1,1 +1,43 @@
 @CHARSET "ISO-8859-1";
+
+
+.temp-page div
+{
+	padding:5px;
+	margin:10px;
+	margin-bottom:20px;
+	border-bottom:1px solid lightgray;
+}
+
+.temp-page ul li>label
+{
+	font-size:14px;
+}
+
+.temp-page label
+{
+	margin:5px;
+}
+
+
+
+.temp-page ul
+{
+	list-style:none;
+}
+
+.temp-page div ul label a
+{
+	text-align:left;
+}
+
+#tempTitol
+{
+	font-size:23px;
+}
+
+.temp-page img
+{
+	width:860px;
+	height:200ps;
+}

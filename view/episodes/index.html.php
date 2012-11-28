@@ -21,7 +21,11 @@
 use Goteo\Library\Text,
     Goteo\Core\View;
 
-$posts = $this['posts'];
+$episodis1 = $this['episodis1'];
+$episodis2 = $this['episodis2'];
+$episodis3 = $this['episodis3'];
+$episodis4 = $this['episodis4'];
+$episodis5 = $this['episodis5'];
 
 include 'view/prologue.html.php';
 include 'view/header.html.php';
@@ -39,21 +43,32 @@ $go_up = Text::get('regular-go_up');
 	</div>
 
 	<div id="main" class="threecols">
+	<?php for($i=1;$i<6;$i++){?>
 		<div id="about-content">
-            <h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>
-    
+            <h3 class="title">Temporada <?php echo $i;?></h3>    
                 <div class="about-page">
-                <a href="#">Breaking Bad</a> és una sèrie de televisió dramàtica Estats Units creada i produïda per <a href="">Vince Gilligan</a>.
-                Es va estrenar el 20 de gener del 2008 a la cadena de televisió per cable AMC. 
-                La sèrie se centra en la vida de <a href="">Walter White</a>, un professor de química que ha d'encarar diversos problemes als cinquanta
-                anys, com afrontar un càncer, la minusvalidesa del seu fill, l'arribada d'un nou membre a la seva família i la gran 
-                falta de diners que farà que es fiqui en un enorme embolic que canviarà la seva pacífica vida. Des que es va estrenar 
-                la sèrie ha rebut molt bona crítica i ha guanyat sis dels disset <a href="">premis</a> <a href="">Emmy</a> als que fou nominada.
-				<a href="#">Breaking Bad</a> ha estat doblada al català per Televisió de Catalunya, que la va estrenar al Canal 3XL l'any 2011 i hi va 
-				emetre les tres primeres <a href="">temporades</a>. La <a href="">quarta temporada</a> ha estat estrenada a TV3 l'any 2012.
+                <div class="temp-page">                
+               	<?php
+               		$aux = "episodis".$i;
+               		if (!empty($$aux)) {?>
+               		
+               		<ul>
+               		
+               		<?php foreach ($$aux as $ep) :?>
+	               		<li>
+	               		<label><?php echo "<b>Capitol $ep->id</b> - "; ?></label>
+	                	<label><?php echo $ep->titol."<br>"; ?></label>
+	                	<div style="padding-right:20px;"><?php echo $ep->descripcio; ?></div>	                	
+	               		</li>
+                        <?php endforeach; ?>
+                     </ul>
+                    <?php 
+               		}
+               		?>              
                 </div>
-		</div>
-	
+            	</div>
+		</div>	
+		<?php } ?>
 	</div>
     
 <?php
