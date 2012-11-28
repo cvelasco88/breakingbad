@@ -41,26 +41,39 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="main" class="threecols">
 		<div id="about-content">
-            <h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>
+		<?php if (!empty($temporada)) { ?>
+            <h3 class="title"><?php echo $temporada->nom; ?></h3>
     
                 <div class="about-page">
                 <div class="cast-page">
                	<ul>
-               	<?php
-               		if (!empty($episodis)) {
-	               		foreach ($episodis as $ep) :?>
+ 
 	               		<li>
 	               		<div>
-	                	<img src="/data/images/cast/<?php echo $ep->id; ?>">
-	                	<label><a href="/season/<?php echo $ep->id; ?>"><?php echo $ep->id; ?></a></label>
+	                	<img src="/data/images/cast/<?php echo $temporada->id; ?>">
 	                	</div>
 	               		</li>
-                        <?php endforeach;
+	              </ul>
+               
+               	<?php
+               		if (!empty($episodis)) {?>
+               		<ul>
+               		<?php foreach ($episodis as $ep) :?>
+	               		<li>
+	                	<div><?php echo $ep->titol; ?></div>
+	                	<div><?php echo $ep->descripcio; ?></div>	                	
+	               		</li>
+                        <?php endforeach; ?>
+                     </ul>
+                    <?php 
                		}
-               	?>
-                </ul>  
+               		?>
+              
                 </div>
                </div>
+              <?php
+              }
+              ?>
 		</div>
 	
 	</div>

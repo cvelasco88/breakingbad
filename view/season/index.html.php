@@ -51,7 +51,7 @@ $go_up = Text::get('regular-go_up');
 	               		<li>
 	               		<div>
 	                	<img src="/data/images/cast/<?php echo $temporada->id; ?>">
-	                	<label><a href="/season/<?php echo $temporada->id; ?>"><?php echo $temporada->id; ?></a></label>
+	                	<label><a href="/season/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></label>
 	                	</div>
 	               		</li>
                         <?php endforeach;

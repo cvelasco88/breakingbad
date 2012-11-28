@@ -44,17 +44,19 @@ namespace Goteo\Controller {
                     )
                  );
             }
+            else {
 
-            $temp = Model\Season::get($id);
-            $episodes = Model\Episodes::get($id);
-            
-            return new View(
-                    'view/season/temp.html.php',
-                    array(
-                        'temporada' => $temp,
-                        'episodes' => $episodes
-                    )
-            );
+	            $temp = Model\Season::get($id);
+	            $episodes = Model\Episodes::get($id);
+	            
+	            return new View(
+	                    'view/season/temporada.html.php',
+	                    array(
+	                        'temporada' => $temp,
+	                        'episodis' => $episodes
+	                    )
+	            );
+            }
 
         }
         

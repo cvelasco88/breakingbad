@@ -38,7 +38,7 @@ namespace Goteo\Model {
          *  Para conseguir el ide del blog de un proyecto o de un nodo
          *  Devuelve datos de un blog
          */
-        public static function get ($temporada) {
+        public static function get ($id) {
                 $query = static::query("
                     SELECT
                         id,
@@ -46,9 +46,9 @@ namespace Goteo\Model {
                         temporada,
                         titol,
                 		descripcio           		
-                    FROM    cast
+                    FROM    episodis
                     WHERE temporada = :temp
-                    ", array(':temp' => $temporada));
+                    ", array(':temp' => $id));
                 
                 //$personatges =  $query->fetchObject(__CLASS__);
                 $episodis = $query->fetchAll(\PDO::FETCH_CLASS, __CLASS__);

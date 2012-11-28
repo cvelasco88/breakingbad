@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2012 a las 12:30:35
+-- Tiempo de generación: 28-11-2012 a las 22:04:56
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -164,6 +164,46 @@ CREATE TABLE IF NOT EXISTS `campaign` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cast`
+--
+
+DROP TABLE IF EXISTS `cast`;
+CREATE TABLE IF NOT EXISTS `cast` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `nomserie` varchar(50) NOT NULL,
+  `nomreal` varchar(50) NOT NULL,
+  `tipus` varchar(20) NOT NULL DEFAULT 'principal',
+  `descripcio` varchar(5000) NOT NULL,
+  `imatge` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Volcado de datos para la tabla `cast`
+--
+
+INSERT INTO `cast` (`id`, `nomserie`, `nomreal`, `tipus`, `descripcio`, `imatge`) VALUES
+(1, 'Walter White', 'Bryan Cranston', 'principal', 'És un professor de química de 50 anys d''edat. Li van diagnosticar càncer de pulmó terminal, fet que va fer que canviés dràsticament la seva manera de pensar. Entossudit en aconseguir diners per a la seva família i amb el seu gran coneixement de la química, Walt comença a produir i distribuir metamfetamina amb el sobrenom de Heisenberg.', ''),
+(2, 'Skyler White ', 'Anna Gunn', 'principal', 'És una escriptora de contes curts. És la mare de Walter White Jr i d''una filla que està en camí. Skyler es preocupa massa per Walter, fins al punt de prendre totes les decisions per ell.', ''),
+(3, 'Jesse Pinkman', 'Aaron Paul', 'principal', 'Sota el sobrenom de Capità Cook és el company de Walter White en el negoci de la metamfetamina. Jesse va ser alumne de White en la classe de química de l''institut on treballa Walter, la qual va suspendre. Prové d''una família benestant, però tot i així viu a la casa que la seva tia li va donar d''herència després de morir. Les relacions amb la seva família no són de les millors ja que el van fer fora de casa per las seves relacions amb la droga.', ''),
+(4, 'Walter White, Jr', 'RJ Mitte', 'principal', 'És el fill adolescent de Skyler i Walter. Va néixer amb paràlisi cerebral, cosa que li provoca problemes a la parla i dificultats motrius i és per això que porta crosses.', ''),
+(5, 'Hank Schrader', 'Dean Norris', 'principal', 'És un agent de la DEA (Drug Enforcement Administration), casat amb Marie Schrader i cunyat de Walter. Actualment està investigant l''arribada d''una nova persona al negoci de la metamfetamina, sense saber que aquesta persona és Walter.', ''),
+(6, 'Marie Schrader', 'Betsy Brandt', 'principal', 'És la germana de Skyler i dona de Hank. Aconsella constantment els demés, però és incapaç d''aplicar-se els seus pròpis consells. A més té un problema de cleptomania.', ''),
+(7, 'Saul Goodman', 'Bob Odenkirk', 'secundari', 'Apareix en la segona temporada. És un advocat de mala nota que s''anuncia a la televisió amb el lema de "Better Call Saul". Ell els ajuda a moure''s millor en el camp de la venda de metamfetamina a més de treure''ls de problemes legals amb mètodes poc ortodoxos.', ''),
+(8, 'Gustavo "Gus" Fring "Señor de los Pollos"', 'Giancarlo Esposito', 'secundari', 'Apareix a finals de la segona temporada. Aquest amable i emprenedor empresari, propietari de la major cadena de menjar ràpid de pollastre fregit de l''estat de Nou Mèxic i, alhora, és el major distribuïdor de metamfetamina de tot l''estat.', ''),
+(9, 'Michael "Mike" Ehrmantraut', 'Jonathan Banks', 'secundari', 'És un investigador privat que a primera instancia sembla treballar per en Saul, però a mesura que passen els capítols es revela que la seva lleialtat esta al costat d’en Fring. ', ''),
+(10, 'Ted Beneke', 'Christopher Cousins', 'secundari', 'Va ser el cap de la Skyler en una empresa d’on ella treballava com a comptable.', ''),
+(11, 'Steven Gomez ', 'Steven Michael Quezada', 'secundari', 'És el company d’en Hank a la DEA.', ''),
+(12, 'Gretchen Schwartz', 'Jessica Hecht', 'secundari', 'És l’antiga assistenta de química de Walter a la universitat. Actualment es propietària de la meitat de la companyia Gray Matter (<<materia girs>>), una companyia farmacèutica exitosa. Aparentment, va tenir interès romàntic per en Walt, però està casada amb l’Elliot Schwartz', ''),
+(13, 'Elliott Schwartz', 'Adam Godley', 'secundari', 'És l’antic company de ciències de Walter i propietari de la meitat de la companyia Gray Matter, cofundador d’aquesta juntament amb Walter White. Està casat amb en Gretchen.', ''),
+(14, 'Jane Margolis', 'Krysten Ritter', 'secundari', 'Xicota d’en Jesse, és addicte a l’heroïna i està en un pla de desintoxicació per pressió del seu pare.', ''),
+(15, 'Tuco Salamanca', 'Raymond Cruz', 'secundari', 'És un mexicà demencial especialista en drogues, es converteix en un distribuïdor de metaenfetamina de Jeese i Walter. És imprevisible i propens a enfadar-se violentament, però respecta en Walt pel seu producte superior, intel•ligència i valentia. ', ''),
+(16, 'Todd', 'Jesse Plemons', 'secundari', 'És un empleat de "Vamonos pest control" que assisteix a en Walt i Jesse en la seva refundació del negoci de fabricació de metaenfetamina.', ''),
+(17, 'Wendy', 'Julia Minesci', 'secundari', 'És una prostituta que té la seva primera aparició en el capítol “And the Bag’s in the River” on dona els seus serveis sexuals a en Jesse, té aparicions a la primera, segons i tercera temporada. ', '');
 
 -- --------------------------------------------------------
 
@@ -352,6 +392,82 @@ CREATE TABLE IF NOT EXISTS `criteria_lang` (
   `description` text,
   UNIQUE KEY `id_lang` (`id`,`lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `episodis`
+--
+
+DROP TABLE IF EXISTS `episodis`;
+CREATE TABLE IF NOT EXISTS `episodis` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `numero` int(5) NOT NULL,
+  `temporada` int(5) NOT NULL,
+  `titol` varchar(50) NOT NULL,
+  `descripcio` varchar(5000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
+
+--
+-- Volcado de datos para la tabla `episodis`
+--
+
+INSERT INTO `episodis` (`id`, `numero`, `temporada`, `titol`, `descripcio`) VALUES
+(1, 1, 1, 'Pilot', 'Un professor de química d''institut recorre al negoci de les drogues per mantenir la seva família.'),
+(2, 2, 1, 'El gat és al sac...', 'El primer tracte fracassa i fa que en Walt i Jesse s''hagin de desfer de dos cadàvers mentre la Skyler sospita que el seu marit en porta alguna de cap.'),
+(3, 3, 1, '.. i el sac és al riu', 'Mentre en Walt neteja les restes del desastre del seu primer negoci, s''adona que la Skyler està molt a prop de descobrir la seva doble vida i es planteja dir-li la veritat sobre la malaltia.'),
+(4, 4, 1, 'Tinc càncer', 'En Walt es veu obligat a dir la veritat sobre la seva malaltia i això fa que s''hagi de plantejar com fer front als costos d''una sèrie de tractaments molt cars contra el càncer.'),
+(5, 5, 1, 'Matèria Grisa', 'Skyler aprofita un esdeveniment per convèncer en Walt d''acceptar la generosa oferta del seu antic company d''investigació de costejar els caríssims tractaments per a la seva malaltia.'),
+(6, 6, 1, 'Un engany com una casa', 'Els efectes secundaris i les despeses del tractament es van acumulant ràpidament i en Walt demana al Jesse que busqui un comprador per al laboratori, però aquest acaba amb problemes amb un delinqüent habitual.'),
+(7, 7, 1, 'Un tracte sense males llets', 'Després que en Jesse va estar a punt de morir, en Walt accepta produir encara més drogues per al despietat Tuco, mentre la Skyler sospita que la seva germana va robar un objecte de bany per a nadons molt car.'),
+(8, 8, 2, 'Set-cents trenta-set', 'Mentre ultimen un pla per rematar una gran operació, en Walt i en Jesse temen que el seu únic comprador, el Tuco, els mati tan bon punt se li presenti l''oportunitat'),
+(9, 9, 2, 'A la brasa', 'Mentre els antidroga anuncien la cerca i captura del Tuco, la Skyler recluta en Hank per localitzar en Walt.'),
+(10, 10, 2, 'Picat per una abella morta', 'En Hank s''acosta perillosament a destapar la veritat sobre el paper d''en Walt en el negoci de les drogues i aquest trama un pla per esborrar qualsevol rastre.'),
+(11, 11, 2, 'Avall', 'Mentre en Walt fa els possibles per evitar el distanciament entre ell i la Skyler, en Jesse es queda sense casa quan els seus pares el fan fora d''on estava vivint.'),
+(12, 12, 2, 'Pèrdues', 'A en Walt se li acumulen les factures del metge i els problemes domèstics, però en Jesse només tornarà al negoci de les drogues si ell en dicta les condicions.'),
+(13, 13, 2, 'Taaat!', 'Mentre en Jesse segueix la pista als addictes que van robar la droga a Skinny Pete, en Walt se les empesca per reforçar la seva coartada sobre com ha sufragat els tractaments contra el càncer.'),
+(14, 14, 2, '"Negre y Blau", la balada d''en Heisenberg', 'Mentre en Walt vol aprofitar la reputació d''en Jesse com a senyor de la droga sense escrúpols per ampliar el seu àmbit d''actuació, el primer contacte d''en Hank amb l''alt risc de l''oficina antidroga d''El Paso el deixa molt tocat.'),
+(15, 15, 2, 'Truca a en Saul', 'La detenció d''en Badger obliga en Walt i en Jesse a associar-se amb un advocat dubtós.'),
+(16, 16, 2, '4 dies a fora', 'Amoïnat perquè el temps se li esgota, en Walt vol deixar assegurat el futur de la seva família i recluta en Jesse per fer una sessió maratoniana de cocció de metadona al desert.'),
+(17, 17, 2, 'Amunt', 'Després de rebre bones notícies sobre els resultats del tractament contra el càncer, en Walt s''enfronta amb el seu cunyat, en Hank, abans de dedicar tots els seus esforços a redreçar les coses a casa.'),
+(18, 18, 2, 'Mandala', 'A mesura que s''acosta el final de l''embaràs, la Skyler es qüestiona el que sent pel seu cap. Mentrestant, la mort d''un camell de carrer fa que en Walt hagi de buscar un altre lloc on descarregar una gran partida de metadona.'),
+(19, 19, 2, 'Phoenix', 'Després de perdre''s el naixement de la seva filla per acabar de tancar un tracte suculent, en Walt es quadra amb la xicota d''en Jesse pel repartiment dels beneficis.'),
+(20, 20, 2, 'Aeroport Internacional d''Alburquerque', 'En Walt mira d''encarrilar la seva vida i la d''en Jesse mentre es prepara per l''operació i procura que la Skyler i en Walt Jr. no descobreixin la font dels seus ingressos.'),
+(21, 21, 3, 'No més', 'Arrenca la tercera temporada de "Breaking Bad", en la qual en Walt patirà les conseqüències de les seves activitats delictives.'),
+(22, 22, 3, 'Caball sense nom', 'En Walt és capaç de qualsevol cosa per fer que la família torni a estar unida. D''altra banda, en Jesse decideix fer una important inversió del tot inesperada'),
+(23, 23, 3, 'Em tiro en Ted', 'En Walt li diu a la Skyler que accepti els diners, justificant que tot el que ha fet ha estat pensant en el futur dels seus fills. La reacció de la Skyler no serà l''esperada ni de bon tros...'),
+(24, 24, 3, 'Semàfor verd', 'En Hank continua sense prestar atenció a la trucada a El Paso després d''anotar-se uns quants avenços en la seva investigació en el "cas Heisenberg". Mentrestant, en Jesse vol tornar a treballar.'),
+(25, 25, 3, 'Més', 'En Walt s''ocupa de les conseqüències de l''accident d''avió i una nova amenaça s''interposa en el seu camí. Mentrestant, la Skyler considera quins són els millors passos que cal seguir'),
+(26, 26, 3, 'Al capvespre', 'En Walt comença a treballar al seu nou laboratori i coneix qui serà el seu nou assistent. Els cosins mexicans reapareixen però no es mouen del restaurant del Gus. En Hank segueix amb la seva investigació i el porta al Jesse. En Walt entrarà en escena.'),
+(27, 27, 3, 'Un minut', 'En Hank passa comptes amb en Jesse després d''involucrar la seva parella en un horrible accident que resulta fictici. D''altra banda, al laboratori, el nou assistent d''en Walter no se''n surt amb els primers experiments'),
+(28, 28, 3, 'Et veig', 'En Hank ingressa a l''hospital després de rebre 4 trets. Pel que fa al laboratori, en Walt ha de dir-li al Gale que prescindeix dels seus serveis.'),
+(29, 29, 3, 'Kafkià', 'Mentre en Hank segueix ingressat, la Skyler trama els seus plans. En Walt i en Gus sembla que s''avenen cada cop més. El Jesse, per la seva banda, busca noves oportunitats.'),
+(30, 30, 3, 'La mosca', 'En Walt es nega a seguir amb més experiments fins que no s''aïlli un agent contaminant que fluctua pel laboratori. En Jesse intenta de totes totes que en Walt reconsideri aquesta situació.'),
+(31, 31, 3, 'Albuquerque', 'La Skyler s''involucra cada cop més en el negoci d''en Walt. En Hank lluita per a la seva recuperació. En Jesse agafa un rol actiu a la seva nova empresa.'),
+(32, 32, 3, 'Mitges tintes', 'En contra de la paraula del Walt, el Jesse tira endavant la seva decisió. En Walt sap que en Jesse corre perill i decideix prendre part en l''assumpte.'),
+(33, 33, 3, 'Tot o res', 'En Walt negocia alguna mena de tracte amb en Gus per la seva seguretat i la d''en Jesse.'),
+(34, 34, 4, 'Cúter', 'En Walt i en Jesse esperen ansiosament el pròxim moviment d''en Gus, el seu cap de narcotraficants. Per la seva banda, la Skyler descobreix que en Walt ha desaparegut i inicia una recerca desesperada.'),
+(35, 35, 4, '38 snub', 'En Walt decideix comprar-se un revòlver per protegir-se i en Jess ha de trampejar el seu sentiment de culpa en reviure l''amistat amb en Badger i l''Skinny Pete. D''altra banda, la Skyler mira de comprar un túnel d''autorentat de cotxes i la seva germana, ha de fer front al rebuig que sent en Hank per la seva discapacitat.'),
+(36, 36, 4, 'Dia de protes obertes', 'En Walt està preocupat perquè en Gus manté el laboratori sota vigilància i perquè l''estat mental d''en Jess és cada vegada més delicat. D''altra banda, la Skyler fa més pressió per comprar el túnel d''autorentat de cotxes, que servirà de tapadora per blanquejar diners.'),
+(37, 37, 4, 'Esquemes', 'La Skyler s''inventa una història d''allò més elaborada per justificar la seva situació financera i en Walt s''inquieta en descobrir que en Hank ha obert una altra investigació. Per la seva banda, en Jesse només pot pensar a fer festes, fet que desperta la curiositat d''en Gus.'),
+(38, 38, 4, 'Vigilant', 'En Walt creu que estan a punt d''assassinar el seu company i en Jesse i en Mike fan una sortida perillosa. D''altra banda, en Walt i la Skyler compren oficialment el túnel d''autorentat de cotxes i en Hank decideix tancar la investigació.'),
+(39, 39, 4, 'Arraconat', 'Quan la Skyler sospita que en Walt no li diu la veritat, pren una actitud freda i purament professional cap a ell. Mentrestant, en Gus s''acosta a en Jesse, que demostra que és un home de vàlua per a en Mike i per a l''empresa d''en Gus.'),
+(40, 40, 4, 'Un gos problemàtic', 'Amb la nova operació, en Walt col•loca a la Skyler en una situació difícil, i mentre en Walt mira de protegir-se d''en Gus, en Jesse accepta una proposició perillosa.'),
+(41, 41, 4, 'Germans', 'Mentre en Hank mostra indicis que en Gus és l''element central del tràfic de metadona d''Alburquerque, en Walt creu que l''assassinaran, i també a en Jesse, per protegir el seu cap. Per la seva banda, en Gus refusa l''exigència del càrtel mexicà d''aturar les seves activitats com a narcotraficant i contraataca.'),
+(42, 42, 4, 'Error', ''),
+(43, 43, 4, 'Salut', ''),
+(44, 44, 4, 'Espai del arrastre', ''),
+(45, 45, 4, 'Final dels temps', ''),
+(46, 46, 4, 'Final dels temps', ''),
+(47, 47, 5, 'Viure lliure o morir', ''),
+(48, 48, 5, 'Madrigal', ''),
+(49, 49, 5, 'Hazard Pay', ''),
+(50, 50, 5, 'Cinquanta-u', ''),
+(51, 51, 5, 'Pes mort', ''),
+(52, 52, 5, 'Buyout', ''),
+(53, 53, 5, 'Del meu nom (FKA totam guanya)', ''),
+(54, 54, 5, 'Desplaçant-se per sobre', '');
 
 -- --------------------------------------------------------
 
@@ -1319,7 +1435,7 @@ INSERT INTO `purpose` (`text`, `purpose`, `html`, `group`) VALUES
 ('blog-comments', 'Comentarios', NULL, 'general'),
 ('blog-comments_no_allowed', 'No se permiten comentarios en  esta entrada', NULL, 'blog'),
 ('blog-comments_no_comments', 'No hay comentarios en esta entrada', NULL, 'blog'),
-('blog-main-header', 'Blog de Goteo', NULL, 'general'),
+('blog-main-header', 'Blog de Breaking Bad', NULL, 'general'),
 ('blog-no_comments', 'Sin comentarios', NULL, 'blog'),
 ('blog-no_posts', 'No se ha publicado ninguna entrada ', NULL, 'blog'),
 ('blog-send_comment-button', 'Enviar', NULL, 'blog'),
@@ -2379,6 +2495,30 @@ CREATE TABLE IF NOT EXISTS `template_lang` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `temporades`
+--
+
+DROP TABLE IF EXISTS `temporades`;
+CREATE TABLE IF NOT EXISTS `temporades` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `temporades`
+--
+
+INSERT INTO `temporades` (`id`, `nom`) VALUES
+(1, 'Primera temporada'),
+(2, 'Segona temporada'),
+(3, 'Tercera temporada'),
+(4, 'Quarta temporada'),
+(5, 'Cinquena temporada');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `text`
 --
 
@@ -2698,7 +2838,7 @@ INSERT INTO `text` (`id`, `lang`, `text`) VALUES
 ('feed-blog-comment', 'en', 'Has written a <span class="green">Comment</span> at the post "%s" from the %s blog'),
 ('feed-head-community', 'ca', 'Comunitat'),
 ('feed-head-community', 'en', 'Community'),
-('feed-head-goteo', 'ca', 'Goteo'),
+('feed-head-goteo', 'ca', 'Breaking Bad'),
 ('feed-head-goteo', 'en', 'Goteo'),
 ('feed-head-projects', 'ca', 'Projectes'),
 ('feed-head-projects', 'en', 'Projects'),
@@ -4011,6 +4151,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `location`, `email`, `password`, `about`, `keywords`, `active`, `avatar`, `contribution`, `twitter`, `facebook`, `google`, `identica`, `linkedin`, `worth`, `created`, `modified`, `token`, `hide`, `confirmed`) VALUES
+('carles', 'carles', '', 'carlesvelasco@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', '', 1, NULL, '', '', '', '', '', '', NULL, '2012-11-28 11:55:20', '2012-11-28 11:56:28', '677c9c0c517c643b4563db1dfc160957', 0, 1),
 ('carlos', 'carlos', NULL, 'carlosvelasco69@hotmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2012-11-11 12:41:51', '2012-11-11 12:49:46', '2a2e06b92f7caf481a5d1dcf5257013e', 0, 1),
 ('root', 'Super administrador', '', 'root_goteo@doukeshi.org', 'f64dd0d8c9276d87c6d0ae24c5d12571c62ecf16', '', '', 1, 91, '', '', '', '', '', '', 0, '2011-08-31 17:54:11', '2011-12-21 21:45:39', '61aa85ea9169c68babfa5b8bdb44097broot_goteo@doukeshi.org', 1, 1);
 
@@ -4146,6 +4287,7 @@ CREATE TABLE IF NOT EXISTS `user_role` (
 --
 
 INSERT INTO `user_role` (`user_id`, `role_id`, `node_id`, `datetime`) VALUES
+('carles', 'user', '*', '2012-11-28 11:55:20'),
 ('carlos', 'admin', '*', '2012-11-11 12:44:02'),
 ('carlos', 'checker', '*', '2012-11-11 12:45:22'),
 ('carlos', 'root', '*', '2012-11-11 12:45:06'),
