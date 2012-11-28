@@ -299,33 +299,6 @@ namespace Goteo\Controller {
                         }
                     break;
 
-                    // preferencias de notificación
-                    case 'preferences':
-                        // campos de preferencias
-                        $fields = array(
-                            'updates',
-                            'threads',
-                            'rounds',
-                            'mailing'
-                        );
-
-                        $preferences = array();
-
-                        foreach ($fields as $field) {
-                            if (isset($_POST[$field])) {
-                                $preferences[$field] = $_POST[$field];
-                            }
-                        }
-
-                        // actualizamos estos datos en los personales del usuario
-                        if (!empty ($preferences)) {
-                            if (Model\User::setPreferences($user->id, $preferences, $errors)) {
-                                Message::Info(Text::get('user-prefer-saved'));
-                                $log_action = 'Modificado las preferencias de notificación'; //feed admin
-                            }
-                        }
-                    break;
-
                 }
 
                 if (!empty($log_action)) {
@@ -381,9 +354,6 @@ namespace Goteo\Controller {
                         break;
                     case 'personal':
                         $viewData['personal'] = Model\User::getPersonal($user->id);
-                        break;
-                    case 'preferences':
-                        $viewData['preferences'] = Model\User::getPreferences($user->id);
                         break;
                     case 'access':
                         // si es recover, en contraseña actual tendran que poner el username
@@ -1276,87 +1246,15 @@ namespace Goteo\Controller {
         private static function menu() {
             // todos los textos del menu dashboard
             $menu = array(
-                'activity' => array(
-                    'label'   => Text::get('dashboard-menu-activity'),
-                    'options' => array (
-                        'summary' => Text::get('dashboard-menu-activity-summary')
-                    )
-                ),
                 'profile' => array(
                     'label'   => Text::get('dashboard-menu-profile'),
                     'options' => array (
                         'profile'  => Text::get('dashboard-menu-profile-profile'),
                         'personal' => Text::get('dashboard-menu-profile-personal'),
                         'access'   => Text::get('dashboard-menu-profile-access'),
-                        'preferences' => Text::get('dashboard-menu-profile-preferences'),
-                        'public'   => Text::get('dashboard-menu-profile-public')
-                    )
-                ),
-                'projects' => array(
-                    'label' => Text::get('dashboard-menu-projects'),
-                    'options' => array (
-                        'summary'  => Text::get('dashboard-menu-projects-summary'),
-                        'updates'  => Text::get('dashboard-menu-projects-updates'),
-                        'widgets'  => Text::get('dashboard-menu-projects-widgets'),
-                        'contract' => Text::get('dashboard-menu-projects-contract'), 
-                        'rewards'  => Text::get('dashboard-menu-projects-rewards'),
-                        'supports' => Text::get('dashboard-menu-projects-supports')
                     )
                 )
             );
-
-            // si tiene algun proyecto para traducir
-            $translates = Model\User\Translate::query("SELECT COUNT(project) FROM user_translate WHERE user = ?", array($_SESSION['user']->id));
-            if ($translates->fetchColumn(0) > 0) {
-                $menu['translates'] = array(
-                    'label' => Text::get('dashboard-menu-translates'),
-                    'options' => array (
-                        'profile'  => Text::get('step-1'),
-                        'overview' => Text::get('step-3'),
-                        'costs'    => Text::get('step-4'),
-                        'rewards'  => Text::get('step-5'),
-                        'supports' => Text::get('step-6'),
-                        'updates'  => Text::get('project-menu-updates')
-                    )
-                );
-            } else {
-                $menu['translates'] = array(
-                    'label' => Text::get('dashboard-menu-translates'),
-                    'options' => array (
-                        'profile'  => Text::get('step-1')
-                    )
-                );
-            }
-
-            // si tiene permiso para ir al admin
-            if (ACL::check('/admin')) {
-                $menu['admin'] = array(
-                    'label'   => Text::get('dashboard-menu-admin_board'),
-                    'options' => array(
-                        'board' => Text::get('dashboard-menu-admin_board')
-                    )
-                );
-            }
-
-            // si tiene permiso para ir a las revisiones
-            if (ACL::check('/review')) {
-                $menu['review'] = array(
-                    'label'   => Text::get('dashboard-menu-review_board'),
-                    'options' => array(
-                        'board' => Text::get('dashboard-menu-review_board')
-                    )
-                );
-            }
-
-            // si tiene permiso para ir a las traducciones
-            if (ACL::check('/translate')) {
-                $menu['translate'] = array(
-                    'label'   => Text::get('dashboard-menu-translate_board'),
-                    'options' => array(
-                        'board' => Text::get('dashboard-menu-translate_board')
-                    )
-                );
-            }
 
             return $menu;
 

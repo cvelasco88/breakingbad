@@ -74,9 +74,9 @@ jQuery(document).ready(function($) {
 <div id="sub-header">
 	<div class="clearfix">
 		<div class="subhead-banner">
-			<h2 class="message"><?php echo Text::html('login-banner-header'); ?></h2>
+			<h2 class="message"><?php //echo Text::html('login-banner-header'); ?></h2>
 		</div>
-		<div class="mod-pojctopen"><?php echo Text::html('open-banner-header', $fbCode); ?></div>
+		<div class="mod-pojctopen"><?php //echo Text::html('open-banner-header', $fbCode); ?></div>
 	</div>
 </div>
 
