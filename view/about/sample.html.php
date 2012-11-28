@@ -22,20 +22,117 @@ $bodyClass = 'about';
 include 'view/prologue.html.php';
 include 'view/header.html.php'; ?>
 
-    <div id="sub-header">
-        <div>
-            <h2><?php echo $this['description']; ?></h2>
-        </div>
-    </div>
+	<div id="sub-header-secondary">
+		<div class="clearfix">
+			<h2><a href="/cast">Actors</a></h2>
+            <?php //echo new View('view/header/share.html.php'); ?>
+		</div>
+	</div>
 
-    <div id="main">
-
-        <div class="widget">
-            <h3 class="title"><?php echo $this['name']; ?></h3>
-            <?php echo $this['content']; ?>
-        </div>
-
-    </div>
+	<div id="main" class="threecols">
+		<div id="about-content">
+            <!--  <h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>-->
+            <h3 class="title">Principals</h3>
+    
+               	<div class="about-page">
+                
+	                <ul style="display: inline;">
+	                	<li>
+	                	<label><img src=""></label>
+	                	<label>Walter White</label>
+	                	<p>Descripció</p>
+	                	</li>
+	                	<li>
+	                	<label><img src=""></label>
+	                	<label>Skyler White</label>
+	                	<p>Descripció</p>
+	                	</li>
+	                	<li>
+	                	<label><img src=""></label>
+	                	<label>Jesse Pinkman</label>
+	                	<p>Descripció</p>
+	                	</li>
+	                	<li>
+	                	<label><img src=""></label>
+	                	<label>Walter White, Jr.</label>
+	                	<p>Descripció</p>
+	                	</li>
+	                	<li>
+	                	<label><img src=""></label>
+	                	<label>Hank Schrader</label>
+	                	<p>Descripció</p>
+	                	</li>
+	                	<li>
+	                	<label><img src=""></label>
+	                	<label>Marie Schrader</label>
+	                	<p>Descripció</p>
+	                	</li>
+	                </ul>
+                </div>
+             <h3 class="title">Secundaris</h3>
+    
+             <div class="about-page">
+                
+                <ul style="display: inline;">
+                	<li>
+                	<label><img src=""></label>
+                	<label>Saul Goodman</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Gustavo "Gus" Fring "Señor de los Pollos"</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Michael "Mike" Ehrmantraut</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Ted Beneke</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Steven Gomez</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Gretchen Schwartz</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Elliott Schwartz</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Jane Margolis</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Tuco Salamanca</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Todd</label>
+                	<p>Descripció</p>
+                	</li>
+                	<li>
+                	<label><img src=""></label>
+                	<label>Wendy</label>
+                	<p>Descripció</p>
+                	</li>
+                </ul>
+		</div>
+	
+	</div>
     
 <?php include 'view/footer.html.php' ?>
 

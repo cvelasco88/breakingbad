@@ -18,6 +18,31 @@
  *
  */
 
-use Goteo\Library\Text;
-$lang = (LANG != 'ca') ? '?lang='.LANG : '';
-?>
+
+namespace Goteo\Controller {
+
+    use Goteo\Library\Page,
+        Goteo\Core\Redirection,
+        Goteo\Core\View,
+        Goteo\Library\Text;
+
+    class Cast extends \Goteo\Core\Controller {
+        
+        public function index () {
+
+            $page = Page::get('cast');
+
+            return new View(
+                'view/about/sample.html.php',
+                array(
+                    'name' => $page->name,
+                    'description' => $page->description,
+                    'content' => $page->content
+                )
+             );
+
+        }
+        
+    }
+    
+}

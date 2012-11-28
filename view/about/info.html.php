@@ -34,13 +34,13 @@ $go_up = Text::get('regular-go_up');
 	<div id="sub-header-secondary">
 		<div class="clearfix">
 			<h2><a href="/about">Argument</a></h2>
-            <?php echo new View('view/header/share.html.php') ?>
+            <?php echo new View('view/header/share.html.php'); ?>
 		</div>
 	</div>
 
 	<div id="main" class="threecols">
 		<div id="about-content">
-            <h3 class="title"><?php echo Text::get('regular-header-about'); ?></h3>
+            <h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>
     
                 <div class="about-page">
                 <a href="#">Breaking Bad</a> és una sèrie de televisió dramàtica Estats Units creada i produïda per <a href="">Vince Gilligan</a>.

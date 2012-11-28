@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2012 a las 15:48:02
+-- Tiempo de generación: 28-11-2012 a las 11:53:14
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `acl` (
   KEY `role_FK` (`role_id`),
   KEY `user_FK` (`user_id`),
   KEY `node_FK` (`node_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=68 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
 
 --
 -- Volcado de datos para la tabla `acl`
@@ -102,7 +102,11 @@ INSERT INTO `acl` (`id`, `node_id`, `role_id`, `user_id`, `url`, `allow`, `times
 (56, '*', '*', '*', '/mail/*', 1, '2011-09-25 12:13:58'),
 (57, '*', 'user', 'diegobus', '/admin/*', 1, '2011-09-29 14:17:50'),
 (58, '*', '*', '*', '/json/*', 1, '2011-11-22 15:10:08'),
-(67, '*', '*', '*', '/wof/*', 1, '2011-12-14 15:44:10');
+(67, '*', '*', '*', '/wof/*', 1, '2011-12-14 15:44:10'),
+(68, '*', '*', '*', '/cast/*', 1, '2012-11-27 20:00:11'),
+(69, '*', '*', '*', '/episodes/*', 1, '2012-11-28 10:46:45'),
+(70, '*', '*', '*', '/photos/*', 1, '2012-11-28 10:49:32'),
+(71, '*', '*', '*', '/video/*', 1, '2012-11-28 10:50:24');
 
 -- --------------------------------------------------------
 
