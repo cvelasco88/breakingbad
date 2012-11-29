@@ -48,7 +48,7 @@ $go_up = Text::get('regular-go_up');
                 <div class="temp-page">
          
                	<div>
-                <img src="/data/images/bb-s<?php echo $temporada->id; ?>">
+                <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg">
                 </div>
 
                	<?php
