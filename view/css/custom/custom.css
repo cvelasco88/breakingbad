@@ -22,3 +22,38 @@
  @import url('episodes.css');
  @import url('photos.css');
  @import url('video.css');
+ 
+ .slides_container .subhead-banner img
+ {
+ 	style="width:680px; 
+ 	height:200px;
+ }
+ 
+ 
+  #about-content .temp-page div
+ {
+ 	display:inline;
+ }
+ 
+ #about-content .temp-page img
+ {
+ 	width:400px;
+ 	height:100px;
+ }
+   
+ #about-content .video-page video
+ {
+ 	width:320px;
+ 	height:210px;
+ }
+ 
+  #about-content .photos-page img
+ {
+ 	width:100px;
+ 	height:100px;
+ }
+ 
+  #about-content .cast-page center
+ {
+ 	display:inline;
+ }

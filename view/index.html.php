@@ -21,7 +21,7 @@
 use Goteo\Core\View,
     Goteo\Library\Text;
 
-$currentPost = $this['posts'][$this['post']];
+//$currentPost = $this['posts'][$this['post']];
 
 $bodyClass = 'home';
 // para que el prologue ponga el código js para botón facebook en el bannerside
@@ -46,19 +46,19 @@ include 'view/header.html.php';
 		<div class="clearfix widget">
 	        <div class="slides_container">
 	        	<div class="subhead-banner">
-	        		<img style="width:680px; height:100%;" src="/data/images/bb-s1.jpg"></img>
+	        		<img src="/data/images/bb-s1.jpg"></img>
 	        	</div>
 	        	<div class="subhead-banner">
-	        		<img style="width:680px; height:100%;" src="/data/images/bb-s2.jpg"></img>
+	        		<img src="/data/images/bb-s2.jpg"></img>
 	        	</div>
 	        	<div class="subhead-banner">
-	        		<img style="width:680px; height:100%;" src="/data/images/bb-s3.jpg"></img>
+	        		<img src="/data/images/bb-s3.jpg"></img>
 	        	</div>
 	        	<div class="subhead-banner">
-	        		<img style="width:680px; height:100%;" src="/data/images/bb-s4.jpg"></img>
+	        		<img src="/data/images/bb-s4.jpg"></img>
 	        	</div>
 	        	<div class="subhead-banner">
-	        		<img style="width:680px; height:100%;" src="/data/images/bb-s5.jpg"></img>
+	        		<img src="/data/images/bb-s5.jpg"></img>
 	        	</div>
 	        </div>
 	    </div>
@@ -68,78 +68,92 @@ include 'view/header.html.php';
 	        <a class="next">next</a>
 	    </div>
 	</div>
- 	<h2>Seasons</h2>
- 	<div class="submain">
- 	<center>
- 		<?php
- 			for($i=1;$i<6;$i++)
- 			{ 			
-	 		?>
-	 		<div>
-	        	<center><img src="/data/images/bb-s<?php echo $i; ?>.jpg"></img></center>
-	        	<center><a href="./season/<?php echo $i; ?>">Season <?php echo $i; ?></a></center>
-	        </div>
- 			<?php 
- 			} 
- 		?>
- 	</center>
- 	</div>
+ 	
  </div>
- <div class="widget">
- 	<h2>Videos</h2>
- 	<div class="submain">
- 		<center>
- 		<video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
-        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
-        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
-        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
-        </center>
-    </div>
- </div>
- <div class="widget">
- 	<h2>Images</h2>
- 	<div class="submain">
- 		<center>
- 		<div>
-        	<img src="/data/images/bb-s1.jpg"></img>
-        </div>
-        <div>
-        	<img src="/data/images/bb-s2.jpg"></img>
-        </div>
-        <div>
-        	<img src="/data/images/bb-s3.jpg"></img>
-        </div>
-        <div>
-        	<img src="/data/images/bb-s4.jpg"></img>
-        </div>
-        <div>
-        	<img src="/data/images/bb-s5.jpg"></img>
-        </div>
-        </center>
- 	</div>
- </div>
- <div class="widget">
- 	<h2>Characters</h2>
- 	<div class="submain">
- 		<center>
- 		<div>
-        	<img src="/data/images/bb-s1.jpg"></img>
-        </div>
-        <div>
-        	<img src="/data/images/bb-s2.jpg"></img>
-        </div>
-        <div>
-        	<img src="/data/images/bb-s3.jpg"></img>
-        </div>
-        <div>
-        	<img src="/data/images/bb-s4.jpg"></img>
-        </div>
-        <div>
-        	<img src="/data/images/bb-s5.jpg"></img>
-        </div>
-        </center>
- 	</div>
- </div
+ <div id="main" class="threecols">
+  
+ 		<div id="about-content">
+            <h3 class="title">Temporades</h3>    
+            <div class="about-page temp-page">
+            	<div class="submain">
+			 	<center>
+			 		<?php
+			 			for($i=1;$i<6;$i++)
+			 			{ 			
+				 		?>
+				 		<div>	
+				 			<a href="./season/<?php echo $i; ?>"><h2>Season <?php echo $i; ?></h2></a>			        	
+				        	<a href="./season/<?php echo $i; ?>"><img src="/data/images/bb-s<?php echo $i; ?>.jpg"></img><a/>				        	
+				        </div>
+			 			<?php 
+			 			} 
+			 		?>
+			 	</center>
+			 	</div>
+            </div>
+		</div>		
+		
+		<div id="about-content">
+            <h3 class="title">Videos</h3>    
+            <div class="about-page video-page">
+            	<div class="submain">
+			 		<center>
+			 		<video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
+			        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
+			        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
+			        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
+			        </center>
+			    </div>
+            </div>
+		</div>
+		
+		<div id="about-content">
+            <h3 class="title">Imatges</h3>    
+            <div class="about-page photos-page">
+            	<div class="submain">
+			 		<center>
+			 		<?php
+		 			for($i=1;$i<6;$i++)
+		 			{ 			
+			 		?>
+				 		<label>			        	
+				        	<a href="/photos"><img src="/data/images/bb-s<?php echo $i; ?>.jpg"></img><a/>				        	
+				        </label>
+				 	<?php 
+				 	} 
+		 			for($i=1;$i<6;$i++)
+		 			{ 			
+			 		?>
+				 		<label>		        	
+				        	<a href="/photos"><img src="/data/images/cast/<?php echo $i; ?>.jpg"></img><a/>				        	
+				        </label>
+				 	<?php 
+				 	} 
+				 	?>
+			        </center>
+			 	</div>
+            </div>
+		</div>
+		
+		<div id="about-content">
+            <h3 class="title">Actors</h3>    
+            <div class="about-page photos-page">
+            	<div class="submain">
+			 		<center>
+		 			<?php for($i=1;$i<6;$i++)
+		 			{ 			
+			 		?>
+				 		<label>		        	
+				        	<a href="/cast/actor/<?php echo $i; ?>"><img src="/data/images/cast/<?php echo $i; ?>.jpg"></img><a/>				        	
+				        </label>
+				 	<?php 
+				 	} 
+				 	?>
+			        </center>
+			 	</div>
+            </div>
+		</div>
+		
 </div>
 <?php include 'view/footer.html.php'; ?>
 <?php include 'view/epilogue.html.php'; ?>
