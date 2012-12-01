@@ -43,7 +43,7 @@ include 'view/header.html.php'; ?>
 		                	<label><?php echo "Actor $actor->tipus"; ?></label>
 		               		</li>
 	                   		<li>
-			                	<div><img src="/data/images/cast/<?php echo $actor->id; ?>"></div>
+			                	<div><img src="/data/images/cast/<?php echo $actor->id; ?>.jpg"></div>
 			                	<div><?php echo $actor->descripcio; ?></div>
 			               	</li>
 	                	</ul>  

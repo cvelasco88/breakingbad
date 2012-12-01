@@ -47,7 +47,12 @@ body {
 body, td, th, input, textarea, button {    
     font-size: 12px;
     color: #14681E;
-    text-align:justify;
+    /*text-align:justify;*/
+}
+
+a
+{
+	text-decoration:none;
 }
 
 

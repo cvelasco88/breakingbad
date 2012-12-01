@@ -19,6 +19,7 @@
  */
 $principals = $this['principals'];
 $secundaris = $this['secundaris'];
+$altres = $this['altres'];
 $bodyClass = 'cast';
 include 'view/prologue.html.php';
 include 'view/header.html.php'; ?>
@@ -42,10 +43,11 @@ include 'view/header.html.php'; ?>
                		if (!empty($principals)) {
 	               		foreach ($principals as $actor) :?>
 	               		<li>
-	               		<div>
-	                	<img src="/data/images/cast/<?php echo $actor->id; ?>">
-	                	<label><a href="/cast/actor/<?php echo $actor->id; ?>"><?php echo "$actor->nomserie ($actor->nomreal)"; ?></a></label>
-	                	</div>
+	               			<label>
+		               			<img src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
+		                		<a href="/cast/actor/<?php echo $actor->id; ?>"><?php echo "$actor->nomserie ($actor->nomreal)"; ?></a>
+		                	</label>
+		                		               		
 	               		</li>
                         <?php endforeach;
                		}
@@ -58,22 +60,49 @@ include 'view/header.html.php'; ?>
              <div class="about-page">
                 <div class="cast-page">
                 <ul>
+               	<ul>
                	<?php
                		if (!empty($secundaris)) {
 	               		foreach ($secundaris as $actor) :?>
 	               		<li>
-	                	<div>
-	                	<img src="/data/images/cast/<?php echo $actor->id; ?>">
-	                	<label><a href="/cast/actor/<?php echo $actor->id; ?>"><?php echo "$actor->nomserie ($actor->nomreal)"; ?></a></label>
-	                	</div>
+	               			<label>
+		               			<img src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
+		                		<a href="/cast/actor/<?php echo $actor->id; ?>"><?php echo "$actor->nomserie ($actor->nomreal)"; ?></a>
+		                	</label>
+		                		               		
 	               		</li>
+                        <?php endforeach;
+               		}
+               	?>
+                </ul>  
+                </ul>   
+                </div>
+              </div>
+              
+                <h3 class="title">Altres</h3>
+               <div class="about-page">
+                <div class="cast-page">
+                <ul>
+               	<?php
+               		if (!empty($altres)) {
+	               		foreach ($altres as $actor) :?>
+	               		<li>
+	               		<div id="indexactors">
+		                	<div>
+		                	<img src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
+		                	</div>
+		                	<div>
+		                	<label><a href="/cast/actor/<?php echo $actor->id; ?>"><?php echo "$actor->nomserie ($actor->nomreal)"; ?></a></label>		                	
+		               		</div>
+		               	</div>
+		               	</li>
                         <?php endforeach;
                		}
                	?>
                 </ul>   
                 </div>
 			</div>	
-		</div>
+	</div>
 	</div>
     
 <?php include 'view/footer.html.php' ?>

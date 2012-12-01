@@ -70,6 +70,8 @@ $go_up = Text::get('regular-go_up');
               
                 </div>
                 <a href="/episodes"> + EPISODIS</a>
+                <a href="/photos"> + IMATGES</a>
+                <a href="/video"> + VIDEOS</a>
                </div>
               <?php
               }

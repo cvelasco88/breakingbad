@@ -1,9 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-.cast-page
-{
-	display:inline;
-}
 
 .cast-page label
 {
@@ -17,10 +13,10 @@
 	background: lightgray;
 }
 
+
 .cast-page div
 {
 	padding:10px;
-	display:inline;
 }
 
 .cast-page img
@@ -28,13 +24,24 @@
 	width:100px;
 	height:125px;
 	border:2px solid black;
-	margin-top:20px;
+	margin-top: 20px;
 	
 }
 
-
-
 .cast-page ul
 {
+	list-style:none;
+}
+
+.cast-page ul li
+{
+	display:inline-block;
+	list-style:none;
+	list-style-type: none;
+}
+
+.cast-page ul li span ul li
+{
+	display:block;
 	list-style:none;
 }

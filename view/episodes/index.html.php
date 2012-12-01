@@ -45,7 +45,7 @@ $go_up = Text::get('regular-go_up');
 	<div id="main" class="threecols">
 	<?php for($i=1;$i<6;$i++){?>
 		<div id="about-content">
-            <h3 class="title">Temporada <?php echo $i;?></h3>    
+            <h3 class="title"><a href="/season/<?php echo $i; ?>">Temporada <?php echo $i;?></a></h3>    
                 <div class="about-page">
                 <div class="temp-page">                
                	<?php

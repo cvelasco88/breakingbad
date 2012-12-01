@@ -32,8 +32,35 @@ namespace Goteo\Controller {
     class Video extends \Goteo\Core\Controller {
         
         public function index ($id = null) {
-
-            if (empty($id)) {
+        	if (empty($id)) {
+        		$temp = Model\Season::getAll();
+        		 
+        		return new View(
+        				'view/video/index.html.php',
+        				array(
+        						'temporades' => $temp
+        				)
+        		);
+        	}
+        	else {
+        	
+        		//$temp = Model\Season::get($id);
+        		//$episodes = Model\Episodes::get($id);
+        	
+        		return new View(
+        				'view/video/video.html.php',
+        				array(
+        						//'temporada' => $temp,
+        						//'episodis' => $episodes
+        						'id' => $id
+        				)
+        		);
+        	}
+        	
+        	if ($id == 'faq' || $id == 'contact') {
+        		throw new Redirection('/'.$id, Redirection::TEMPORARY);
+        	}
+           /* if (empty($id)) {
                 $id = 'about';
 
                 $posts = Model\Info::getAll(true, \GOTEO_NODE);
@@ -71,7 +98,8 @@ namespace Goteo\Controller {
                     'content' => $page->content
                 )
              );
-
+*/
+        	
         }
         
     }

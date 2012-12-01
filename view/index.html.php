@@ -74,7 +74,7 @@ include 'view/header.html.php';
   
  		<div id="about-content">
             <h3 class="title">Temporades</h3>    
-            <div class="about-page temp-page">
+            <div class="about-page main-temp-page">
             	<div class="submain">
 			 	<center>
 			 		<?php

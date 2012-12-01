@@ -22,6 +22,7 @@ use Goteo\Library\Text,
     Goteo\Core\View;
 
 $posts = $this['posts'];
+$temporades = $this['temporades'];
 
 include 'view/prologue.html.php';
 include 'view/header.html.php';
@@ -42,14 +43,24 @@ $go_up = Text::get('regular-go_up');
 		<div id="about-content">
             <h3 class="title">Youtube</h3>
     
-                <div class="about-page">
-                <center>
-                <iframe width="560" height="315" src="http://www.youtube.com/embed/--z4YzxlT8o" frameborder="0" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="http://www.youtube.com/embed/HmOZyVnyVKQ" frameborder="0" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="http://www.youtube.com/embed/1tuowzxkKbQ" frameborder="0" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="http://www.youtube.com/embed/FM1gEZXzunI" frameborder="0" allowfullscreen></iframe>
-                </center>
-                </div>
+		<div class="about-page">
+		<div class="temp-page">
+	            
+	            <ul>
+	            <?php
+	  			
+	            if (!empty($temporades)) {
+            	               		foreach ($temporades as $temporada) :?>
+            	               		<li>
+            	               		<span><a id="tempTitol" href="/video/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></span>	               	
+            	               		<div>
+            	                	<a href="/video/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg"></a>
+            	                	</div>
+            	               		</li>
+                                    <?php endforeach;
+	                         }
+	            ?>
+	            </ul>
 		</div>
 	
 	</div>

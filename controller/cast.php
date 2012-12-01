@@ -46,9 +46,10 @@ namespace Goteo\Controller {
         	// obtenim personatge
             $principals = Model\Cast::get('principal');
             $secundaris = Model\Cast::get('secundari');
+            $altres = Model\Cast::get('altres');
            
 
-            if (!isset($principals) || !isset($secundaris)) {
+            if (!isset($principals) || !isset($secundaris) || !isset($altres)) {
                 throw new \Goteo\Core\Redirection('/');
             }
 
@@ -56,7 +57,8 @@ namespace Goteo\Controller {
             		'view/cast/index.html.php',
             		array(
                     'principals' => $principals,
-                    'secundaris' => $secundaris
+                    'secundaris' => $secundaris,
+            		'altres' => $altres
                 )
              );
 
@@ -82,6 +84,8 @@ namespace Goteo\Controller {
 	        }
        
         }
+        
+        
 
     }
     

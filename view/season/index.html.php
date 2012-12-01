@@ -49,7 +49,7 @@ $go_up = Text::get('regular-go_up');
                		if (!empty($temporades)) {
 	               		foreach ($temporades as $temporada) :?>
 	               		<li>
-	               		<div><a id="tempTitol" href="/season/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></div>	               	
+	               		<span><a id="tempTitol" href="/season/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></span>	               	
 	               		<div>
 	                	<a href="/season/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg"></a>
 	                	</div>

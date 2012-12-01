@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2012 a las 22:04:56
--- Versión del servidor: 5.5.27
--- Versión de PHP: 5.4.7
+-- Temps de generació: 30-11-2012 a les 19:16:48
+-- Versió del servidor: 5.5.27
+-- Versió de PHP: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,16 +17,15 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `breaking`
+-- Base de dades: `breaking`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `acl`
+-- Estructura de la taula `acl`
 --
 
-DROP TABLE IF EXISTS `acl`;
 CREATE TABLE IF NOT EXISTS `acl` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `node_id` varchar(50) NOT NULL,
@@ -42,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `acl` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=74 ;
 
 --
--- Volcado de datos para la tabla `acl`
+-- Bolcant dades de la taula `acl`
 --
 
 INSERT INTO `acl` (`id`, `node_id`, `role_id`, `user_id`, `url`, `allow`, `timestamp`) VALUES
@@ -113,10 +112,9 @@ INSERT INTO `acl` (`id`, `node_id`, `role_id`, `user_id`, `url`, `allow`, `times
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `banner`
+-- Estructura de la taula `banner`
 --
 
-DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `node` varchar(50) NOT NULL,
@@ -131,10 +129,9 @@ CREATE TABLE IF NOT EXISTS `banner` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `blog`
+-- Estructura de la taula `blog`
 --
 
-DROP TABLE IF EXISTS `blog`;
 CREATE TABLE IF NOT EXISTS `blog` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `type` varchar(10) NOT NULL,
@@ -144,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Blogs de nodo o proyecto' AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `blog`
+-- Bolcant dades de la taula `blog`
 --
 
 INSERT INTO `blog` (`id`, `type`, `owner`, `active`) VALUES
@@ -153,10 +150,9 @@ INSERT INTO `blog` (`id`, `type`, `owner`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `campaign`
+-- Estructura de la taula `campaign`
 --
 
-DROP TABLE IF EXISTS `campaign`;
 CREATE TABLE IF NOT EXISTS `campaign` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -168,10 +164,9 @@ CREATE TABLE IF NOT EXISTS `campaign` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cast`
+-- Estructura de la taula `cast`
 --
 
-DROP TABLE IF EXISTS `cast`;
 CREATE TABLE IF NOT EXISTS `cast` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `nomserie` varchar(50) NOT NULL,
@@ -180,38 +175,39 @@ CREATE TABLE IF NOT EXISTS `cast` (
   `descripcio` varchar(5000) NOT NULL,
   `imatge` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Volcado de datos para la tabla `cast`
+-- Bolcant dades de la taula `cast`
 --
 
 INSERT INTO `cast` (`id`, `nomserie`, `nomreal`, `tipus`, `descripcio`, `imatge`) VALUES
-(1, 'Walter White', 'Bryan Cranston', 'principal', 'És un professor de química de 50 anys d''edat. Li van diagnosticar càncer de pulmó terminal, fet que va fer que canviés dràsticament la seva manera de pensar. Entossudit en aconseguir diners per a la seva família i amb el seu gran coneixement de la química, Walt comença a produir i distribuir metamfetamina amb el sobrenom de Heisenberg.', ''),
-(2, 'Skyler White ', 'Anna Gunn', 'principal', 'És una escriptora de contes curts. És la mare de Walter White Jr i d''una filla que està en camí. Skyler es preocupa massa per Walter, fins al punt de prendre totes les decisions per ell.', ''),
-(3, 'Jesse Pinkman', 'Aaron Paul', 'principal', 'Sota el sobrenom de Capità Cook és el company de Walter White en el negoci de la metamfetamina. Jesse va ser alumne de White en la classe de química de l''institut on treballa Walter, la qual va suspendre. Prové d''una família benestant, però tot i així viu a la casa que la seva tia li va donar d''herència després de morir. Les relacions amb la seva família no són de les millors ja que el van fer fora de casa per las seves relacions amb la droga.', ''),
-(4, 'Walter White, Jr', 'RJ Mitte', 'principal', 'És el fill adolescent de Skyler i Walter. Va néixer amb paràlisi cerebral, cosa que li provoca problemes a la parla i dificultats motrius i és per això que porta crosses.', ''),
-(5, 'Hank Schrader', 'Dean Norris', 'principal', 'És un agent de la DEA (Drug Enforcement Administration), casat amb Marie Schrader i cunyat de Walter. Actualment està investigant l''arribada d''una nova persona al negoci de la metamfetamina, sense saber que aquesta persona és Walter.', ''),
-(6, 'Marie Schrader', 'Betsy Brandt', 'principal', 'És la germana de Skyler i dona de Hank. Aconsella constantment els demés, però és incapaç d''aplicar-se els seus pròpis consells. A més té un problema de cleptomania.', ''),
-(7, 'Saul Goodman', 'Bob Odenkirk', 'secundari', 'Apareix en la segona temporada. És un advocat de mala nota que s''anuncia a la televisió amb el lema de "Better Call Saul". Ell els ajuda a moure''s millor en el camp de la venda de metamfetamina a més de treure''ls de problemes legals amb mètodes poc ortodoxos.', ''),
-(8, 'Gustavo "Gus" Fring "Señor de los Pollos"', 'Giancarlo Esposito', 'secundari', 'Apareix a finals de la segona temporada. Aquest amable i emprenedor empresari, propietari de la major cadena de menjar ràpid de pollastre fregit de l''estat de Nou Mèxic i, alhora, és el major distribuïdor de metamfetamina de tot l''estat.', ''),
-(9, 'Michael "Mike" Ehrmantraut', 'Jonathan Banks', 'secundari', 'És un investigador privat que a primera instancia sembla treballar per en Saul, però a mesura que passen els capítols es revela que la seva lleialtat esta al costat d’en Fring. ', ''),
-(10, 'Ted Beneke', 'Christopher Cousins', 'secundari', 'Va ser el cap de la Skyler en una empresa d’on ella treballava com a comptable.', ''),
-(11, 'Steven Gomez ', 'Steven Michael Quezada', 'secundari', 'És el company d’en Hank a la DEA.', ''),
-(12, 'Gretchen Schwartz', 'Jessica Hecht', 'secundari', 'És l’antiga assistenta de química de Walter a la universitat. Actualment es propietària de la meitat de la companyia Gray Matter (<<materia girs>>), una companyia farmacèutica exitosa. Aparentment, va tenir interès romàntic per en Walt, però està casada amb l’Elliot Schwartz', ''),
-(13, 'Elliott Schwartz', 'Adam Godley', 'secundari', 'És l’antic company de ciències de Walter i propietari de la meitat de la companyia Gray Matter, cofundador d’aquesta juntament amb Walter White. Està casat amb en Gretchen.', ''),
-(14, 'Jane Margolis', 'Krysten Ritter', 'secundari', 'Xicota d’en Jesse, és addicte a l’heroïna i està en un pla de desintoxicació per pressió del seu pare.', ''),
-(15, 'Tuco Salamanca', 'Raymond Cruz', 'secundari', 'És un mexicà demencial especialista en drogues, es converteix en un distribuïdor de metaenfetamina de Jeese i Walter. És imprevisible i propens a enfadar-se violentament, però respecta en Walt pel seu producte superior, intel•ligència i valentia. ', ''),
-(16, 'Todd', 'Jesse Plemons', 'secundari', 'És un empleat de "Vamonos pest control" que assisteix a en Walt i Jesse en la seva refundació del negoci de fabricació de metaenfetamina.', ''),
-(17, 'Wendy', 'Julia Minesci', 'secundari', 'És una prostituta que té la seva primera aparició en el capítol “And the Bag’s in the River” on dona els seus serveis sexuals a en Jesse, té aparicions a la primera, segons i tercera temporada. ', '');
+(1, 'Walter White', 'Bryan Cranston', 'principal', 'És un professor de química de 50 anys d''edat. Li van diagnosticar càncer de pulmó terminal, fet que va fer que canviés dràsticament la seva manera de pensar. Entossudit en aconseguir diners per a la seva família i amb el seu gran coneixement de la química, <a href="/cast/actor/1">Walt</a> comença a produir i distribuir metamfetamina amb el sobrenom de <a href="/cast/actor/1">Heisenberg</a>.', ''),
+(2, 'Skyler White ', 'Anna Gunn', 'principal', 'És una escriptora de contes curts. És la mare de <a href="/cast/actor/4">Walter White Jr</a> i d''una filla que està en camí. Skyler es preocupa massa per <a href="/cast/actor/1">Walter</a>, fins al punt de prendre totes les decisions per ell.', ''),
+(3, 'Jesse Pinkman', 'Aaron Paul', 'principal', 'Sota el sobrenom de <a href="/cast/actor/3">Capità Cook</a>\n és el company de <a href="/cast/actor/1">Walter White</a> en el negoci de la metamfetamina. <a href="/cast/actor/3">Jesse</a> va ser alumne de <a href="/cast/actor/1">White</a> en la classe de química de l''institut on treballa <a href="/cast/actor/1">Walter</a>, la qual va suspendre. Prové d''una família benestant, però tot i així viu a la casa que la seva tia li va donar d''herència després de morir. Les relacions amb la seva família no són de les millors ja que el van fer fora de casa per las seves relacions amb la droga.', ''),
+(4, 'Walter White, Jr', 'RJ Mitte', 'principal', 'És el fill adolescent de <a href="/cast/actor/2">Skyler</a> i <a href="/cast/actor/1">Walter</a>. Va néixer amb paràlisi cerebral, cosa que li provoca problemes a la parla i dificultats motrius i és per això que porta crosses.', ''),
+(5, 'Hank Schrader', 'Dean Norris', 'principal', 'És un agent de la DEA (Drug Enforcement Administration), casat amb <a href="/cast/actor/6">Marie Schrader</a> i cunyat de <a href="/cast/actor/1">Walter</a>. Actualment està investigant l''arribada d''una nova persona al negoci de la metamfetamina, sense saber que aquesta persona és <a href="/cast/actor/1">Walter</a>.', ''),
+(6, 'Marie Schrader', 'Betsy Brandt', 'principal', 'És la germana de <a href="/cast/actor/2">Skyler</a> i dona de <a href="/cast/actor/5">Hank</a>. Aconsella constantment els demés, però és incapaç d''aplicar-se els seus pròpis consells. A més té un problema de cleptomania.', ''),
+(7, 'Saul Goodman', 'Bob Odenkirk', 'secundari', 'Apareix en la segona temporada. És un advocat de mala nota que s''anuncia a la televisió amb el lema de "Better Call <a href="/cast/actor/7">Saul</a>". Ell els ajuda a moure''s millor en el camp de la venda de metamfetamina a més de treure''ls de problemes legals amb mètodes poc ortodoxos.', ''),
+(8, 'Gustavo "Gus" Fring "Señor de los Pollos"', 'Giancarlo Esposito', 'secundari', 'Apareix a finals de la <a href="/season/2">segona temporada</a>. Aquest amable i emprenedor empresari, propietari de la major cadena de menjar ràpid de pollastre fregit de l''estat de Nou Mèxic i, alhora, és el major distribuïdor de metamfetamina de tot l''estat.', ''),
+(9, 'Michael "Mike" Ehrmantraut', 'Jonathan Banks', 'secundari', 'És un investigador privat que a primera instancia sembla treballar per en <a href="/cast/actor/7">Saul</a>, però a mesura que passen els capítols es revela que la seva lleialtat esta al costat d’en <a href="/cast/actor/8">Fring</a>. ', ''),
+(10, 'Ted Beneke', 'Christopher Cousins', 'secundari', 'Va ser el cap de la <a href="/cast/actor/2">Skyler</a> en una empresa d’on ella treballava com a comptable.', ''),
+(11, 'Steven Gomez ', 'Steven Michael Quezada', 'secundari', 'És el company d’en <a href="/cast/actor/5">Hank</a> a la DEA.', ''),
+(12, 'Gretchen Schwartz', 'Jessica Hecht', 'secundari', 'És l’antiga assistenta de química de <a href="/cast/actor/1">Walter</a> a la universitat. Actualment es propietària de la meitat de la companyia Gray Matter (<<materia girs>>), una companyia farmacèutica exitosa. Aparentment, va tenir interès romàntic per en <a href="/cast/actor/1">Walt</a>, però està casada amb l’<a href="/cast/actor/13">Elliot Schwartz</a>', ''),
+(13, 'Elliott Schwartz', 'Adam Godley', 'secundari', 'És l’antic company de ciències de <a href="/cast/actor/1">Walter</a> i propietari de la meitat de la companyia Gray Matter, cofundador d’aquesta juntament amb <a href="/cast/actor/1">Walter White</a>. Està casat amb en Gretchen.', ''),
+(14, 'Jane Margolis', 'Krysten Ritter', 'secundari', 'Xicota d’en <a href="/cast/actor/3">Jesse</a>, és addicte a l’heroïna i està en un pla de desintoxicació per pressió del seu pare.', ''),
+(15, 'Tuco Salamanca', 'Raymond Cruz', 'secundari', 'És un mexicà demencial especialista en drogues, es converteix en un distribuïdor de metaenfetamina de <a href="/cast/actor/3">Jeese</a> i <a href="/cast/actor/1">Walter</a>. És imprevisible i propens a enfadar-se violentament, però respecta en <a href="/cast/actor/1">Walt</a> pel seu producte superior, intel•ligència i valentia. ', ''),
+(16, 'Todd', 'Jesse Plemons', 'secundari', 'És un empleat de "Vamonos pest control" que assisteix a en <a href="/cast/actor/1">Walt</a> i <a href="/cast/actor/1">Jesse</a> en la seva refundació del negoci de fabricació de metaenfetamina.', ''),
+(17, 'Wendy', 'Julia Minesci', 'secundari', 'És una prostituta que té la seva primera aparició en el capítol “And the Bag’s in the River” on dona els seus serveis sexuals a en <a href="/cast/actor/3">Jesse</a>, té aparicions a la primera, segons i <a href="/season/3">tercera temporada</a>. ', ''),
+(18, 'Vince Gilligan', 'Vince Gilligan', 'altres', 'Creador i productor executiu. (nascut el 10 de febrer de 1967) és un escriptor, director i productor nord-americà. É el creador de la sèrie de televisió <a href="/">Breaking Bad</a>. També ha treballat en la reeixida sèrie Expediente X i Els Pistolers Solitaris.', ''),
+(19, 'Mark Johnson', 'Mark Johnson ', 'altres', 'Productor executiu. (nascut el 27 de desembre 1945) és un productor de cinema nord-americà. Johnson va guanyar el premi de Millor Pel • lícula de l''Acadèmia per a la producció de drama 1988 Rain Man, protagonitzada per Dustin Hoffman i Tom Cruise. La pel • lícula, guanyadora de quatre premis Oscar, també un Globus d''Or com a millor Pel • lícula.', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `category`
+-- Estructura de la taula `category`
 --
 
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext,
@@ -222,7 +218,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Categorias de los proyectos' AUTO_INCREMENT=15 ;
 
 --
--- Volcado de datos para la tabla `category`
+-- Bolcant dades de la taula `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `description`, `order`) VALUES
@@ -238,10 +234,9 @@ INSERT INTO `category` (`id`, `name`, `description`, `order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `category_lang`
+-- Estructura de la taula `category_lang`
 --
 
-DROP TABLE IF EXISTS `category_lang`;
 CREATE TABLE IF NOT EXISTS `category_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -251,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `category_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `category_lang`
+-- Bolcant dades de la taula `category_lang`
 --
 
 INSERT INTO `category_lang` (`id`, `lang`, `name`, `description`) VALUES
@@ -283,10 +278,9 @@ INSERT INTO `category_lang` (`id`, `lang`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comment`
+-- Estructura de la taula `comment`
 --
 
-DROP TABLE IF EXISTS `comment`;
 CREATE TABLE IF NOT EXISTS `comment` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post` bigint(20) unsigned NOT NULL,
@@ -299,10 +293,9 @@ CREATE TABLE IF NOT EXISTS `comment` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cost`
+-- Estructura de la taula `cost`
 --
 
-DROP TABLE IF EXISTS `cost`;
 CREATE TABLE IF NOT EXISTS `cost` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `project` varchar(50) NOT NULL,
@@ -320,10 +313,9 @@ CREATE TABLE IF NOT EXISTS `cost` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cost_lang`
+-- Estructura de la taula `cost_lang`
 --
 
-DROP TABLE IF EXISTS `cost_lang`;
 CREATE TABLE IF NOT EXISTS `cost_lang` (
   `id` int(20) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -335,10 +327,9 @@ CREATE TABLE IF NOT EXISTS `cost_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `criteria`
+-- Estructura de la taula `criteria`
 --
 
-DROP TABLE IF EXISTS `criteria`;
 CREATE TABLE IF NOT EXISTS `criteria` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `section` varchar(50) NOT NULL DEFAULT 'node',
@@ -350,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `criteria` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Criterios de puntuación' AUTO_INCREMENT=28 ;
 
 --
--- Volcado de datos para la tabla `criteria`
+-- Bolcant dades de la taula `criteria`
 --
 
 INSERT INTO `criteria` (`id`, `section`, `title`, `description`, `order`) VALUES
@@ -381,10 +372,9 @@ INSERT INTO `criteria` (`id`, `section`, `title`, `description`, `order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `criteria_lang`
+-- Estructura de la taula `criteria_lang`
 --
 
-DROP TABLE IF EXISTS `criteria_lang`;
 CREATE TABLE IF NOT EXISTS `criteria_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -396,10 +386,9 @@ CREATE TABLE IF NOT EXISTS `criteria_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `episodis`
+-- Estructura de la taula `episodis`
 --
 
-DROP TABLE IF EXISTS `episodis`;
 CREATE TABLE IF NOT EXISTS `episodis` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `numero` int(5) NOT NULL,
@@ -410,51 +399,51 @@ CREATE TABLE IF NOT EXISTS `episodis` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
 
 --
--- Volcado de datos para la tabla `episodis`
+-- Bolcant dades de la taula `episodis`
 --
 
 INSERT INTO `episodis` (`id`, `numero`, `temporada`, `titol`, `descripcio`) VALUES
 (1, 1, 1, 'Pilot', 'Un professor de química d''institut recorre al negoci de les drogues per mantenir la seva família.'),
-(2, 2, 1, 'El gat és al sac...', 'El primer tracte fracassa i fa que en Walt i Jesse s''hagin de desfer de dos cadàvers mentre la Skyler sospita que el seu marit en porta alguna de cap.'),
-(3, 3, 1, '.. i el sac és al riu', 'Mentre en Walt neteja les restes del desastre del seu primer negoci, s''adona que la Skyler està molt a prop de descobrir la seva doble vida i es planteja dir-li la veritat sobre la malaltia.'),
-(4, 4, 1, 'Tinc càncer', 'En Walt es veu obligat a dir la veritat sobre la seva malaltia i això fa que s''hagi de plantejar com fer front als costos d''una sèrie de tractaments molt cars contra el càncer.'),
-(5, 5, 1, 'Matèria Grisa', 'Skyler aprofita un esdeveniment per convèncer en Walt d''acceptar la generosa oferta del seu antic company d''investigació de costejar els caríssims tractaments per a la seva malaltia.'),
-(6, 6, 1, 'Un engany com una casa', 'Els efectes secundaris i les despeses del tractament es van acumulant ràpidament i en Walt demana al Jesse que busqui un comprador per al laboratori, però aquest acaba amb problemes amb un delinqüent habitual.'),
-(7, 7, 1, 'Un tracte sense males llets', 'Després que en Jesse va estar a punt de morir, en Walt accepta produir encara més drogues per al despietat Tuco, mentre la Skyler sospita que la seva germana va robar un objecte de bany per a nadons molt car.'),
-(8, 8, 2, 'Set-cents trenta-set', 'Mentre ultimen un pla per rematar una gran operació, en Walt i en Jesse temen que el seu únic comprador, el Tuco, els mati tan bon punt se li presenti l''oportunitat'),
-(9, 9, 2, 'A la brasa', 'Mentre els antidroga anuncien la cerca i captura del Tuco, la Skyler recluta en Hank per localitzar en Walt.'),
-(10, 10, 2, 'Picat per una abella morta', 'En Hank s''acosta perillosament a destapar la veritat sobre el paper d''en Walt en el negoci de les drogues i aquest trama un pla per esborrar qualsevol rastre.'),
-(11, 11, 2, 'Avall', 'Mentre en Walt fa els possibles per evitar el distanciament entre ell i la Skyler, en Jesse es queda sense casa quan els seus pares el fan fora d''on estava vivint.'),
-(12, 12, 2, 'Pèrdues', 'A en Walt se li acumulen les factures del metge i els problemes domèstics, però en Jesse només tornarà al negoci de les drogues si ell en dicta les condicions.'),
-(13, 13, 2, 'Taaat!', 'Mentre en Jesse segueix la pista als addictes que van robar la droga a Skinny Pete, en Walt se les empesca per reforçar la seva coartada sobre com ha sufragat els tractaments contra el càncer.'),
-(14, 14, 2, '"Negre y Blau", la balada d''en Heisenberg', 'Mentre en Walt vol aprofitar la reputació d''en Jesse com a senyor de la droga sense escrúpols per ampliar el seu àmbit d''actuació, el primer contacte d''en Hank amb l''alt risc de l''oficina antidroga d''El Paso el deixa molt tocat.'),
-(15, 15, 2, 'Truca a en Saul', 'La detenció d''en Badger obliga en Walt i en Jesse a associar-se amb un advocat dubtós.'),
-(16, 16, 2, '4 dies a fora', 'Amoïnat perquè el temps se li esgota, en Walt vol deixar assegurat el futur de la seva família i recluta en Jesse per fer una sessió maratoniana de cocció de metadona al desert.'),
-(17, 17, 2, 'Amunt', 'Després de rebre bones notícies sobre els resultats del tractament contra el càncer, en Walt s''enfronta amb el seu cunyat, en Hank, abans de dedicar tots els seus esforços a redreçar les coses a casa.'),
-(18, 18, 2, 'Mandala', 'A mesura que s''acosta el final de l''embaràs, la Skyler es qüestiona el que sent pel seu cap. Mentrestant, la mort d''un camell de carrer fa que en Walt hagi de buscar un altre lloc on descarregar una gran partida de metadona.'),
-(19, 19, 2, 'Phoenix', 'Després de perdre''s el naixement de la seva filla per acabar de tancar un tracte suculent, en Walt es quadra amb la xicota d''en Jesse pel repartiment dels beneficis.'),
-(20, 20, 2, 'Aeroport Internacional d''Alburquerque', 'En Walt mira d''encarrilar la seva vida i la d''en Jesse mentre es prepara per l''operació i procura que la Skyler i en Walt Jr. no descobreixin la font dels seus ingressos.'),
-(21, 21, 3, 'No més', 'Arrenca la tercera temporada de "Breaking Bad", en la qual en Walt patirà les conseqüències de les seves activitats delictives.'),
-(22, 22, 3, 'Caball sense nom', 'En Walt és capaç de qualsevol cosa per fer que la família torni a estar unida. D''altra banda, en Jesse decideix fer una important inversió del tot inesperada'),
-(23, 23, 3, 'Em tiro en Ted', 'En Walt li diu a la Skyler que accepti els diners, justificant que tot el que ha fet ha estat pensant en el futur dels seus fills. La reacció de la Skyler no serà l''esperada ni de bon tros...'),
-(24, 24, 3, 'Semàfor verd', 'En Hank continua sense prestar atenció a la trucada a El Paso després d''anotar-se uns quants avenços en la seva investigació en el "cas Heisenberg". Mentrestant, en Jesse vol tornar a treballar.'),
-(25, 25, 3, 'Més', 'En Walt s''ocupa de les conseqüències de l''accident d''avió i una nova amenaça s''interposa en el seu camí. Mentrestant, la Skyler considera quins són els millors passos que cal seguir'),
-(26, 26, 3, 'Al capvespre', 'En Walt comença a treballar al seu nou laboratori i coneix qui serà el seu nou assistent. Els cosins mexicans reapareixen però no es mouen del restaurant del Gus. En Hank segueix amb la seva investigació i el porta al Jesse. En Walt entrarà en escena.'),
-(27, 27, 3, 'Un minut', 'En Hank passa comptes amb en Jesse després d''involucrar la seva parella en un horrible accident que resulta fictici. D''altra banda, al laboratori, el nou assistent d''en Walter no se''n surt amb els primers experiments'),
-(28, 28, 3, 'Et veig', 'En Hank ingressa a l''hospital després de rebre 4 trets. Pel que fa al laboratori, en Walt ha de dir-li al Gale que prescindeix dels seus serveis.'),
-(29, 29, 3, 'Kafkià', 'Mentre en Hank segueix ingressat, la Skyler trama els seus plans. En Walt i en Gus sembla que s''avenen cada cop més. El Jesse, per la seva banda, busca noves oportunitats.'),
-(30, 30, 3, 'La mosca', 'En Walt es nega a seguir amb més experiments fins que no s''aïlli un agent contaminant que fluctua pel laboratori. En Jesse intenta de totes totes que en Walt reconsideri aquesta situació.'),
-(31, 31, 3, 'Albuquerque', 'La Skyler s''involucra cada cop més en el negoci d''en Walt. En Hank lluita per a la seva recuperació. En Jesse agafa un rol actiu a la seva nova empresa.'),
-(32, 32, 3, 'Mitges tintes', 'En contra de la paraula del Walt, el Jesse tira endavant la seva decisió. En Walt sap que en Jesse corre perill i decideix prendre part en l''assumpte.'),
-(33, 33, 3, 'Tot o res', 'En Walt negocia alguna mena de tracte amb en Gus per la seva seguretat i la d''en Jesse.'),
-(34, 34, 4, 'Cúter', 'En Walt i en Jesse esperen ansiosament el pròxim moviment d''en Gus, el seu cap de narcotraficants. Per la seva banda, la Skyler descobreix que en Walt ha desaparegut i inicia una recerca desesperada.'),
-(35, 35, 4, '38 snub', 'En Walt decideix comprar-se un revòlver per protegir-se i en Jess ha de trampejar el seu sentiment de culpa en reviure l''amistat amb en Badger i l''Skinny Pete. D''altra banda, la Skyler mira de comprar un túnel d''autorentat de cotxes i la seva germana, ha de fer front al rebuig que sent en Hank per la seva discapacitat.'),
-(36, 36, 4, 'Dia de protes obertes', 'En Walt està preocupat perquè en Gus manté el laboratori sota vigilància i perquè l''estat mental d''en Jess és cada vegada més delicat. D''altra banda, la Skyler fa més pressió per comprar el túnel d''autorentat de cotxes, que servirà de tapadora per blanquejar diners.'),
-(37, 37, 4, 'Esquemes', 'La Skyler s''inventa una història d''allò més elaborada per justificar la seva situació financera i en Walt s''inquieta en descobrir que en Hank ha obert una altra investigació. Per la seva banda, en Jesse només pot pensar a fer festes, fet que desperta la curiositat d''en Gus.'),
-(38, 38, 4, 'Vigilant', 'En Walt creu que estan a punt d''assassinar el seu company i en Jesse i en Mike fan una sortida perillosa. D''altra banda, en Walt i la Skyler compren oficialment el túnel d''autorentat de cotxes i en Hank decideix tancar la investigació.'),
-(39, 39, 4, 'Arraconat', 'Quan la Skyler sospita que en Walt no li diu la veritat, pren una actitud freda i purament professional cap a ell. Mentrestant, en Gus s''acosta a en Jesse, que demostra que és un home de vàlua per a en Mike i per a l''empresa d''en Gus.'),
-(40, 40, 4, 'Un gos problemàtic', 'Amb la nova operació, en Walt col•loca a la Skyler en una situació difícil, i mentre en Walt mira de protegir-se d''en Gus, en Jesse accepta una proposició perillosa.'),
-(41, 41, 4, 'Germans', 'Mentre en Hank mostra indicis que en Gus és l''element central del tràfic de metadona d''Alburquerque, en Walt creu que l''assassinaran, i també a en Jesse, per protegir el seu cap. Per la seva banda, en Gus refusa l''exigència del càrtel mexicà d''aturar les seves activitats com a narcotraficant i contraataca.'),
+(2, 2, 1, 'El gat és al sac...', 'El primer tracte fracassa i fa que en <a href="/cast/actor/1">Walt</a> i <a href="/cast/actor/3">Jesse</a> s''hagin de desfer de dos cadàvers mentre la <a href="/cast/actor/2">Skyler</a> sospita que el seu marit en porta alguna de cap.'),
+(3, 3, 1, '.. i el sac és al riu', 'Mentre en <a href="/cast/actor/1">Walt</a> neteja les restes del desastre del seu primer negoci, s''adona que la <a href="/cast/actor/2">Skyler</a> està molt a prop de descobrir la seva doble vida i es planteja dir-li la veritat sobre la malaltia.'),
+(4, 4, 1, 'Tinc càncer', 'En <a href="/cast/actor/1">Walt</a> es veu obligat a dir la veritat sobre la seva malaltia i això fa que s''hagi de plantejar com fer front als costos d''una sèrie de tractaments molt cars contra el càncer.'),
+(5, 5, 1, 'Matèria Grisa', '<a href="/cast/actor/2">Skyler</a> aprofita un esdeveniment per convèncer en <a href="/cast/actor/1">Walt</a> d''acceptar la generosa oferta del seu antic company d''investigació de costejar els caríssims tractaments per a la seva malaltia.'),
+(6, 6, 1, 'Un engany com una casa', 'Els efectes secundaris i les despeses del tractament es van acumulant ràpidament i en <a href="/cast/actor/1">Walt</a> demana al <a href="/cast/actor/3">Jesse</a> que busqui un comprador per al laboratori, però aquest acaba amb problemes amb un delinqüent habitual.'),
+(7, 7, 1, 'Un tracte sense males llets', 'Després que en <a href="/cast/actor/3">Jesse</a> va estar a punt de morir, en <a href="/cast/actor/1">Walt</a> accepta produir encara més drogues per al despietat <a href="/cast/actor/15">Tuco</a>, mentre la <a href="/cast/actor/2">Skyler</a> sospita que la seva germana va robar un objecte de bany per a nadons molt car.'),
+(8, 8, 2, 'Set-cents trenta-set', 'Mentre ultimen un pla per rematar una gran operació, en <a href="/cast/actor/1">Walt</a> i en <a href="/cast/actor/3">Jesse</a> temen que el seu únic comprador, el <a href="/cast/actor/15">Tuco</a>, els mati tan bon punt se li presenti l''oportunitat'),
+(9, 9, 2, 'A la brasa', 'Mentre els antidroga anuncien la cerca i captura del <a href="/cast/actor/15">Tuco</a>, la <a href="/cast/actor/2">Skyler</a> recluta en <a href="/cast/actor/5">Hank</a> per localitzar en <a href="/cast/actor/1">Walt</a>.'),
+(10, 10, 2, 'Picat per una abella morta', 'En <a href="/cast/actor/5">Hank</a> s''acosta perillosament a destapar la veritat sobre el paper d''en <a href="/cast/actor/1">Walt</a> en el negoci de les drogues i aquest trama un pla per esborrar qualsevol rastre.'),
+(11, 11, 2, 'Avall', 'Mentre en <a href="/cast/actor/1">Walt</a> fa els possibles per evitar el distanciament entre ell i la <a href="/cast/actor/2">Skyler</a>, en <a href="/cast/actor/3">Jesse</a> es queda sense casa quan els seus pares el fan fora d''on estava vivint.'),
+(12, 12, 2, 'Pèrdues', 'A en <a href="/cast/actor/1">Walt</a> se li acumulen les factures del metge i els problemes domèstics, però en <a href="/cast/actor/3">Jesse</a> només tornarà al negoci de les drogues si ell en dicta les condicions.'),
+(13, 13, 2, 'Taaat!', 'Mentre en <a href="/cast/actor/3">Jesse</a> segueix la pista als addictes que van robar la droga a Skinny Pete, en <a href="/cast/actor/1">Walt</a> se les empesca per reforçar la seva coartada sobre com ha sufragat els tractaments contra el càncer.'),
+(14, 14, 2, '"Negre y Blau", la balada d''en Heisenberg', 'Mentre en <a href="/cast/actor/1">Walt</a> vol aprofitar la reputació d''en <a href="/cast/actor/3">Jesse</a> com a senyor de la droga sense escrúpols per ampliar el seu àmbit d''actuació, el primer contacte d''en <a href="/cast/actor/1">Hank</a> amb l''alt risc de l''oficina antidroga d''El Paso el deixa molt tocat.'),
+(15, 15, 2, 'Truca a en Saul', 'La detenció d''en Badger obliga en <a href="/cast/actor/1">Walt</a> i en <a href="/cast/actor/3">Jesse</a> a associar-se amb un advocat dubtós.'),
+(16, 16, 2, '4 dies a fora', 'Amoïnat perquè el temps se li esgota, en <a href="/cast/actor/1">Walt</a> vol deixar assegurat el futur de la seva família i recluta en <a href="/cast/actor/3">Jesse</a> per fer una sessió maratoniana de cocció de metadona al desert.'),
+(17, 17, 2, 'Amunt', 'Després de rebre bones notícies sobre els resultats del tractament contra el càncer, en <a href="/cast/actor/1">Walt</a> s''enfronta amb el seu cunyat, en <a href="/cast/actor/5">Hank</a>, abans de dedicar tots els seus esforços a redreçar les coses a casa.'),
+(18, 18, 2, 'Mandala', 'A mesura que s''acosta el final de l''embaràs, la <a href="/cast/actor/2">Skyler</a> es qüestiona el que sent pel seu cap. Mentrestant, la mort d''un camell de carrer fa que en <a href="/cast/actor/1">Walt</a> hagi de buscar un altre lloc on descarregar una gran partida de metadona.'),
+(19, 19, 2, 'Phoenix', 'Després de perdre''s el naixement de la seva filla per acabar de tancar un tracte suculent, en <a href="/cast/actor/1">Walt</a> es quadra amb la xicota d''en <a href="/cast/actor/3">Jesse</a> pel repartiment dels beneficis.'),
+(20, 20, 2, 'Aeroport Internacional d''Alburquerque', 'En <a href="/cast/actor/1">Walt</a> mira d''encarrilar la seva vida i la d''en <a href="/cast/actor/3">Jesse</a> mentre es prepara per l''operació i procura que la <a href="/cast/actor/2">Skyler</a> i en <a href="/cast/actor/4">Walt Jr.</a> no descobreixin la font dels seus ingressos.'),
+(21, 21, 3, 'No més', 'Arrenca la <a href="/season/3">tercera temporada</a> de <a href="/">"Breaking Bad"</a>, en la qual en <a href="/season/3">Walt</a> patirà les conseqüències de les seves activitats delictives.'),
+(22, 22, 3, 'Caball sense nom', 'En <a href="/season/1">Walt</a> és capaç de qualsevol cosa per fer que la família torni a estar unida. D''altra banda, en <a href="/season/3">Jesse</a> decideix fer una important inversió del tot inesperada'),
+(23, 23, 3, 'Em tiro en Ted', 'En <a href="/season/1">Walt</a> li diu a la <a href="/season/2">Skyler</a> que accepti els diners, justificant que tot el que ha fet ha estat pensant en el futur dels seus fills. La reacció de la <a href="/season/2">Skyler</a> no serà l''esperada ni de bon tros...'),
+(24, 24, 3, 'Semàfor verd', 'En <a href="/season/5">Hank</a> continua sense prestar atenció a la trucada a El Paso després d''anotar-se uns quants avenços en la seva investigació en el "cas Heisenberg". Mentrestant, en <a href="/season/3">Jesse</a> vol tornar a treballar.'),
+(25, 25, 3, 'Més', 'En <a href="/season/1">Walt</a> s''ocupa de les conseqüències de l''accident d''avió i una nova amenaça s''interposa en el seu camí. Mentrestant, la <a href="/season/2">Skyler</a> considera quins són els millors passos que cal seguir'),
+(26, 26, 3, 'Al capvespre', 'En <a href="/season/1">Walt</a> comença a treballar al seu nou laboratori i coneix qui serà el seu nou assistent. Els cosins mexicans reapareixen però no es mouen del restaurant del <a href="/season/8">Gus</a>. En <a href="/season/5">Hank</a> segueix amb la seva investigació i el porta al <a href="/season/3">Jesse</a>. En <a href="/season/1">Walt</a> entrarà en escena.'),
+(27, 27, 3, 'Un minut', 'En <a href="/season/5">Hank</a> passa comptes amb en <a href="/season/3">Jesse</a> després d''involucrar la seva parella en un horrible accident que resulta fictici. D''altra banda, al laboratori, el nou assistent d''en <a href="/season/1">Walter</a> no se''n surt amb els primers experiments'),
+(28, 28, 3, 'Et veig', 'En <a href="/season/5">Hank</a> ingressa a l''hospital després de rebre 4 trets. Pel que fa al laboratori, en <a href="/season/1">Walt</a> ha de dir-li al Gale que prescindeix dels seus serveis.'),
+(29, 29, 3, 'Kafkià', 'Mentre en <a href="/season/5">Hank</a> segueix ingressat, la <a href="/season/2">Skyler</a> trama els seus plans. En <a href="/season/1">Walt</a> i en <a href="/season/8">Gus</a> sembla que s''avenen cada cop més. El <a href="/season/2">Jesse</a>, per la seva banda, busca noves oportunitats.'),
+(30, 30, 3, 'La mosca', 'En <a href="/season/1">Walt</a> es nega a seguir amb més experiments fins que no s''aïlli un agent contaminant que fluctua pel laboratori. En <a href="/season/3">Jesse</a> intenta de totes totes que en Walt reconsideri aquesta situació.'),
+(31, 31, 3, 'Albuquerque', 'La <a href="/season/2">Skyler</a> s''involucra cada cop més en el negoci d''en <a href="/season/1">Walt</a>. En <a href="/season/5">Hank</a> lluita per a la seva recuperació. En <a href="/season/3">Jesse</a> agafa un rol actiu a la seva nova empresa.'),
+(32, 32, 3, 'Mitges tintes', 'En contra de la paraula del <a href="/season/1">Walt</a>, el <a href="/season/3">Jesse</a> tira endavant la seva decisió. En <a href="/season/1">Walt</a> sap que en <a href="/season/3">Jesse</a> corre perill i decideix prendre part en l''assumpte.'),
+(33, 33, 3, 'Tot o res', 'En <a href="/season/1">Walt</a> negocia alguna mena de tracte amb en <a href="/season/8">Gus</a> per la seva seguretat i la d''en <a href="/season/3">Jesse</a>.'),
+(34, 34, 4, 'Cúter', 'En <a href="/season/1">Walt</a> i en <a href="/season/3">Jesse</a> esperen ansiosament el pròxim moviment d''en <a href="/season/8">Gus</a>, el seu cap de narcotraficants. Per la seva banda, la <a href="/season/2">Skyler</a> descobreix que en <a href="/season/1">Walt</a> ha desaparegut i inicia una recerca desesperada.'),
+(35, 35, 4, '38 snub', 'En <a href="/season/1">Walt</a> decideix comprar-se un revòlver per protegir-se i en <a href="/season/3">Jesse</a> ha de trampejar el seu sentiment de culpa en reviure l''amistat amb en Badger i l''Skinny Pete. D''altra banda, la <a href="/season/2">Skyler</a> mira de comprar un túnel d''autorentat de cotxes i la seva germana, ha de fer front al rebuig que sent en <a href="/season/5">Hank</a> per la seva discapacitat.'),
+(36, 36, 4, 'Dia de protes obertes', 'En <a href="/season/1">Walt</a> està preocupat perquè en <a href="/season/8">Gus</a> manté el laboratori sota vigilància i perquè l''estat mental d''en <a href="/season/3">Jesse</a> és cada vegada més delicat. D''altra banda, la <a href="/season/2">Skyler</a> fa més pressió per comprar el túnel d''autorentat de cotxes, que servirà de tapadora per blanquejar diners.'),
+(37, 37, 4, 'Esquemes', 'La <a href="/season/2">Skyler</a> s''inventa una història d''allò més elaborada per justificar la seva situació financera i en <a href="/season/1">Walt</a> s''inquieta en descobrir que en <a href="/season/1">Hank</a> ha obert una altra investigació. Per la seva banda, en <a href="/season/3">Jesse</a> només pot pensar a fer festes, fet que desperta la curiositat d''en <a href="/season/8">Gus</a>.'),
+(38, 38, 4, 'Vigilant', 'En <a href="/season/1">Walt</a> creu que estan a punt d''assassinar el seu company i en <a href="/season/3">Jesse</a> i en <a href="/season/9">Mike</a> fan una sortida perillosa. D''altra banda, en <a href="/season/1">Walt</a> i la <a href="/season/2">Skyler</a> compren oficialment el túnel d''autorentat de cotxes i en <a href="/season/1">Hank</a> decideix tancar la investigació.'),
+(39, 39, 4, 'Arraconat', 'Quan la <a href="/season/2">Skyler</a> sospita que en <a href="/season/1">Walt</a> no li diu la veritat, pren una actitud freda i purament professional cap a ell. Mentrestant, en <a href="/season/8">Gusz/a> s''acosta a en <a href="/season/3">Jesse</a>, que demostra que és un home de vàlua per a en <a href="/season/9">Mike</a> i per a l''empresa d''en <a href="/season/8">Gus</a>.'),
+(40, 40, 4, 'Un gos problemàtic', 'Amb la nova operació, en <a href="/season/1">Walt</a> col•loca a la <a href="/season/2">Skyler</a> en una situació difícil, i mentre en <a href="/season/1">Walt</a> mira de protegir-se d''en <a href="/season/8">Gus</a>, en <a href="/season/3">Jesse</a> accepta una proposició perillosa.'),
+(41, 41, 4, 'Germans', 'Mentre en <a href="/season/5">Hank</a> mostra indicis que en <a href="/season/8">Gus</a> és l''element central del tràfic de metadona d''Alburquerque, en <a href="/season/1">Walt</a> creu que l''assassinaran, i també a en <a href="/season/3">Jesse</a>, per protegir el seu cap. Per la seva banda, en <a href="/season/8">Gus</a> refusa l''exigència del càrtel mexicà d''aturar les seves activitats com a narcotraficant i contraataca.'),
 (42, 42, 4, 'Error', ''),
 (43, 43, 4, 'Salut', ''),
 (44, 44, 4, 'Espai del arrastre', ''),
@@ -472,10 +461,9 @@ INSERT INTO `episodis` (`id`, `numero`, `temporada`, `titol`, `descripcio`) VALU
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `faq`
+-- Estructura de la taula `faq`
 --
 
-DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `node` varchar(50) NOT NULL,
@@ -490,10 +478,9 @@ CREATE TABLE IF NOT EXISTS `faq` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `faq_lang`
+-- Estructura de la taula `faq_lang`
 --
 
-DROP TABLE IF EXISTS `faq_lang`;
 CREATE TABLE IF NOT EXISTS `faq_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -505,10 +492,9 @@ CREATE TABLE IF NOT EXISTS `faq_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `feed`
+-- Estructura de la taula `feed`
 --
 
-DROP TABLE IF EXISTS `feed`;
 CREATE TABLE IF NOT EXISTS `feed` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext NOT NULL,
@@ -525,7 +511,7 @@ CREATE TABLE IF NOT EXISTS `feed` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log de eventos' AUTO_INCREMENT=3 ;
 
 --
--- Volcado de datos para la tabla `feed`
+-- Bolcant dades de la taula `feed`
 --
 
 INSERT INTO `feed` (`id`, `title`, `url`, `datetime`, `scope`, `type`, `html`, `image`) VALUES
@@ -535,10 +521,9 @@ INSERT INTO `feed` (`id`, `title`, `url`, `datetime`, `scope`, `type`, `html`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `glossary`
+-- Estructura de la taula `glossary`
 --
 
-DROP TABLE IF EXISTS `glossary`;
 CREATE TABLE IF NOT EXISTS `glossary` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext,
@@ -552,10 +537,9 @@ CREATE TABLE IF NOT EXISTS `glossary` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `glossary_image`
+-- Estructura de la taula `glossary_image`
 --
 
-DROP TABLE IF EXISTS `glossary_image`;
 CREATE TABLE IF NOT EXISTS `glossary_image` (
   `glossary` bigint(20) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -565,10 +549,9 @@ CREATE TABLE IF NOT EXISTS `glossary_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `glossary_lang`
+-- Estructura de la taula `glossary_lang`
 --
 
-DROP TABLE IF EXISTS `glossary_lang`;
 CREATE TABLE IF NOT EXISTS `glossary_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -581,10 +564,9 @@ CREATE TABLE IF NOT EXISTS `glossary_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `icon`
+-- Estructura de la taula `icon`
 --
 
-DROP TABLE IF EXISTS `icon`;
 CREATE TABLE IF NOT EXISTS `icon` (
   `id` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -595,7 +577,7 @@ CREATE TABLE IF NOT EXISTS `icon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Iconos para retorno/recompensa';
 
 --
--- Volcado de datos para la tabla `icon`
+-- Bolcant dades de la taula `icon`
 --
 
 INSERT INTO `icon` (`id`, `name`, `description`, `group`, `order`) VALUES
@@ -611,10 +593,9 @@ INSERT INTO `icon` (`id`, `name`, `description`, `group`, `order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `icon_lang`
+-- Estructura de la taula `icon_lang`
 --
 
-DROP TABLE IF EXISTS `icon_lang`;
 CREATE TABLE IF NOT EXISTS `icon_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -624,7 +605,7 @@ CREATE TABLE IF NOT EXISTS `icon_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `icon_lang`
+-- Bolcant dades de la taula `icon_lang`
 --
 
 INSERT INTO `icon_lang` (`id`, `lang`, `name`, `description`) VALUES
@@ -648,10 +629,9 @@ INSERT INTO `icon_lang` (`id`, `lang`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `icon_license`
+-- Estructura de la taula `icon_license`
 --
 
-DROP TABLE IF EXISTS `icon_license`;
 CREATE TABLE IF NOT EXISTS `icon_license` (
   `icon` varchar(50) NOT NULL,
   `license` varchar(50) NOT NULL,
@@ -659,7 +639,7 @@ CREATE TABLE IF NOT EXISTS `icon_license` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Licencias para cada icono, solo social';
 
 --
--- Volcado de datos para la tabla `icon_license`
+-- Bolcant dades de la taula `icon_license`
 --
 
 INSERT INTO `icon_license` (`icon`, `license`) VALUES
@@ -717,10 +697,9 @@ INSERT INTO `icon_license` (`icon`, `license`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `image`
+-- Estructura de la taula `image`
 --
 
-DROP TABLE IF EXISTS `image`;
 CREATE TABLE IF NOT EXISTS `image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -730,7 +709,7 @@ CREATE TABLE IF NOT EXISTS `image` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `image`
+-- Bolcant dades de la taula `image`
 --
 
 INSERT INTO `image` (`id`, `name`, `type`, `size`) VALUES
@@ -739,10 +718,9 @@ INSERT INTO `image` (`id`, `name`, `type`, `size`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `info`
+-- Estructura de la taula `info`
 --
 
-DROP TABLE IF EXISTS `info`;
 CREATE TABLE IF NOT EXISTS `info` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `node` varchar(50) NOT NULL,
@@ -759,10 +737,9 @@ CREATE TABLE IF NOT EXISTS `info` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `info_image`
+-- Estructura de la taula `info_image`
 --
 
-DROP TABLE IF EXISTS `info_image`;
 CREATE TABLE IF NOT EXISTS `info_image` (
   `info` bigint(20) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -772,10 +749,9 @@ CREATE TABLE IF NOT EXISTS `info_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `info_lang`
+-- Estructura de la taula `info_lang`
 --
 
-DROP TABLE IF EXISTS `info_lang`;
 CREATE TABLE IF NOT EXISTS `info_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -788,10 +764,9 @@ CREATE TABLE IF NOT EXISTS `info_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `invest`
+-- Estructura de la taula `invest`
 --
 
-DROP TABLE IF EXISTS `invest`;
 CREATE TABLE IF NOT EXISTS `invest` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user` varchar(50) NOT NULL,
@@ -818,10 +793,9 @@ CREATE TABLE IF NOT EXISTS `invest` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `invest_address`
+-- Estructura de la taula `invest_address`
 --
 
-DROP TABLE IF EXISTS `invest_address`;
 CREATE TABLE IF NOT EXISTS `invest_address` (
   `invest` bigint(20) unsigned NOT NULL,
   `user` varchar(50) NOT NULL,
@@ -837,10 +811,9 @@ CREATE TABLE IF NOT EXISTS `invest_address` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `invest_reward`
+-- Estructura de la taula `invest_reward`
 --
 
-DROP TABLE IF EXISTS `invest_reward`;
 CREATE TABLE IF NOT EXISTS `invest_reward` (
   `invest` bigint(20) unsigned NOT NULL,
   `reward` bigint(20) unsigned NOT NULL,
@@ -851,10 +824,9 @@ CREATE TABLE IF NOT EXISTS `invest_reward` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `lang`
+-- Estructura de la taula `lang`
 --
 
-DROP TABLE IF EXISTS `lang`;
 CREATE TABLE IF NOT EXISTS `lang` (
   `id` varchar(2) NOT NULL COMMENT 'Código ISO-639',
   `name` varchar(20) NOT NULL,
@@ -865,7 +837,7 @@ CREATE TABLE IF NOT EXISTS `lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Idiomas';
 
 --
--- Volcado de datos para la tabla `lang`
+-- Bolcant dades de la taula `lang`
 --
 
 INSERT INTO `lang` (`id`, `name`, `active`, `short`, `locale`) VALUES
@@ -882,10 +854,9 @@ INSERT INTO `lang` (`id`, `name`, `active`, `short`, `locale`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `license`
+-- Estructura de la taula `license`
 --
 
-DROP TABLE IF EXISTS `license`;
 CREATE TABLE IF NOT EXISTS `license` (
   `id` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -897,7 +868,7 @@ CREATE TABLE IF NOT EXISTS `license` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Licencias de distribucion';
 
 --
--- Volcado de datos para la tabla `license`
+-- Bolcant dades de la taula `license`
 --
 
 INSERT INTO `license` (`id`, `name`, `description`, `group`, `url`, `order`) VALUES
@@ -931,10 +902,9 @@ INSERT INTO `license` (`id`, `name`, `description`, `group`, `url`, `order`) VAL
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `license_lang`
+-- Estructura de la taula `license_lang`
 --
 
-DROP TABLE IF EXISTS `license_lang`;
 CREATE TABLE IF NOT EXISTS `license_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -945,7 +915,7 @@ CREATE TABLE IF NOT EXISTS `license_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `license_lang`
+-- Bolcant dades de la taula `license_lang`
 --
 
 INSERT INTO `license_lang` (`id`, `lang`, `name`, `description`, `url`) VALUES
@@ -1005,10 +975,9 @@ INSERT INTO `license_lang` (`id`, `lang`, `name`, `description`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `mail`
+-- Estructura de la taula `mail`
 --
 
-DROP TABLE IF EXISTS `mail`;
 CREATE TABLE IF NOT EXISTS `mail` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `email` tinytext NOT NULL,
@@ -1022,10 +991,9 @@ CREATE TABLE IF NOT EXISTS `mail` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `message`
+-- Estructura de la taula `message`
 --
 
-DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user` varchar(50) NOT NULL,
@@ -1042,10 +1010,9 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `message_lang`
+-- Estructura de la taula `message_lang`
 --
 
-DROP TABLE IF EXISTS `message_lang`;
 CREATE TABLE IF NOT EXISTS `message_lang` (
   `id` int(20) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1056,10 +1023,9 @@ CREATE TABLE IF NOT EXISTS `message_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `news`
+-- Estructura de la taula `news`
 --
 
-DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext NOT NULL,
@@ -1073,10 +1039,9 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `news_lang`
+-- Estructura de la taula `news_lang`
 --
 
-DROP TABLE IF EXISTS `news_lang`;
 CREATE TABLE IF NOT EXISTS `news_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1089,10 +1054,9 @@ CREATE TABLE IF NOT EXISTS `news_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `node`
+-- Estructura de la taula `node`
 --
 
-DROP TABLE IF EXISTS `node`;
 CREATE TABLE IF NOT EXISTS `node` (
   `id` varchar(50) NOT NULL,
   `name` varchar(256) NOT NULL,
@@ -1101,7 +1065,7 @@ CREATE TABLE IF NOT EXISTS `node` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Nodos';
 
 --
--- Volcado de datos para la tabla `node`
+-- Bolcant dades de la taula `node`
 --
 
 INSERT INTO `node` (`id`, `name`, `active`) VALUES
@@ -1110,10 +1074,9 @@ INSERT INTO `node` (`id`, `name`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `page`
+-- Estructura de la taula `page`
 --
 
-DROP TABLE IF EXISTS `page`;
 CREATE TABLE IF NOT EXISTS `page` (
   `id` varchar(50) NOT NULL,
   `name` tinytext NOT NULL,
@@ -1123,7 +1086,7 @@ CREATE TABLE IF NOT EXISTS `page` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Páginas institucionales';
 
 --
--- Volcado de datos para la tabla `page`
+-- Bolcant dades de la taula `page`
 --
 
 INSERT INTO `page` (`id`, `name`, `description`, `url`) VALUES
@@ -1148,10 +1111,9 @@ INSERT INTO `page` (`id`, `name`, `description`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `page_lang`
+-- Estructura de la taula `page_lang`
 --
 
-DROP TABLE IF EXISTS `page_lang`;
 CREATE TABLE IF NOT EXISTS `page_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1163,10 +1125,9 @@ CREATE TABLE IF NOT EXISTS `page_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `page_node`
+-- Estructura de la taula `page_node`
 --
 
-DROP TABLE IF EXISTS `page_node`;
 CREATE TABLE IF NOT EXISTS `page_node` (
   `page` varchar(50) NOT NULL,
   `node` varchar(50) NOT NULL,
@@ -1178,10 +1139,9 @@ CREATE TABLE IF NOT EXISTS `page_node` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `post`
+-- Estructura de la taula `post`
 --
 
-DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `blog` bigint(20) unsigned NOT NULL,
@@ -1201,7 +1161,7 @@ CREATE TABLE IF NOT EXISTS `post` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Entradas para la portada' AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `post`
+-- Bolcant dades de la taula `post`
 --
 
 INSERT INTO `post` (`id`, `blog`, `title`, `text`, `media`, `image`, `date`, `order`, `allow`, `home`, `footer`, `publish`, `legend`) VALUES
@@ -1210,10 +1170,9 @@ INSERT INTO `post` (`id`, `blog`, `title`, `text`, `media`, `image`, `date`, `or
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `post_image`
+-- Estructura de la taula `post_image`
 --
 
-DROP TABLE IF EXISTS `post_image`;
 CREATE TABLE IF NOT EXISTS `post_image` (
   `post` bigint(20) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -1223,10 +1182,9 @@ CREATE TABLE IF NOT EXISTS `post_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `post_lang`
+-- Estructura de la taula `post_lang`
 --
 
-DROP TABLE IF EXISTS `post_lang`;
 CREATE TABLE IF NOT EXISTS `post_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1240,10 +1198,9 @@ CREATE TABLE IF NOT EXISTS `post_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `post_tag`
+-- Estructura de la taula `post_tag`
 --
 
-DROP TABLE IF EXISTS `post_tag`;
 CREATE TABLE IF NOT EXISTS `post_tag` (
   `post` bigint(20) unsigned NOT NULL,
   `tag` bigint(20) unsigned NOT NULL,
@@ -1253,10 +1210,9 @@ CREATE TABLE IF NOT EXISTS `post_tag` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `project`
+-- Estructura de la taula `project`
 --
 
-DROP TABLE IF EXISTS `project`;
 CREATE TABLE IF NOT EXISTS `project` (
   `id` varchar(50) NOT NULL,
   `name` tinytext,
@@ -1317,10 +1273,9 @@ CREATE TABLE IF NOT EXISTS `project` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `project_account`
+-- Estructura de la taula `project_account`
 --
 
-DROP TABLE IF EXISTS `project_account`;
 CREATE TABLE IF NOT EXISTS `project_account` (
   `project` varchar(50) NOT NULL,
   `bank` tinytext,
@@ -1331,10 +1286,9 @@ CREATE TABLE IF NOT EXISTS `project_account` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `project_category`
+-- Estructura de la taula `project_category`
 --
 
-DROP TABLE IF EXISTS `project_category`;
 CREATE TABLE IF NOT EXISTS `project_category` (
   `project` varchar(50) NOT NULL,
   `category` int(12) NOT NULL,
@@ -1344,10 +1298,9 @@ CREATE TABLE IF NOT EXISTS `project_category` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `project_image`
+-- Estructura de la taula `project_image`
 --
 
-DROP TABLE IF EXISTS `project_image`;
 CREATE TABLE IF NOT EXISTS `project_image` (
   `project` varchar(50) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -1357,10 +1310,9 @@ CREATE TABLE IF NOT EXISTS `project_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `project_lang`
+-- Estructura de la taula `project_lang`
 --
 
-DROP TABLE IF EXISTS `project_lang`;
 CREATE TABLE IF NOT EXISTS `project_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1379,10 +1331,9 @@ CREATE TABLE IF NOT EXISTS `project_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `promote`
+-- Estructura de la taula `promote`
 --
 
-DROP TABLE IF EXISTS `promote`;
 CREATE TABLE IF NOT EXISTS `promote` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `node` varchar(50) NOT NULL,
@@ -1399,10 +1350,9 @@ CREATE TABLE IF NOT EXISTS `promote` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `promote_lang`
+-- Estructura de la taula `promote_lang`
 --
 
-DROP TABLE IF EXISTS `promote_lang`;
 CREATE TABLE IF NOT EXISTS `promote_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1414,10 +1364,9 @@ CREATE TABLE IF NOT EXISTS `promote_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `purpose`
+-- Estructura de la taula `purpose`
 --
 
-DROP TABLE IF EXISTS `purpose`;
 CREATE TABLE IF NOT EXISTS `purpose` (
   `text` varchar(50) NOT NULL,
   `purpose` text NOT NULL,
@@ -1427,7 +1376,7 @@ CREATE TABLE IF NOT EXISTS `purpose` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Explicación del propósito de los textos';
 
 --
--- Volcado de datos para la tabla `purpose`
+-- Bolcant dades de la taula `purpose`
 --
 
 INSERT INTO `purpose` (`text`, `purpose`, `html`, `group`) VALUES
@@ -2232,10 +2181,9 @@ INSERT INTO `purpose` (`text`, `purpose`, `html`, `group`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `review`
+-- Estructura de la taula `review`
 --
 
-DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `project` varchar(50) NOT NULL,
@@ -2251,10 +2199,9 @@ CREATE TABLE IF NOT EXISTS `review` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `review_comment`
+-- Estructura de la taula `review_comment`
 --
 
-DROP TABLE IF EXISTS `review_comment`;
 CREATE TABLE IF NOT EXISTS `review_comment` (
   `review` bigint(20) unsigned NOT NULL,
   `user` varchar(50) NOT NULL,
@@ -2268,10 +2215,9 @@ CREATE TABLE IF NOT EXISTS `review_comment` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `review_score`
+-- Estructura de la taula `review_score`
 --
 
-DROP TABLE IF EXISTS `review_score`;
 CREATE TABLE IF NOT EXISTS `review_score` (
   `review` bigint(20) unsigned NOT NULL,
   `user` varchar(50) NOT NULL,
@@ -2283,10 +2229,9 @@ CREATE TABLE IF NOT EXISTS `review_score` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reward`
+-- Estructura de la taula `reward`
 --
 
-DROP TABLE IF EXISTS `reward`;
 CREATE TABLE IF NOT EXISTS `reward` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `project` varchar(50) NOT NULL,
@@ -2306,10 +2251,9 @@ CREATE TABLE IF NOT EXISTS `reward` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reward_lang`
+-- Estructura de la taula `reward_lang`
 --
 
-DROP TABLE IF EXISTS `reward_lang`;
 CREATE TABLE IF NOT EXISTS `reward_lang` (
   `id` int(20) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -2322,10 +2266,9 @@ CREATE TABLE IF NOT EXISTS `reward_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `role`
+-- Estructura de la taula `role`
 --
 
-DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
   `id` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -2333,7 +2276,7 @@ CREATE TABLE IF NOT EXISTS `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `role`
+-- Bolcant dades de la taula `role`
 --
 
 INSERT INTO `role` (`id`, `name`) VALUES
@@ -2347,10 +2290,9 @@ INSERT INTO `role` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sponsor`
+-- Estructura de la taula `sponsor`
 --
 
-DROP TABLE IF EXISTS `sponsor`;
 CREATE TABLE IF NOT EXISTS `sponsor` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -2364,10 +2306,9 @@ CREATE TABLE IF NOT EXISTS `sponsor` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `support`
+-- Estructura de la taula `support`
 --
 
-DROP TABLE IF EXISTS `support`;
 CREATE TABLE IF NOT EXISTS `support` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `project` varchar(50) NOT NULL,
@@ -2382,10 +2323,9 @@ CREATE TABLE IF NOT EXISTS `support` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `support_lang`
+-- Estructura de la taula `support_lang`
 --
 
-DROP TABLE IF EXISTS `support_lang`;
 CREATE TABLE IF NOT EXISTS `support_lang` (
   `id` int(20) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -2397,10 +2337,9 @@ CREATE TABLE IF NOT EXISTS `support_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tag`
+-- Estructura de la taula `tag`
 --
 
-DROP TABLE IF EXISTS `tag`;
 CREATE TABLE IF NOT EXISTS `tag` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -2411,10 +2350,9 @@ CREATE TABLE IF NOT EXISTS `tag` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tag_lang`
+-- Estructura de la taula `tag_lang`
 --
 
-DROP TABLE IF EXISTS `tag_lang`;
 CREATE TABLE IF NOT EXISTS `tag_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -2425,10 +2363,9 @@ CREATE TABLE IF NOT EXISTS `tag_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `template`
+-- Estructura de la taula `template`
 --
 
-DROP TABLE IF EXISTS `template`;
 CREATE TABLE IF NOT EXISTS `template` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -2440,7 +2377,7 @@ CREATE TABLE IF NOT EXISTS `template` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Plantillas emails automáticos' AUTO_INCREMENT=33 ;
 
 --
--- Volcado de datos para la tabla `template`
+-- Bolcant dades de la taula `template`
 --
 
 INSERT INTO `template` (`id`, `name`, `purpose`, `title`, `text`) VALUES
@@ -2480,10 +2417,9 @@ INSERT INTO `template` (`id`, `name`, `purpose`, `title`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `template_lang`
+-- Estructura de la taula `template_lang`
 --
 
-DROP TABLE IF EXISTS `template_lang`;
 CREATE TABLE IF NOT EXISTS `template_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -2495,10 +2431,9 @@ CREATE TABLE IF NOT EXISTS `template_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `temporades`
+-- Estructura de la taula `temporades`
 --
 
-DROP TABLE IF EXISTS `temporades`;
 CREATE TABLE IF NOT EXISTS `temporades` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `nom` varchar(20) NOT NULL,
@@ -2506,7 +2441,7 @@ CREATE TABLE IF NOT EXISTS `temporades` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Volcado de datos para la tabla `temporades`
+-- Bolcant dades de la taula `temporades`
 --
 
 INSERT INTO `temporades` (`id`, `nom`) VALUES
@@ -2519,10 +2454,9 @@ INSERT INTO `temporades` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `text`
+-- Estructura de la taula `text`
 --
 
-DROP TABLE IF EXISTS `text`;
 CREATE TABLE IF NOT EXISTS `text` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL DEFAULT 'es',
@@ -2531,7 +2465,7 @@ CREATE TABLE IF NOT EXISTS `text` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Textos multi-idioma';
 
 --
--- Volcado de datos para la tabla `text`
+-- Bolcant dades de la taula `text`
 --
 
 INSERT INTO `text` (`id`, `lang`, `text`) VALUES
@@ -4117,10 +4051,9 @@ INSERT INTO `text` (`id`, `lang`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user`
+-- Estructura de la taula `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -4147,7 +4080,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `user`
+-- Bolcant dades de la taula `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `location`, `email`, `password`, `about`, `keywords`, `active`, `avatar`, `contribution`, `twitter`, `facebook`, `google`, `identica`, `linkedin`, `worth`, `created`, `modified`, `token`, `hide`, `confirmed`) VALUES
@@ -4158,10 +4091,9 @@ INSERT INTO `user` (`id`, `name`, `location`, `email`, `password`, `about`, `key
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_image`
+-- Estructura de la taula `user_image`
 --
 
-DROP TABLE IF EXISTS `user_image`;
 CREATE TABLE IF NOT EXISTS `user_image` (
   `user` varchar(50) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -4171,10 +4103,9 @@ CREATE TABLE IF NOT EXISTS `user_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_interest`
+-- Estructura de la taula `user_interest`
 --
 
-DROP TABLE IF EXISTS `user_interest`;
 CREATE TABLE IF NOT EXISTS `user_interest` (
   `user` varchar(50) NOT NULL,
   `interest` int(12) NOT NULL,
@@ -4184,10 +4115,9 @@ CREATE TABLE IF NOT EXISTS `user_interest` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_lang`
+-- Estructura de la taula `user_lang`
 --
 
-DROP TABLE IF EXISTS `user_lang`;
 CREATE TABLE IF NOT EXISTS `user_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -4200,10 +4130,9 @@ CREATE TABLE IF NOT EXISTS `user_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_login`
+-- Estructura de la taula `user_login`
 --
 
-DROP TABLE IF EXISTS `user_login`;
 CREATE TABLE IF NOT EXISTS `user_login` (
   `user` varchar(50) NOT NULL,
   `provider` varchar(50) NOT NULL,
@@ -4216,10 +4145,9 @@ CREATE TABLE IF NOT EXISTS `user_login` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_personal`
+-- Estructura de la taula `user_personal`
 --
 
-DROP TABLE IF EXISTS `user_personal`;
 CREATE TABLE IF NOT EXISTS `user_personal` (
   `user` varchar(50) NOT NULL,
   `contract_name` varchar(255) DEFAULT NULL,
@@ -4237,10 +4165,9 @@ CREATE TABLE IF NOT EXISTS `user_personal` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_prefer`
+-- Estructura de la taula `user_prefer`
 --
 
-DROP TABLE IF EXISTS `user_prefer`;
 CREATE TABLE IF NOT EXISTS `user_prefer` (
   `user` varchar(50) NOT NULL,
   `updates` int(1) NOT NULL DEFAULT '0',
@@ -4253,10 +4180,9 @@ CREATE TABLE IF NOT EXISTS `user_prefer` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_review`
+-- Estructura de la taula `user_review`
 --
 
-DROP TABLE IF EXISTS `user_review`;
 CREATE TABLE IF NOT EXISTS `user_review` (
   `user` varchar(50) NOT NULL,
   `review` bigint(20) unsigned NOT NULL,
@@ -4267,10 +4193,9 @@ CREATE TABLE IF NOT EXISTS `user_review` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_role`
+-- Estructura de la taula `user_role`
 --
 
-DROP TABLE IF EXISTS `user_role`;
 CREATE TABLE IF NOT EXISTS `user_role` (
   `user_id` varchar(50) NOT NULL,
   `role_id` varchar(50) NOT NULL,
@@ -4283,7 +4208,7 @@ CREATE TABLE IF NOT EXISTS `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `user_role`
+-- Bolcant dades de la taula `user_role`
 --
 
 INSERT INTO `user_role` (`user_id`, `role_id`, `node_id`, `datetime`) VALUES
@@ -4303,10 +4228,9 @@ INSERT INTO `user_role` (`user_id`, `role_id`, `node_id`, `datetime`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_translate`
+-- Estructura de la taula `user_translate`
 --
 
-DROP TABLE IF EXISTS `user_translate`;
 CREATE TABLE IF NOT EXISTS `user_translate` (
   `user` varchar(50) NOT NULL,
   `project` varchar(50) NOT NULL,
@@ -4317,10 +4241,9 @@ CREATE TABLE IF NOT EXISTS `user_translate` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_web`
+-- Estructura de la taula `user_web`
 --
 
-DROP TABLE IF EXISTS `user_web`;
 CREATE TABLE IF NOT EXISTS `user_web` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user` varchar(50) NOT NULL,
@@ -4332,10 +4255,49 @@ CREATE TABLE IF NOT EXISTS `user_web` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `worthcracy`
+-- Estructura de la taula `video`
 --
 
-DROP TABLE IF EXISTS `worthcracy`;
+CREATE TABLE IF NOT EXISTS `video` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `temporada` varchar(50) NOT NULL,
+  `url` varchar(500) NOT NULL,
+  `numero` int(5) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+
+--
+-- Bolcant dades de la taula `video`
+--
+
+INSERT INTO `video` (`id`, `temporada`, `url`, `numero`) VALUES
+(4, '1', '<iframe width="560" height="315" src="http://www.youtube.com/embed/erZqsV5UJpM" frameborder="0" allowfullscreen></iframe>', 1),
+(5, '1', '<iframe width="560" height="315" src="http://www.youtube.com/embed/Y5MyxpYtVLg" frameborder="0" allowfullscreen></iframe>', 2),
+(6, '1', '<iframe width="560" height="315" src="http://www.youtube.com/embed/V8WekanqL7c" frameborder="0" allowfullscreen></iframe>', 3),
+(7, '1', '<iframe width="420" height="315" src="http://www.youtube.com/embed/EpxRc0Kzkmo" frameborder="0" allowfullscreen></iframe>', 4),
+(8, '2', '<iframe width="560" height="315" src="http://www.youtube.com/embed/7K2ywM4YyVo" frameborder="0" allowfullscreen></iframe>', 1),
+(9, '2', '<iframe width="560" height="315" src="http://www.youtube.com/embed/VxME8GYZXcA" frameborder="0" allowfullscreen></iframe>', 2),
+(10, '2', '<iframe width="560" height="315" src="http://www.youtube.com/embed/alFsfEUtDmQ" frameborder="0" allowfullscreen></iframe>', 3),
+(11, '2', '<iframe width="560" height="315" src="http://www.youtube.com/embed/QBeeJK0OTrQ" frameborder="0" allowfullscreen></iframe>', 4),
+(12, '3', '<iframe width="560" height="315" src="http://www.youtube.com/embed/bMzqiGG5Udg" frameborder="0" allowfullscreen></iframe>', 1),
+(13, '3', '<iframe width="560" height="315" src="http://www.youtube.com/embed/YWKY_3J-1tU" frameborder="0" allowfullscreen></iframe>', 2),
+(14, '3', '<iframe width="560" height="315" src="http://www.youtube.com/embed/84znak2CGos" frameborder="0" allowfullscreen></iframe>', 3),
+(15, '3', '<iframe width="560" height="315" src="http://www.youtube.com/embed/MYdqpw2NBJw" frameborder="0" allowfullscreen></iframe>', 4),
+(16, '4', '<iframe width="560" height="315" src="http://www.youtube.com/embed/Y7AvqD2loX4" frameborder="0" allowfullscreen></iframe>', 1),
+(17, '4', '<iframe width="560" height="315" src="http://www.youtube.com/embed/6lQkhpSFvxU" frameborder="0" allowfullscreen></iframe>', 2),
+(18, '4', '<iframe width="560" height="315" src="http://www.youtube.com/embed/6IJNOVLkaTg" frameborder="0" allowfullscreen></iframe>', 3),
+(19, '4', '<iframe width="560" height="315" src="http://www.youtube.com/embed/DAdA7CCepKA" frameborder="0" allowfullscreen></iframe>', 4),
+(20, '5', '<iframe width="560" height="315" src="http://www.youtube.com/embed/VlvsE8fMHP4" frameborder="0" allowfullscreen></iframe>', 1),
+(21, '5', '<iframe width="560" height="315" src="http://www.youtube.com/embed/OjFtBAd3lUk" frameborder="0" allowfullscreen></iframe>', 2),
+(22, '5', '<iframe width="560" height="315" src="http://www.youtube.com/embed/P-ZjG5jG5bg" frameborder="0" allowfullscreen></iframe>', 3),
+(23, '5', '<iframe width="560" height="315" src="http://www.youtube.com/embed/aJvFib5iOxE" frameborder="0" allowfullscreen></iframe>', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de la taula `worthcracy`
+--
+
 CREATE TABLE IF NOT EXISTS `worthcracy` (
   `id` int(2) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -4344,7 +4306,7 @@ CREATE TABLE IF NOT EXISTS `worthcracy` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Niveles de meritocracia' AUTO_INCREMENT=6 ;
 
 --
--- Volcado de datos para la tabla `worthcracy`
+-- Bolcant dades de la taula `worthcracy`
 --
 
 INSERT INTO `worthcracy` (`id`, `name`, `amount`) VALUES
@@ -4357,10 +4319,9 @@ INSERT INTO `worthcracy` (`id`, `name`, `amount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `worthcracy_lang`
+-- Estructura de la taula `worthcracy_lang`
 --
 
-DROP TABLE IF EXISTS `worthcracy_lang`;
 CREATE TABLE IF NOT EXISTS `worthcracy_lang` (
   `id` int(2) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,

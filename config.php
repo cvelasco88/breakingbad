@@ -84,8 +84,8 @@ define('GOTEO_MAIL', 'hola@gmail.com');
 define('GOTEO_DEFAULT_LANG', 'ca');
 
 // url
-define('SITE_URL', 'http://p1.multimedia.com/');
-define('SRC_URL', 'http://p1.multimedia.com/');
+define('SITE_URL', '');
+define('SRC_URL', '');
 
 // Cron params
 define('CRON_PARAM', '');

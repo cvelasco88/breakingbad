@@ -1,10 +1,16 @@
 @CHARSET "ISO-8859-1";
 
-#photos-img img
+#imatgetemporada img
 {
 	width:120px;
 	height:120px;
 	padding:5px;
 	border:2px solid lightgray;
 	margin:3px;
+}
+
+#imatgetemporada
+{
+	border-bottom:0px;
+	display:inline;
 }

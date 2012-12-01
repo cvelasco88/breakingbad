@@ -22,6 +22,8 @@ use Goteo\Library\Text,
     Goteo\Core\View;
 
 $posts = $this['posts'];
+$temporades = $this['temporades'];
+
 
 include 'view/prologue.html.php';
 include 'view/header.html.php';
@@ -40,19 +42,26 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="main" class="threecols">
 		<div id="about-content">
+			<h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>
+		
 		<div class="about-page">
-			<div id="photos-img">
-	            <h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>
+		<div class="temp-page">
+	            
+	            <ul>
 	            <?php
-	            	for($i=0;$i<6;$i++) 
-	            	{
-	            		echo "<img src='/data/images/bb-s$i'>";
-	            	}
- 					for($i=1;$i<18;$i++) 
-	            	{
-	            		echo "<img src='/data/images/cast/$i'>";
-	            	}
+	  			
+	            if (!empty($temporades)) {
+            	               		foreach ($temporades as $temporada) :?>
+            	               		<li>
+            	               		<span><a id="tempTitol" href="/photos/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></span>	               	
+            	               		<div>
+            	                	<a href="/photos/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg"></a>
+            	                	</div>
+            	               		</li>
+                                    <?php endforeach;
+	                         }
 	            ?>
+	            </ul>
             </div>
 		</div>
 	</div>
