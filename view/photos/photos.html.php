@@ -30,6 +30,12 @@ $bodyClass = 'season';
 
 $go_up = Text::get('regular-go_up');
 ?>
+<script src="/data/js/jquery.tools.min.js"></script>
+<script src="/data/js/jquery.overlay.min.js"></script>
+<head>
+
+<!-- same styling as in minimal setup -->
+<link rel="stylesheet" type="text/css" href="/data/css/overlay.css"/>
 
 	<div id="sub-header-secondary">
 		<div class="clearfix">
@@ -47,10 +53,23 @@ $go_up = Text::get('regular-go_up');
             		for($i=1;$i<11;$i++)
             		{?>
             		<div id="imatgetemporada">
-            			<img  src=/data/images/<?php echo "t".$id;?>/<?php echo $i;?>.jpg>
+            			<img rel="#mies<?php echo $i;?>" src=/data/images/<?php echo "t".$id;?>/<?php echo $i;?>.jpg>
             		</div>
-            		<?php }
+            	<?php 
+            	}
             	?>
+            	<?php 
+		 			for($i=1;$i<11;$i++)
+		 			{ 			
+			 		?>
+				 		<!-- first overlay. id attribute matches our selector -->
+						<div class="simple_overlay photo-overlay" id="mies<?php echo $i; ?>">
+						  	<!-- large image -->
+            				<img src=/data/images/<?php echo "t".$id;?>/<?php echo $i;?>.jpg>
+						</div>
+				 	<?php 
+				 	} 
+				 	?>		
            <div>>
             <a href="/episodes"> + EPISODIS</a>
             <a href="/photos"> + IMATGES</a>
@@ -60,7 +79,10 @@ $go_up = Text::get('regular-go_up');
 		</div>
 	
 	</div>
-    
+    <!-- make it happen -->
+	<script>
+	 $("img[rel]").overlay();
+	</script>
 <?php
 include 'view/footer.html.php';
 include 'view/epilogue.html.php';

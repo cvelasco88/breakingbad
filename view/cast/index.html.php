@@ -44,10 +44,10 @@ include 'view/header.html.php'; ?>
 	               		foreach ($principals as $actor) :?>
 	               		<li>
 	               			<label>
-		               			<img src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
-		                		<a href="/cast/actor/<?php echo $actor->id; ?>"><?php echo "$actor->nomserie ($actor->nomreal)"; ?></a>
-		                	</label>
-		                		               		
+		               			<a href="/cast/actor/<?php echo $actor->id; ?>">
+		               			<img title="<?php echo "$actor->nomserie ($actor->nomreal)"; ?>" alt="<?php echo "$actor->nomserie ($actor->nomreal)"; ?>" src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
+		                		</a>
+		                	</label>             		
 	               		</li>
                         <?php endforeach;
                		}
@@ -66,8 +66,9 @@ include 'view/header.html.php'; ?>
 	               		foreach ($secundaris as $actor) :?>
 	               		<li>
 	               			<label>
-		               			<img src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
-		                		<a href="/cast/actor/<?php echo $actor->id; ?>"><?php echo "$actor->nomserie ($actor->nomreal)"; ?></a>
+		               			<a href="/cast/actor/<?php echo $actor->id; ?>">
+		               			<img title="<?php echo "$actor->nomserie ($actor->nomreal)"; ?>" alt="<?php echo "$actor->nomserie ($actor->nomreal)"; ?>" src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
+		                		</a>
 		                	</label>
 		                		               		
 	               		</li>
@@ -87,14 +88,11 @@ include 'view/header.html.php'; ?>
                		if (!empty($altres)) {
 	               		foreach ($altres as $actor) :?>
 	               		<li>
-	               		<div id="indexactors">
-		                	<div>
-		                	<img src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
-		                	</div>
-		                	<div>
-		                	<label><a href="/cast/actor/<?php echo $actor->id; ?>"><?php echo "$actor->nomserie ($actor->nomreal)"; ?></a></label>		                	
-		               		</div>
-		               	</div>
+	               			<label>
+		               			<a href="/cast/actor/<?php echo $actor->id; ?>">
+		               			<img title="<?php echo "$actor->nomserie ($actor->nomreal)"; ?>" alt="<?php echo "$actor->nomserie ($actor->nomreal)"; ?>" src="/data/images/cast/<?php echo $actor->id; ?>.jpg">
+		                		</a>
+		                	</label>
 		               	</li>
                         <?php endforeach;
                		}
