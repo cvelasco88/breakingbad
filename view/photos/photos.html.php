@@ -35,7 +35,6 @@ $go_up = Text::get('regular-go_up');
 <head>
 
 <!-- same styling as in minimal setup -->
-<link rel="stylesheet" type="text/css" href="/data/css/overlay.css"/>
 
 	<div id="sub-header-secondary">
 		<div class="clearfix">

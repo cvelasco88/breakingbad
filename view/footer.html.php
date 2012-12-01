@@ -39,32 +39,38 @@ jQuery(document).ready(function($) {
     <div id="footer">
 		<div class="w940">
         	<div class="block categories">
-                <h8 class="title"><?php echo Text::get('footer-header-categories') ?></h8>
+                <h8 class="title">Seccions</h8>
                 <ul class="scroll-pane">
-                <?php //foreach ($categories as $id=>$name) : ?>
-                    <li><a href="/discover/results/<?php//echo $id; ?>"><?php //echo $name; ?></a></li>
-                <?php //endforeach; ?>
+                    <li><a href="/">Inici</a></li>
+                    <li><a href="/story">Argument</a></li>
+                    <li><a href="/cast">Actors</a></li>
+                    <li><a href="/season">Temporades</a></li>
+                    <li><a href="/episodes">Episodis</a></li>
+                    <li><a href="/photos">Imatges</a></li>
+                    <li><a href="/video">Videos</a></li>
+                    <li><a href="/blog">Blog</a></li>
                 </ul>
             </div>
 
             <div class="block projects">
-                <h8 class="title"><?php echo Text::get('footer-header-projects') ?></h8>
+                <h8 class="title">Desenvolupadors</h8>
                 <ul class="scroll-pane">
-                    <li><a href="/"><?php echo Text::get('home-promotes-header') ?></a></li>
+                    <li><a href="/">Carlos Velasco</a></li>
+                    <li><a href="/">Norbert Figueras</a></li>
                 </ul>
             </div>
 
             <div class="block resources">
                 <h8 class="title"><?php echo Text::get('footer-header-resources') ?></h8>
                 <ul class="scroll-pane">
-                    <li><a href="/faq"><?php echo Text::get('regular-header-faq') ?></a></li>
+                    <li><a><?php echo Text::get('regular-header-faq') ?></a></li>
                     <?php foreach ($posts as $id=>$title) : ?>
                     <li><a href="/blog/<?php echo $id ?>"><?php echo Text::recorta($title, 50) ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
 			<script>
-				/*$(function(){
+				$(function(){
 					$('#slides_sponsor').slides({
 						container: 'slides_container',
 						effect: 'fade', 
@@ -73,16 +79,16 @@ jQuery(document).ready(function($) {
 						play: 5000, 
 						pause: 1
 					});
-				});*/
+				});
 			</script>
            <div id="slides_sponsor" class="block sponsors">
-                <h8 class="title"><?php //echo Text::get('footer-header-sponsors') ?></h8>
+                <h8 class="title">Temporades</h8>
 				<div class="slides_container">
-					<?php $i = 1; foreach ($sponsors as $sponsor) : ?>
-					<div class="sponsor" id="footer-sponsor-<?php echo $i ?>">
-						<a href="<?php echo $sponsor->url ?>" title="<?php echo $sponsor->name ?>" target="_blank"><img src="<?php echo $sponsor->image->getLink(150, 85) ?>" alt="<?php echo $sponsor->name ?>" /></a>
+					<?php for($i=0;$i<6;$i++) { ?>
+					<div class="sponsor" id="footer-sponsor-<?php echo $i; ?>">
+						<a href="/season/<?php echo $i; ?>" ><img style="width:120px; height:80px;" src="/data/images/bb-s<?php echo $i; ?>.jpg" alt="Temporada <?php echo $i; ?>" /></a>
 					</div>
-					<?php $i++; endforeach; ?>
+					<?php } ?>
 				</div>
 				<div class="slidersponsors-ctrl">
 					<a class="prev">prev</a>
@@ -93,14 +99,14 @@ jQuery(document).ready(function($) {
 
             <div class="block services">
                 
-                <h8 class="title"><?php echo Text::get('footer-header-services') ?></h8>
+                <h8 class="title">Newsletter</h8>
                 <ul>
-                    <li><a href="/service/resources"><?php echo Text::get('footer-service-resources') ?></a></li>
+                    <!-- <li><a href="/service/resources"><?php echo Text::get('footer-service-resources') ?></a></li> -->
 <?php /*                    <li><a href="/service/campaign"><?php echo Text::get('footer-service-campaign') ?></a></li>
                     <li><a href="/service/consulting"><?php echo Text::get('footer-service-consulting') ?></a></li>
  *
  */ ?>
-                    <li><a href="/service/workshop"><?php echo Text::get('footer-service-workshop') ?></a></li>
+                     <!-- <li><a href="/service/workshop"><?php echo Text::get('footer-service-workshop') ?></a></li> -->
                 </ul>
                 
             </div>
@@ -108,9 +114,9 @@ jQuery(document).ready(function($) {
             <div class="block social" style="border-right:#ebe9ea 2px solid;">
                 <h8 class="title"><?php echo Text::get('footer-header-social') ?></h8>
                 <ul>
-                    <li class="twitter"><a href="<?php echo Text::get('social-account-twitter') ?>" target="_blank"><?php echo Text::get('regular-twitter') ?></a></li>
-                    <li class="facebook"><a href="<?php echo Text::get('social-account-facebook') ?>" target="_blank"><?php echo Text::get('regular-facebook') ?></a></li>
-                    <li class="identica"><a href="<?php echo Text::get('social-account-identica') ?>" target="_blank"><?php echo Text::get('regular-identica') ?></a></li>
+                    <li class="twitter"><a href="https://twitter.com/BreakingBad_AMC" target="_blank"><?php echo Text::get('regular-twitter') ?></a></li>
+                    <li class="facebook"><a href="http://www.facebook.com/BreakingBad" target="_blank"><?php echo Text::get('regular-facebook') ?></a></li>
+                    <li class="identica"><a target="_blank"><?php echo Text::get('regular-identica') ?></a></li>
                     <li class="gplus"><a href="<?php echo Text::get('social-account-google') ?>" target="_blank"><?php echo Text::get('regular-google') ?></a></li>
                     <li class="rss"><a rel="alternate" type="application/rss+xml" title="RSS" href="/rss<?php echo $lang ?>" target="_blank"><?php echo Text::get('regular-share-rss'); ?></a></li>
                 </ul>
@@ -121,19 +127,19 @@ jQuery(document).ready(function($) {
     <div id="sub-footer">
 		<div class="w940">
 			<ul>
-				<li><a href="/about"><?php echo Text::get('regular-header-about'); ?></a></li>
-				<li><a href="/user/login"><?php echo Text::get('regular-login'); ?></a></li>
-				<li><a href="/contact"><?php echo Text::get('regular-footer-contact'); ?></a></li>
-<!--                    <li><a href="/blog"><?php echo Text::get('regular-header-blog'); ?></a></li> -->
-<!--                    <li><a href="/about/legal"><?php echo Text::get('regular-footer-legal'); ?></a></li> -->
-				<li><a href="/legal/terms"><?php echo Text::get('regular-footer-terms'); ?></a></li>
-				<li><a href="/legal/privacy"><?php echo Text::get('regular-footer-privacy'); ?></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+<!--                    <li><a href="https://plus.google.com/b/116559557256583965659/"></a></li> -->
+<!--                    <li><a href="http://p1.multimedia.com/rss?lang=ca"></a></li> -->
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
 			</ul>
 
 			<div class="platoniq">
-			   <span class="text"><a href="#" class="poweredby"><?php echo Text::get('footer-platoniq-iniciative') ?></a></span>
-			   <span class="logo"><a href="http://fuentesabiertas.org" target="_blank" class="foundation">FFA</a></span>
-			   <span class="logo"><a href="http://www.youcoop.org" target="_blank" class="growby">Platoniq</a></span>
+<!--			   <span class="text"><a href="#" class="poweredby"><?php echo Text::get('footer-platoniq-iniciative') ?></a></span>-->
+<!--			   <span class="logo"><a href="http://fuentesabiertas.org" target="_blank" class="foundation">FFA</a></span>-->
+<!--			   <span class="logo"><a href="http://www.youcoop.org" target="_blank" class="growby">Platoniq</a></span>-->
 			</div>
         </div>
     </div>

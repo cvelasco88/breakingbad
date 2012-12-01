@@ -21,11 +21,11 @@
  
 /* close button positioned on upper right corner */
 .simple_overlay .close {
-    background-image:url(/media/img/overlay/close.png);
+    background-image:url(/data/images/close.png);
     position:absolute;
     right:-15px;
     top:-15px;
     cursor:pointer;
-    height:35px;
-    width:35px;
+    height:40px;
+    width:40px;
 }

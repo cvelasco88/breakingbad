@@ -28,77 +28,31 @@ namespace Goteo\Model {
 
         public
             $id,
-            $nomserie,
-            $nomreal,
-            $tipus,
-            $descripcio,
-            $imatge;
+            $temporada,
+            $url;
         
 
         /*
          *  Para conseguir el ide del blog de un proyecto o de un nodo
          *  Devuelve datos de un blog
          */
-        public static function get ($type) {
+        public static function get ($temp) {
                 $query = static::query("
                     SELECT
-                        id,
-                        nomserie,
-                        nomreal,
-                        tipus,
-                		descripcio,
-                		imatge                		
-                    FROM    cast
-                    WHERE tipus = :type
-                    ", array(':type' => $type));
+			            id,
+			            temporada,
+			            url            		
+                    FROM    video
+                    WHERE temporada = :temp
+                    ", array(':temp' => $temp));
                 
                 //$personatges =  $query->fetchObject(__CLASS__);
-                $personatges = $query->fetchAll(\PDO::FETCH_CLASS, __CLASS__);
+                $temporada = $query->fetchAll(\PDO::FETCH_CLASS, __CLASS__);
 
-                return $personatges;
+                return $temporada;
         }
         
-        /*
-         *  Para conseguir el ide del blog de un proyecto o de un nodo
-        *  Devuelve datos de un blog
-        */
-        public static function getActor ($id) {
-        	$query = static::query("
-        			SELECT
-        			id,
-        			nomserie,
-        			nomreal,
-        			tipus,
-        			descripcio,
-        			imatge
-        			FROM    cast
-        			WHERE id = :id
-        			", array(':id' => $id));
-        
-        	$personatges =  $query->fetchObject(__CLASS__);
-        	//$personatges = $query->fetchAll(\PDO::FETCH_CLASS, __CLASS__);
-        
-        	return $personatges;
-        }
-        
-        public static function getAll () {
-        	$query = static::query("
-        			SELECT
-        			id,
-        			nomserie,
-        			nomreal,
-        			tipus,
-        			descripcio,
-        			imatge
-        			FROM    cast
-        			");
-        
-        	//$personatges =  $query->fetchObject(__CLASS__);
-        	$personatges = $query->fetchAll(\PDO::FETCH_CLASS, __CLASS__);
-        
-        	return $personatges;
-        }
-        
+      
         public function validate (&$errors = array()) {
         	return true;
         }

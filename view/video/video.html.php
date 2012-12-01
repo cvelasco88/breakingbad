@@ -21,6 +21,7 @@
 use Goteo\Library\Text,
     Goteo\Core\View;
 
+$video = $this['video'];
 $id = $this['id'];
 
 include 'view/prologue.html.php';
@@ -33,6 +34,7 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="sub-header-secondary">
 		<div class="clearfix">
+			<h2><a href="/video">Videos</a></h2>
             <?php echo new View('view/header/share.html.php'); ?>
 		</div>
 	</div>
@@ -42,8 +44,14 @@ $go_up = Text::get('regular-go_up');
 		<div class="about-page">
         <div class="temp-page">
          
-            <h3 class="title">Temporada <?php $id ?></h3>
+            <h3 class="title">Temporada <?php echo $id; ?></h3>
 
+            <div>
+            	<?php  foreach ($video as $v) {?>
+            		<div><?php echo $v->url; ?></div>
+            	<?php } ?>
+            </div>
+            
            <div>
             <a href="/episodes"> + EPISODIS</a>
             <a href="/photos"> + IMATGES</a>

@@ -71,84 +71,80 @@ include 'view/header.html.php';
  	
  </div>
  <div id="main" class="threecols">
-  
- 		<div id="about-content">
-            <h3 class="title">Temporades</h3>    
+  <div id="about-content">
+            <h3 class="title"><a href="/story">Argument</a></h3>    
             <div class="about-page main-temp-page">
             	<div class="submain">
-			 	<center>
+		
+				 		<div class="justify" style="text-align: left;">	
+				 			      <a href="#">Breaking Bad</a> és una sèrie de televisió dramàtica Estats Units creada i produïda per <a href="/cast/actor/18">Vince Gilligan</a>.
+                Es va estrenar el 20 de gener del 2008 a la cadena de televisió per cable AMC... 			        	
+				        </div><div><a href="/story">llegir +</a></div>
+		
+			 	</div>
+            </div>
+		</div>		
+		
+ 		<div id="about-content">
+            <h3 class="title"><a href="/season">Temporades</a></h3>    
+            <div class="about-page main-temp-page">
+            	<div class="submain">
+            	<center>
+			 	<ul style="display:inline;list-style:none;">
+			 	
 			 		<?php
 			 			for($i=1;$i<6;$i++)
 			 			{ 			
 				 		?>
-				 		<div>	
-				 			<a href="./season/<?php echo $i; ?>"><h2>Season <?php echo $i; ?></h2></a>			        	
-				        	<a href="./season/<?php echo $i; ?>"><img src="/data/images/bb-s<?php echo $i; ?>.jpg"></img><a/>				        	
-				        </div>
+				 		<li style="display:inline-block;">	
+				        	<a href="./season/<?php echo $i; ?>"><img title="Season <?php echo $i; ?>" alt="Season <?php echo $i; ?>" src="/data/images/bb-s<?php echo $i; ?>.jpg"></img><a/>				        	
+				        </li>
 			 			<?php 
 			 			} 
 			 		?>
+			 	</ul>
 			 	</center>
 			 	</div>
             </div>
 		</div>		
 		
 		<div id="about-content">
-            <h3 class="title">Videos</h3>    
+            <h3 class="title"><a href="/video">Videos</a></h3>    
             <div class="about-page video-page">
             	<div class="submain">
 			 		<center>
-			 		<video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
-			        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
-			        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
-			        <video controls src="http://devfiles.myopera.com/articles/2642/sintel-trailer.ogv">Tu navegador no soporta HTML5 </video>
-			        </center>
+			 			<iframe width="350" height="250" src="http://www.youtube.com/embed/--z4YzxlT8o" frameborder="0" allowfullscreen></iframe>
+			 			<iframe width="350" height="250" src="http://www.youtube.com/embed/pSxpF5M0KTg" frameborder="0" allowfullscreen></iframe>		        </center>
 			    </div>
             </div>
 		</div>
 		
 		<div id="about-content">
-            <h3 class="title">Imatges</h3>    
+            <h3 class="title"><a href="/video">Imatges</a></h3>    
             <div class="about-page photos-page">
             	<div class="submain">
 			 		<center>
-			 		<?php
-		 			for($i=1;$i<6;$i++)
-		 			{ 			
-			 		?>
-				 		<label>			        	
-				        	<a href="/photos"><img src="/data/images/bb-s<?php echo $i; ?>.jpg"></img><a/>				        	
-				        </label>
-				 	<?php 
-				 	} 
-		 			for($i=1;$i<6;$i++)
-		 			{ 			
-			 		?>
-				 		<label>		        	
-				        	<a href="/photos"><img src="/data/images/cast/<?php echo $i; ?>.jpg"></img><a/>				        	
-				        </label>
-				 	<?php 
-				 	} 
-				 	?>
+			 				<a title="Primer temporada" alt="Primer temporada" href="./photos/1"><img src="/data/images/t1/1.jpg"></img><a/>	
+				        	<a title="Segona temporada" alt="Segona temporada" href="./photos/2"><img src="/data/images/t2/1.jpg"></img><a/>	
+				        	<a title="Tercera temporada" alt="Tercera temporada" href="./photos/3"><img src="/data/images/t3/3.jpg"></img><a/>
+				        	<a title="Quarta temporada" alt="Quarta temporada" href="./photos/4"><img src="/data/images/t4/1.jpg"></img><a/>	
+				        	<a title="Quinta temporada" alt="Quinta temporada" href="./photos/5"><img src="/data/images/t5/1.jpg"></img><a/>		
 			        </center>
 			 	</div>
             </div>
 		</div>
 		
 		<div id="about-content">
-            <h3 class="title">Actors</h3>    
+            <h3 class="title"><a href="./cast">Actors</a></h3>    
             <div class="about-page photos-page">
             	<div class="submain">
 			 		<center>
-		 			<?php for($i=1;$i<6;$i++)
-		 			{ 			
-			 		?>
-				 		<label>		        	
-				        	<a href="/cast/actor/<?php echo $i; ?>"><img src="/data/images/cast/<?php echo $i; ?>.jpg"></img><a/>				        	
-				        </label>
-				 	<?php 
-				 	} 
-				 	?>
+						<a title="Walter White" alt="Walter White" href="/cast/actor/1"><img src="/data/images/cast/1.jpg"></img><a/>
+						<a title="Skyler" alt="Skyler" href="/cast/actor/2"><img src="/data/images/cast/2.jpg"></img><a/>
+						<a title="Jesse" alt="Jesse"" href="/cast/actor/3"><img src="/data/images/cast/3.jpg"></img><a/>
+						<a title="WW Jr" alt="WW Jr"" href="/cast/actor/4"><img src="/data/images/cast/4.jpg"></img><a/>
+						<a title="Hank" alt="Hank"" href="/cast/actor/5"><img src="/data/images/cast/5.jpg"></img><a/>
+						<a title="Marie" alt="Marie"" href="/cast/actor/6"><img src="/data/images/cast/6.jpg"></img><a/>
 			        </center>
 			 	</div>
             </div>

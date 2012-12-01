@@ -39,19 +39,18 @@ namespace Goteo\Controller {
         				'view/video/index.html.php',
         				array(
         						'temporades' => $temp
+        						
         				)
         		);
         	}
         	else {
         	
-        		//$temp = Model\Season::get($id);
-        		//$episodes = Model\Episodes::get($id);
+        		$video = Model\Video::get($id);
         	
         		return new View(
         				'view/video/video.html.php',
         				array(
-        						//'temporada' => $temp,
-        						//'episodis' => $episodes
+        						'video' => $video,
         						'id' => $id
         				)
         		);

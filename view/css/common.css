@@ -23,6 +23,16 @@
 	border:0px;	
 }
 
+.justify
+{
+	text-align:justify;
+}
+
+a
+{
+	text-decoration:none;
+}
+
 html {
     height: 100%;
     margin: 0;
@@ -48,11 +58,6 @@ body, td, th, input, textarea, button {
     font-size: 12px;
     color: #14681E;
     /*text-align:justify;*/
-}
-
-a
-{
-	text-decoration:none;
 }
 
 
