@@ -145,6 +145,7 @@ include 'view/header.html.php';
 						<a title="WW Jr" alt="WW Jr"" href="/cast/actor/4"><img src="/data/images/cast/4.jpg"></img><a/>
 						<a title="Hank" alt="Hank"" href="/cast/actor/5"><img src="/data/images/cast/5.jpg"></img><a/>
 						<a title="Marie" alt="Marie"" href="/cast/actor/6"><img src="/data/images/cast/6.jpg"></img><a/>
+						<a title="More" alt="More"" href="/cast/"><img src="/data/images/cast/more.png"></img><a/>
 			        </center>
 			 	</div>
             </div>
