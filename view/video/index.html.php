@@ -40,28 +40,28 @@ $go_up = Text::get('regular-go_up');
 	</div>
 
 	<div id="main" class="threecols">
-		<div id="about-content">
-            <h3 class="title">Youtube</h3>
-    
-		<div class="about-page">
-		<div class="temp-page">
-	            
-	            <ul>
-	            <?php
-	  			
-	            if (!empty($temporades)) {
-            	               		foreach ($temporades as $temporada) :?>
-            	               		<li>
-            	               		<span><a id="tempTitol" href="/video/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></span>	               	
-            	               		<div>
-            	                	<a href="/video/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg"></a>
-            	                	</div>
-            	               		</li>
-                                    <?php endforeach;
-	                         }
-	            ?>
-	            </ul>
+		<?php
+            if (!empty($temporades)) {
+	       foreach ($temporades as $temporada) :?>
+			<div id="about-content">
+            <h3 class="title"><a id="tempTitol" href="/video/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></h3>
+                <div class="about-page">
+                <div class="temp-page">
+               	<ul>
+               		<li>              	
+               		<div>
+                	<a href="/video/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg"></a>
+                	</div>
+               		</li>
+                </ul>  
+                </div>
+                
+               </div>
 		</div>
+		<?php
+		endforeach;
+         }
+        ?>
 	
 	</div>
     

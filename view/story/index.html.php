@@ -40,7 +40,7 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="main" class="threecols">
 		<div id="about-content">
-            <h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>
+            <h3 class="title">Sinopsi</h3>
     
                 <div class="about-page story-page">
                 <a href="#">Breaking Bad</a> és una sèrie de televisió dramàtica Estats Units creada i produïda per <a href="">Vince Gilligan</a>.
@@ -54,6 +54,16 @@ $go_up = Text::get('regular-go_up');
                 </div>
 		</div>
 	
+	
+			<div id="about-content">
+            <h3 class="title">Premis i nominacions</h3>
+    
+                <div class="about-page story-page">
+         La sèrie va obtenir quatre nominacions als premis Emmy del 2008, entre els que destaca el de millor actor en sèrie dramàtica per en Bryan Cranston i el de millor direcció en una sèrie dramàtica per Vince Gilligan, escriptor i creador de la sèrie, per l’episodi pilot. Finalment, la sèrie es va emportar el primer dels premis i el de millor muntatge en una sèrie dramàtica en mono càmera per Lynne Willigham. La sèrie va obtenir una nominació als premis Satellite i va tornar a guanyar a la categoria de millor actor en sèrie dramàtica per Cranston. La temporada va rebre tres nominacions per els Writer Guild of America Awards 2009, com a millor sèrie nova i millor episodi dramàtic per l’episodi pilot (resultat guanyador) i el titulat <<Grey Matter>>.
+Al 2009 i 2010 va obtenir l’Emmy al millor actor en sèrie dramàtica per en Bryan Cranston, i al 2010 i 2012 l’Emmy al millor actor de repartiment en sèrie dramàtica per en Aaron Paul.
+         
+                </div>
+		</div>
 	</div>
     
 <?php

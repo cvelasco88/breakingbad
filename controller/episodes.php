@@ -31,25 +31,33 @@ namespace Goteo\Controller {
 
     class Episodes extends \Goteo\Core\Controller {
         
-        public function index () {
+        public function index ($id = null) {
 
-         
+            if (empty($id)) {
 
-                $episodis1 = Model\Episodes::get(1);
-                $episodis2 = Model\Episodes::get(2);
-                $episodis3 = Model\Episodes::get(3);
-                $episodis4 = Model\Episodes::get(4);
-                $episodis5 = Model\Episodes::get(5);
+                $temp = Model\Season::getAll();
 
-                return new View('view/episodes/index.html.php',
+                return new View(
+                		'view/episodes/index.html.php',
                     array(
-                        'episodis1' => $episodis1,
-                    	'episodis2' => $episodis2,
-                    	'episodis3' => $episodis3,
-                    	'episodis4' => $episodis4,
-                    	'episodis5' => $episodis5
+                        'temporades' => $temp
                     )
                  );
+            }
+            else {
+
+	            $temp = Model\Season::get($id);
+	            $episodes = Model\Episodes::get($id);
+	            
+	            return new View(
+	                    'view/episodes/episode.html.php',
+	                    array(
+	                        'temporada' => $temp,
+	                        'episodis' => $episodes
+	                    )
+	            );
+            }
+
         }
         
     }

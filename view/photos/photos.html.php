@@ -22,6 +22,7 @@ use Goteo\Library\Text,
     Goteo\Core\View;
 
 $id = $this['id'];
+$temporada = $this['temporada'];
 
 include 'view/prologue.html.php';
 include 'view/header.html.php';
@@ -44,10 +45,11 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="main" class="threecols">
 		<div id="about-content">
+		<h3 class="title"><?php echo $temporada->nom; ?></h3>
 		<div class="about-page">
         <div class="temp-page">
          
-            <h3 class="title">Temporada <?php $id ?></h3>
+            
             	<?php 
             		for($i=1;$i<11;$i++)
             		{?>

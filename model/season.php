@@ -28,7 +28,8 @@ namespace Goteo\Model {
 
         public
             $id,
-            $nom;
+            $nom,
+        	$descripcio;
         
 
         /*
@@ -39,7 +40,8 @@ namespace Goteo\Model {
                 $query = static::query("
                     SELECT
                         id,
-                        nom                		
+                        nom, 
+                		descripcio               		
                     FROM    temporades
                     WHERE id = :id
                     ", array(':id' => $id));
@@ -55,7 +57,8 @@ namespace Goteo\Model {
         	$query = static::query("
                     SELECT
                         id,
-                        nom                		
+                        nom, 
+        				descripcio               		
                     FROM    temporades"
         			);
         

@@ -41,30 +41,28 @@ $go_up = Text::get('regular-go_up');
 	</div>
 
 	<div id="main" class="threecols">
-		<div id="about-content">
-			<h3 class="title"><?php //echo Text::get('regular-header-about'); ?></h3>
-		
-		<div class="about-page">
-		<div class="temp-page">
-	            
-	            <ul>
-	            <?php
-	  			
-	            if (!empty($temporades)) {
-            	               		foreach ($temporades as $temporada) :?>
-            	               		<li>
-            	               		<span><a id="tempTitol" href="/photos/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></span>	               	
-            	               		<div>
-            	                	<a href="/photos/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg"></a>
-            	                	</div>
-            	               		</li>
-                                    <?php endforeach;
-	                         }
-	            ?>
-	            </ul>
-            </div>
+		<?php
+            if (!empty($temporades)) {
+	       foreach ($temporades as $temporada) :?>
+			<div id="about-content">
+            <h3 class="title"><a id="tempTitol" href="/photos/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></h3>
+                <div class="about-page">
+                <div class="temp-page">
+               	<ul>
+               		<li>              	
+               		<div>
+                	<a href="/photos/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg"></a>
+                	</div>
+               		</li>
+                </ul>  
+                </div>
+                
+               </div>
 		</div>
-	</div>
+		<?php
+		endforeach;
+         }
+        ?>
 	</div>
     
 <?php

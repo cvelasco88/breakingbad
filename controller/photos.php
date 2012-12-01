@@ -45,13 +45,13 @@ namespace Goteo\Controller {
             }
             else {
             
-            	//$temp = Model\Season::get($id);
+            	$temp = Model\Season::get($id);
             	//$episodes = Model\Episodes::get($id);
             	 
             	return new View(
             			'view/photos/photos.html.php',
             			array(
-            					//'temporada' => $temp,
+            					'temporada' => $temp,
             					//'episodis' => $episodes
             					'id' => $id
             			)

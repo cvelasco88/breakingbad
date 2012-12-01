@@ -45,13 +45,15 @@ namespace Goteo\Controller {
         	}
         	else {
         	
+        		$temp = Model\Season::get($id);
         		$video = Model\Video::get($id);
         	
         		return new View(
         				'view/video/video.html.php',
         				array(
         						'video' => $video,
-        						'id' => $id
+        						'id' => $id,
+        						'temporada' => $temp
         				)
         		);
         	}

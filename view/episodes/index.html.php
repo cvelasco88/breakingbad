@@ -21,11 +21,7 @@
 use Goteo\Library\Text,
     Goteo\Core\View;
 
-$episodis1 = $this['episodis1'];
-$episodis2 = $this['episodis2'];
-$episodis3 = $this['episodis3'];
-$episodis4 = $this['episodis4'];
-$episodis5 = $this['episodis5'];
+$temporades = $this['temporades'];
 
 include 'view/prologue.html.php';
 include 'view/header.html.php';
@@ -37,38 +33,35 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="sub-header-secondary">
 		<div class="clearfix">
-			<h2><a href="/episodes">Episodis</a></h2>
+			<h2><a href="/season">Temporades</a></h2>
             <?php echo new View('view/header/share.html.php'); ?>
 		</div>
 	</div>
 
 	<div id="main" class="threecols">
-	<?php for($i=1;$i<6;$i++){?>
-		<div id="about-content">
-            <h3 class="title"><a href="/season/<?php echo $i; ?>">Temporada <?php echo $i;?></a></h3>    
+		<?php
+            if (!empty($temporades)) {
+	       foreach ($temporades as $temporada) :?>
+			<div id="about-content">
+            <h3 class="title"><a id="tempTitol" href="/episodes/<?php echo $temporada->id; ?>"><?php echo $temporada->nom; ?></a></h3>
                 <div class="about-page">
-                <div class="temp-page">                
-               	<?php
-               		$aux = "episodis".$i;
-               		if (!empty($$aux)) {?>
-               		
-               		<ul>
-               		
-               		<?php foreach ($$aux as $ep) :?>
-	               		<li>
-	               		<label><?php echo "<b>Capitol $ep->id</b> - "; ?></label>
-	                	<label><?php echo $ep->titol."<br>"; ?></label>
-	                	<div style="padding-right:20px;"><?php echo $ep->descripcio; ?></div>	                	
-	               		</li>
-                        <?php endforeach; ?>
-                     </ul>
-                    <?php 
-               		}
-               		?>              
+                <div class="temp-page">
+               	<ul>
+               		<li>              	
+               		<div>
+                	<a href="/episodes/<?php echo $temporada->id; ?>"> <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg"></a>
+                	</div>
+               		</li>
+                </ul>  
                 </div>
-            	</div>
-		</div>	
-		<?php } ?>
+                
+               </div>
+		</div>
+		<?php
+		endforeach;
+         }
+        ?>
+	
 	</div>
     
 <?php

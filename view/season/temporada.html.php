@@ -51,22 +51,9 @@ $go_up = Text::get('regular-go_up');
                 <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg">
                 </div>
 
-               	<?php
-               		if (!empty($episodis)) {?>
-               		
-               		<ul>
-               		
-               		<?php foreach ($episodis as $ep) :?>
-	               		<li>
-	               		<label><?php echo "<b>Capitol $ep->id</b> - "; ?></label>
-	                	<label><?php echo $ep->titol."<br>"; ?></label>
-	                	<div style="padding-right:20px;"><?php echo $ep->descripcio; ?></div>	                	
-	               		</li>
-                        <?php endforeach; ?>
-                     </ul>
-                    <?php 
-               		}
-               		?>
+            	<div class="justify">
+               <?php echo $temporada->descripcio; ?>
+                </div>
               
                 </div>
                 <a href="/episodes"> + EPISODIS</a>

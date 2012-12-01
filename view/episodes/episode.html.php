@@ -21,9 +21,8 @@
 use Goteo\Library\Text,
     Goteo\Core\View;
 
-$video = $this['video'];
-$id = $this['id'];
 $temporada = $this['temporada'];
+$episodis = $this['episodis'];
 
 include 'view/prologue.html.php';
 include 'view/header.html.php';
@@ -35,29 +34,48 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="sub-header-secondary">
 		<div class="clearfix">
-			<h2><a href="/video">Videos</a></h2>
+			<h2><a href="/episodes">Episodis</a></h2>
             <?php echo new View('view/header/share.html.php'); ?>
 		</div>
 	</div>
 
 	<div id="main" class="threecols">
 		<div id="about-content">
-		<h3 class="title"><?php echo $temporada->nom; ?></h3>
-		<div class="about-page">
-        <div class="video-page">
+		<?php if (!empty($temporada)) { ?>
+            <h3 class="title"><?php echo $temporada->nom; ?></h3>
+    
+                <div class="about-page">
+                <div class="temp-page">
          
-            
-			<div>
-            	<?php  foreach ($video as $v) {?>
-            		<?php echo $v->url; ?>
-            	<?php } ?>
-            </div>
-           <div>
-            <a href="/episodes"> + EPISODIS</a>
-            <a href="/photos"> + IMATGES</a>
-            <a href="/video"> + VIDEOS</a>
-           </div>
+               	<div>
+                <img src="/data/images/bb-s<?php echo $temporada->id; ?>.jpg">
+                </div>
 
+               	<?php
+               		if (!empty($episodis)) {?>
+               		
+               		<ul>
+               		
+               		<?php foreach ($episodis as $ep) :?>
+	               		<li>
+	               		<label><?php echo "<b>Capitol $ep->id</b> - "; ?></label>
+	                	<label><?php echo $ep->titol."<br>"; ?></label>
+	                	<div style="padding-right:20px;"><?php echo $ep->descripcio; ?></div>	                	
+	               		</li>
+                        <?php endforeach; ?>
+                     </ul>
+                    <?php 
+               		}
+               		?>
+              
+                </div>
+                <a href="/episodes"> + EPISODIS</a>
+                <a href="/photos"> + IMATGES</a>
+                <a href="/video"> + VIDEOS</a>
+               </div>
+              <?php
+              }
+              ?>
 		</div>
 	
 	</div>
