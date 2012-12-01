@@ -42,7 +42,7 @@ include 'view/header.html.php'; ?>
 		                	<label><?php echo "$actor->nomserie ($actor->nomreal)"; ?></label>
 		                	<label><?php echo "Actor $actor->tipus"; ?></label>
 		               		</li>
-	                   		<li>
+	                   		<li style="display:block;">
 			                	<div><img src="/data/images/cast/<?php echo $actor->id; ?>.jpg"></div>
 			                	<div><?php echo $actor->descripcio; ?></div>
 			               	</li>

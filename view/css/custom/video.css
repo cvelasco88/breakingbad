@@ -1,1 +1,8 @@
 @CHARSET "ISO-8859-1";
+
+.video-page label
+{
+	width:640px;
+	height:480px;
+	padding:10px;
+}

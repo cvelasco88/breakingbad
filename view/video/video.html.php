@@ -42,13 +42,13 @@ $go_up = Text::get('regular-go_up');
 	<div id="main" class="threecols">
 		<div id="about-content">
 		<div class="about-page">
-        <div class="temp-page">
+        <div class="video-page">
          
             <h3 class="title">Temporada <?php echo $id; ?></h3>
 
             <div>
             	<?php  foreach ($video as $v) {?>
-            		<div><?php echo $v->url; ?></div>
+            		<label><?php echo $v->url; ?></label>
             	<?php } ?>
             </div>
             

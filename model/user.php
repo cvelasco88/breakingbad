@@ -110,7 +110,7 @@ namespace Goteo\Model {
                     if(!in_array('password',$skip_validations)) $data[':password'] = sha1($this->password);
                     $data[':created'] = date('Y-m-d H:i:s');
                     $data[':active'] = true;
-                    $data[':confirmed'] = false;
+                    $data[':confirmed'] = true;
 
                     // Rol por defecto.
                     if (!empty($this->id)) {

@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 30-11-2012 a les 19:16:48
--- Versió del servidor: 5.5.27
--- Versió de PHP: 5.4.7
+-- Tiempo de generación: 02-12-2012 a las 00:10:12
+-- Versión del servidor: 5.5.27
+-- Versión de PHP: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,15 +17,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de dades: `breaking`
+-- Base de datos: `breaking`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `acl`
+-- Estructura de tabla para la tabla `acl`
 --
 
+DROP TABLE IF EXISTS `acl`;
 CREATE TABLE IF NOT EXISTS `acl` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `node_id` varchar(50) NOT NULL,
@@ -41,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `acl` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=74 ;
 
 --
--- Bolcant dades de la taula `acl`
+-- Volcado de datos para la tabla `acl`
 --
 
 INSERT INTO `acl` (`id`, `node_id`, `role_id`, `user_id`, `url`, `allow`, `timestamp`) VALUES
@@ -112,9 +113,10 @@ INSERT INTO `acl` (`id`, `node_id`, `role_id`, `user_id`, `url`, `allow`, `times
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `banner`
+-- Estructura de tabla para la tabla `banner`
 --
 
+DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `node` varchar(50) NOT NULL,
@@ -129,9 +131,10 @@ CREATE TABLE IF NOT EXISTS `banner` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `blog`
+-- Estructura de tabla para la tabla `blog`
 --
 
+DROP TABLE IF EXISTS `blog`;
 CREATE TABLE IF NOT EXISTS `blog` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `type` varchar(10) NOT NULL,
@@ -141,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Blogs de nodo o proyecto' AUTO_INCREMENT=2 ;
 
 --
--- Bolcant dades de la taula `blog`
+-- Volcado de datos para la tabla `blog`
 --
 
 INSERT INTO `blog` (`id`, `type`, `owner`, `active`) VALUES
@@ -150,9 +153,10 @@ INSERT INTO `blog` (`id`, `type`, `owner`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `campaign`
+-- Estructura de tabla para la tabla `campaign`
 --
 
+DROP TABLE IF EXISTS `campaign`;
 CREATE TABLE IF NOT EXISTS `campaign` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -164,9 +168,10 @@ CREATE TABLE IF NOT EXISTS `campaign` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `cast`
+-- Estructura de tabla para la tabla `cast`
 --
 
+DROP TABLE IF EXISTS `cast`;
 CREATE TABLE IF NOT EXISTS `cast` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `nomserie` varchar(50) NOT NULL,
@@ -178,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `cast` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Bolcant dades de la taula `cast`
+-- Volcado de datos para la tabla `cast`
 --
 
 INSERT INTO `cast` (`id`, `nomserie`, `nomreal`, `tipus`, `descripcio`, `imatge`) VALUES
@@ -194,7 +199,7 @@ INSERT INTO `cast` (`id`, `nomserie`, `nomreal`, `tipus`, `descripcio`, `imatge`
 (10, 'Ted Beneke', 'Christopher Cousins', 'secundari', 'Va ser el cap de la <a href="/cast/actor/2">Skyler</a> en una empresa d’on ella treballava com a comptable.', ''),
 (11, 'Steven Gomez ', 'Steven Michael Quezada', 'secundari', 'És el company d’en <a href="/cast/actor/5">Hank</a> a la DEA.', ''),
 (12, 'Gretchen Schwartz', 'Jessica Hecht', 'secundari', 'És l’antiga assistenta de química de <a href="/cast/actor/1">Walter</a> a la universitat. Actualment es propietària de la meitat de la companyia Gray Matter (<<materia girs>>), una companyia farmacèutica exitosa. Aparentment, va tenir interès romàntic per en <a href="/cast/actor/1">Walt</a>, però està casada amb l’<a href="/cast/actor/13">Elliot Schwartz</a>', ''),
-(13, 'Elliott Schwartz', 'Adam Godley', 'secundari', 'És l’antic company de ciències de <a href="/cast/actor/1">Walter</a> i propietari de la meitat de la companyia Gray Matter, cofundador d’aquesta juntament amb <a href="/cast/actor/1">Walter White</a>. Està casat amb en Gretchen.', ''),
+(13, 'Elliott Schwartz', 'Adam Godley', 'secundari', 'És l’antic company de ciències de <a href="/cast/actor/1">Walter</a> i propietari de la meitat de la companyia Gray Matter, cofundador d’aquesta juntament amb <a href="/cast/actor/1">Walter White</a>. Està casat amb en <a href="/cast/actor/12">Gretchen</a>.', ''),
 (14, 'Jane Margolis', 'Krysten Ritter', 'secundari', 'Xicota d’en <a href="/cast/actor/3">Jesse</a>, és addicte a l’heroïna i està en un pla de desintoxicació per pressió del seu pare.', ''),
 (15, 'Tuco Salamanca', 'Raymond Cruz', 'secundari', 'És un mexicà demencial especialista en drogues, es converteix en un distribuïdor de metaenfetamina de <a href="/cast/actor/3">Jeese</a> i <a href="/cast/actor/1">Walter</a>. És imprevisible i propens a enfadar-se violentament, però respecta en <a href="/cast/actor/1">Walt</a> pel seu producte superior, intel•ligència i valentia. ', ''),
 (16, 'Todd', 'Jesse Plemons', 'secundari', 'És un empleat de "Vamonos pest control" que assisteix a en <a href="/cast/actor/1">Walt</a> i <a href="/cast/actor/1">Jesse</a> en la seva refundació del negoci de fabricació de metaenfetamina.', ''),
@@ -205,9 +210,10 @@ INSERT INTO `cast` (`id`, `nomserie`, `nomreal`, `tipus`, `descripcio`, `imatge`
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `category`
+-- Estructura de tabla para la tabla `category`
 --
 
+DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext,
@@ -218,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Categorias de los proyectos' AUTO_INCREMENT=15 ;
 
 --
--- Bolcant dades de la taula `category`
+-- Volcado de datos para la tabla `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `description`, `order`) VALUES
@@ -234,9 +240,10 @@ INSERT INTO `category` (`id`, `name`, `description`, `order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `category_lang`
+-- Estructura de tabla para la tabla `category_lang`
 --
 
+DROP TABLE IF EXISTS `category_lang`;
 CREATE TABLE IF NOT EXISTS `category_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -246,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `category_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Bolcant dades de la taula `category_lang`
+-- Volcado de datos para la tabla `category_lang`
 --
 
 INSERT INTO `category_lang` (`id`, `lang`, `name`, `description`) VALUES
@@ -278,9 +285,10 @@ INSERT INTO `category_lang` (`id`, `lang`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `comment`
+-- Estructura de tabla para la tabla `comment`
 --
 
+DROP TABLE IF EXISTS `comment`;
 CREATE TABLE IF NOT EXISTS `comment` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post` bigint(20) unsigned NOT NULL,
@@ -293,9 +301,10 @@ CREATE TABLE IF NOT EXISTS `comment` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `cost`
+-- Estructura de tabla para la tabla `cost`
 --
 
+DROP TABLE IF EXISTS `cost`;
 CREATE TABLE IF NOT EXISTS `cost` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `project` varchar(50) NOT NULL,
@@ -313,9 +322,10 @@ CREATE TABLE IF NOT EXISTS `cost` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `cost_lang`
+-- Estructura de tabla para la tabla `cost_lang`
 --
 
+DROP TABLE IF EXISTS `cost_lang`;
 CREATE TABLE IF NOT EXISTS `cost_lang` (
   `id` int(20) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -327,9 +337,10 @@ CREATE TABLE IF NOT EXISTS `cost_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `criteria`
+-- Estructura de tabla para la tabla `criteria`
 --
 
+DROP TABLE IF EXISTS `criteria`;
 CREATE TABLE IF NOT EXISTS `criteria` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `section` varchar(50) NOT NULL DEFAULT 'node',
@@ -341,7 +352,7 @@ CREATE TABLE IF NOT EXISTS `criteria` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Criterios de puntuación' AUTO_INCREMENT=28 ;
 
 --
--- Bolcant dades de la taula `criteria`
+-- Volcado de datos para la tabla `criteria`
 --
 
 INSERT INTO `criteria` (`id`, `section`, `title`, `description`, `order`) VALUES
@@ -372,9 +383,10 @@ INSERT INTO `criteria` (`id`, `section`, `title`, `description`, `order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `criteria_lang`
+-- Estructura de tabla para la tabla `criteria_lang`
 --
 
+DROP TABLE IF EXISTS `criteria_lang`;
 CREATE TABLE IF NOT EXISTS `criteria_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -386,9 +398,10 @@ CREATE TABLE IF NOT EXISTS `criteria_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `episodis`
+-- Estructura de tabla para la tabla `episodis`
 --
 
+DROP TABLE IF EXISTS `episodis`;
 CREATE TABLE IF NOT EXISTS `episodis` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `numero` int(5) NOT NULL,
@@ -399,7 +412,7 @@ CREATE TABLE IF NOT EXISTS `episodis` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
 
 --
--- Bolcant dades de la taula `episodis`
+-- Volcado de datos para la tabla `episodis`
 --
 
 INSERT INTO `episodis` (`id`, `numero`, `temporada`, `titol`, `descripcio`) VALUES
@@ -461,9 +474,10 @@ INSERT INTO `episodis` (`id`, `numero`, `temporada`, `titol`, `descripcio`) VALU
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `faq`
+-- Estructura de tabla para la tabla `faq`
 --
 
+DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `node` varchar(50) NOT NULL,
@@ -478,9 +492,10 @@ CREATE TABLE IF NOT EXISTS `faq` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `faq_lang`
+-- Estructura de tabla para la tabla `faq_lang`
 --
 
+DROP TABLE IF EXISTS `faq_lang`;
 CREATE TABLE IF NOT EXISTS `faq_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -492,9 +507,10 @@ CREATE TABLE IF NOT EXISTS `faq_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `feed`
+-- Estructura de tabla para la tabla `feed`
 --
 
+DROP TABLE IF EXISTS `feed`;
 CREATE TABLE IF NOT EXISTS `feed` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext NOT NULL,
@@ -511,7 +527,7 @@ CREATE TABLE IF NOT EXISTS `feed` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log de eventos' AUTO_INCREMENT=3 ;
 
 --
--- Bolcant dades de la taula `feed`
+-- Volcado de datos para la tabla `feed`
 --
 
 INSERT INTO `feed` (`id`, `title`, `url`, `datetime`, `scope`, `type`, `html`, `image`) VALUES
@@ -521,9 +537,10 @@ INSERT INTO `feed` (`id`, `title`, `url`, `datetime`, `scope`, `type`, `html`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `glossary`
+-- Estructura de tabla para la tabla `glossary`
 --
 
+DROP TABLE IF EXISTS `glossary`;
 CREATE TABLE IF NOT EXISTS `glossary` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext,
@@ -537,9 +554,10 @@ CREATE TABLE IF NOT EXISTS `glossary` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `glossary_image`
+-- Estructura de tabla para la tabla `glossary_image`
 --
 
+DROP TABLE IF EXISTS `glossary_image`;
 CREATE TABLE IF NOT EXISTS `glossary_image` (
   `glossary` bigint(20) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -549,9 +567,10 @@ CREATE TABLE IF NOT EXISTS `glossary_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `glossary_lang`
+-- Estructura de tabla para la tabla `glossary_lang`
 --
 
+DROP TABLE IF EXISTS `glossary_lang`;
 CREATE TABLE IF NOT EXISTS `glossary_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -564,9 +583,10 @@ CREATE TABLE IF NOT EXISTS `glossary_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `icon`
+-- Estructura de tabla para la tabla `icon`
 --
 
+DROP TABLE IF EXISTS `icon`;
 CREATE TABLE IF NOT EXISTS `icon` (
   `id` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -577,7 +597,7 @@ CREATE TABLE IF NOT EXISTS `icon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Iconos para retorno/recompensa';
 
 --
--- Bolcant dades de la taula `icon`
+-- Volcado de datos para la tabla `icon`
 --
 
 INSERT INTO `icon` (`id`, `name`, `description`, `group`, `order`) VALUES
@@ -593,9 +613,10 @@ INSERT INTO `icon` (`id`, `name`, `description`, `group`, `order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `icon_lang`
+-- Estructura de tabla para la tabla `icon_lang`
 --
 
+DROP TABLE IF EXISTS `icon_lang`;
 CREATE TABLE IF NOT EXISTS `icon_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -605,7 +626,7 @@ CREATE TABLE IF NOT EXISTS `icon_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Bolcant dades de la taula `icon_lang`
+-- Volcado de datos para la tabla `icon_lang`
 --
 
 INSERT INTO `icon_lang` (`id`, `lang`, `name`, `description`) VALUES
@@ -629,9 +650,10 @@ INSERT INTO `icon_lang` (`id`, `lang`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `icon_license`
+-- Estructura de tabla para la tabla `icon_license`
 --
 
+DROP TABLE IF EXISTS `icon_license`;
 CREATE TABLE IF NOT EXISTS `icon_license` (
   `icon` varchar(50) NOT NULL,
   `license` varchar(50) NOT NULL,
@@ -639,7 +661,7 @@ CREATE TABLE IF NOT EXISTS `icon_license` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Licencias para cada icono, solo social';
 
 --
--- Bolcant dades de la taula `icon_license`
+-- Volcado de datos para la tabla `icon_license`
 --
 
 INSERT INTO `icon_license` (`icon`, `license`) VALUES
@@ -697,9 +719,10 @@ INSERT INTO `icon_license` (`icon`, `license`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `image`
+-- Estructura de tabla para la tabla `image`
 --
 
+DROP TABLE IF EXISTS `image`;
 CREATE TABLE IF NOT EXISTS `image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -709,7 +732,7 @@ CREATE TABLE IF NOT EXISTS `image` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Bolcant dades de la taula `image`
+-- Volcado de datos para la tabla `image`
 --
 
 INSERT INTO `image` (`id`, `name`, `type`, `size`) VALUES
@@ -718,9 +741,10 @@ INSERT INTO `image` (`id`, `name`, `type`, `size`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `info`
+-- Estructura de tabla para la tabla `info`
 --
 
+DROP TABLE IF EXISTS `info`;
 CREATE TABLE IF NOT EXISTS `info` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `node` varchar(50) NOT NULL,
@@ -737,9 +761,10 @@ CREATE TABLE IF NOT EXISTS `info` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `info_image`
+-- Estructura de tabla para la tabla `info_image`
 --
 
+DROP TABLE IF EXISTS `info_image`;
 CREATE TABLE IF NOT EXISTS `info_image` (
   `info` bigint(20) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -749,9 +774,10 @@ CREATE TABLE IF NOT EXISTS `info_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `info_lang`
+-- Estructura de tabla para la tabla `info_lang`
 --
 
+DROP TABLE IF EXISTS `info_lang`;
 CREATE TABLE IF NOT EXISTS `info_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -764,9 +790,10 @@ CREATE TABLE IF NOT EXISTS `info_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `invest`
+-- Estructura de tabla para la tabla `invest`
 --
 
+DROP TABLE IF EXISTS `invest`;
 CREATE TABLE IF NOT EXISTS `invest` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user` varchar(50) NOT NULL,
@@ -793,9 +820,10 @@ CREATE TABLE IF NOT EXISTS `invest` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `invest_address`
+-- Estructura de tabla para la tabla `invest_address`
 --
 
+DROP TABLE IF EXISTS `invest_address`;
 CREATE TABLE IF NOT EXISTS `invest_address` (
   `invest` bigint(20) unsigned NOT NULL,
   `user` varchar(50) NOT NULL,
@@ -811,9 +839,10 @@ CREATE TABLE IF NOT EXISTS `invest_address` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `invest_reward`
+-- Estructura de tabla para la tabla `invest_reward`
 --
 
+DROP TABLE IF EXISTS `invest_reward`;
 CREATE TABLE IF NOT EXISTS `invest_reward` (
   `invest` bigint(20) unsigned NOT NULL,
   `reward` bigint(20) unsigned NOT NULL,
@@ -824,9 +853,10 @@ CREATE TABLE IF NOT EXISTS `invest_reward` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `lang`
+-- Estructura de tabla para la tabla `lang`
 --
 
+DROP TABLE IF EXISTS `lang`;
 CREATE TABLE IF NOT EXISTS `lang` (
   `id` varchar(2) NOT NULL COMMENT 'Código ISO-639',
   `name` varchar(20) NOT NULL,
@@ -837,7 +867,7 @@ CREATE TABLE IF NOT EXISTS `lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Idiomas';
 
 --
--- Bolcant dades de la taula `lang`
+-- Volcado de datos para la tabla `lang`
 --
 
 INSERT INTO `lang` (`id`, `name`, `active`, `short`, `locale`) VALUES
@@ -854,9 +884,10 @@ INSERT INTO `lang` (`id`, `name`, `active`, `short`, `locale`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `license`
+-- Estructura de tabla para la tabla `license`
 --
 
+DROP TABLE IF EXISTS `license`;
 CREATE TABLE IF NOT EXISTS `license` (
   `id` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -868,7 +899,7 @@ CREATE TABLE IF NOT EXISTS `license` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Licencias de distribucion';
 
 --
--- Bolcant dades de la taula `license`
+-- Volcado de datos para la tabla `license`
 --
 
 INSERT INTO `license` (`id`, `name`, `description`, `group`, `url`, `order`) VALUES
@@ -902,9 +933,10 @@ INSERT INTO `license` (`id`, `name`, `description`, `group`, `url`, `order`) VAL
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `license_lang`
+-- Estructura de tabla para la tabla `license_lang`
 --
 
+DROP TABLE IF EXISTS `license_lang`;
 CREATE TABLE IF NOT EXISTS `license_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -915,7 +947,7 @@ CREATE TABLE IF NOT EXISTS `license_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Bolcant dades de la taula `license_lang`
+-- Volcado de datos para la tabla `license_lang`
 --
 
 INSERT INTO `license_lang` (`id`, `lang`, `name`, `description`, `url`) VALUES
@@ -975,9 +1007,10 @@ INSERT INTO `license_lang` (`id`, `lang`, `name`, `description`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `mail`
+-- Estructura de tabla para la tabla `mail`
 --
 
+DROP TABLE IF EXISTS `mail`;
 CREATE TABLE IF NOT EXISTS `mail` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `email` tinytext NOT NULL,
@@ -991,9 +1024,10 @@ CREATE TABLE IF NOT EXISTS `mail` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `message`
+-- Estructura de tabla para la tabla `message`
 --
 
+DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user` varchar(50) NOT NULL,
@@ -1010,9 +1044,10 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `message_lang`
+-- Estructura de tabla para la tabla `message_lang`
 --
 
+DROP TABLE IF EXISTS `message_lang`;
 CREATE TABLE IF NOT EXISTS `message_lang` (
   `id` int(20) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1023,9 +1058,10 @@ CREATE TABLE IF NOT EXISTS `message_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `news`
+-- Estructura de tabla para la tabla `news`
 --
 
+DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext NOT NULL,
@@ -1039,9 +1075,10 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `news_lang`
+-- Estructura de tabla para la tabla `news_lang`
 --
 
+DROP TABLE IF EXISTS `news_lang`;
 CREATE TABLE IF NOT EXISTS `news_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1054,9 +1091,10 @@ CREATE TABLE IF NOT EXISTS `news_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `node`
+-- Estructura de tabla para la tabla `node`
 --
 
+DROP TABLE IF EXISTS `node`;
 CREATE TABLE IF NOT EXISTS `node` (
   `id` varchar(50) NOT NULL,
   `name` varchar(256) NOT NULL,
@@ -1065,7 +1103,7 @@ CREATE TABLE IF NOT EXISTS `node` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Nodos';
 
 --
--- Bolcant dades de la taula `node`
+-- Volcado de datos para la tabla `node`
 --
 
 INSERT INTO `node` (`id`, `name`, `active`) VALUES
@@ -1074,9 +1112,10 @@ INSERT INTO `node` (`id`, `name`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `page`
+-- Estructura de tabla para la tabla `page`
 --
 
+DROP TABLE IF EXISTS `page`;
 CREATE TABLE IF NOT EXISTS `page` (
   `id` varchar(50) NOT NULL,
   `name` tinytext NOT NULL,
@@ -1086,7 +1125,7 @@ CREATE TABLE IF NOT EXISTS `page` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Páginas institucionales';
 
 --
--- Bolcant dades de la taula `page`
+-- Volcado de datos para la tabla `page`
 --
 
 INSERT INTO `page` (`id`, `name`, `description`, `url`) VALUES
@@ -1111,9 +1150,10 @@ INSERT INTO `page` (`id`, `name`, `description`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `page_lang`
+-- Estructura de tabla para la tabla `page_lang`
 --
 
+DROP TABLE IF EXISTS `page_lang`;
 CREATE TABLE IF NOT EXISTS `page_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1125,9 +1165,10 @@ CREATE TABLE IF NOT EXISTS `page_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `page_node`
+-- Estructura de tabla para la tabla `page_node`
 --
 
+DROP TABLE IF EXISTS `page_node`;
 CREATE TABLE IF NOT EXISTS `page_node` (
   `page` varchar(50) NOT NULL,
   `node` varchar(50) NOT NULL,
@@ -1139,9 +1180,10 @@ CREATE TABLE IF NOT EXISTS `page_node` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `post`
+-- Estructura de tabla para la tabla `post`
 --
 
+DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `blog` bigint(20) unsigned NOT NULL,
@@ -1161,7 +1203,7 @@ CREATE TABLE IF NOT EXISTS `post` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Entradas para la portada' AUTO_INCREMENT=2 ;
 
 --
--- Bolcant dades de la taula `post`
+-- Volcado de datos para la tabla `post`
 --
 
 INSERT INTO `post` (`id`, `blog`, `title`, `text`, `media`, `image`, `date`, `order`, `allow`, `home`, `footer`, `publish`, `legend`) VALUES
@@ -1170,9 +1212,10 @@ INSERT INTO `post` (`id`, `blog`, `title`, `text`, `media`, `image`, `date`, `or
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `post_image`
+-- Estructura de tabla para la tabla `post_image`
 --
 
+DROP TABLE IF EXISTS `post_image`;
 CREATE TABLE IF NOT EXISTS `post_image` (
   `post` bigint(20) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -1182,9 +1225,10 @@ CREATE TABLE IF NOT EXISTS `post_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `post_lang`
+-- Estructura de tabla para la tabla `post_lang`
 --
 
+DROP TABLE IF EXISTS `post_lang`;
 CREATE TABLE IF NOT EXISTS `post_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1198,9 +1242,10 @@ CREATE TABLE IF NOT EXISTS `post_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `post_tag`
+-- Estructura de tabla para la tabla `post_tag`
 --
 
+DROP TABLE IF EXISTS `post_tag`;
 CREATE TABLE IF NOT EXISTS `post_tag` (
   `post` bigint(20) unsigned NOT NULL,
   `tag` bigint(20) unsigned NOT NULL,
@@ -1210,9 +1255,10 @@ CREATE TABLE IF NOT EXISTS `post_tag` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `project`
+-- Estructura de tabla para la tabla `project`
 --
 
+DROP TABLE IF EXISTS `project`;
 CREATE TABLE IF NOT EXISTS `project` (
   `id` varchar(50) NOT NULL,
   `name` tinytext,
@@ -1273,9 +1319,10 @@ CREATE TABLE IF NOT EXISTS `project` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `project_account`
+-- Estructura de tabla para la tabla `project_account`
 --
 
+DROP TABLE IF EXISTS `project_account`;
 CREATE TABLE IF NOT EXISTS `project_account` (
   `project` varchar(50) NOT NULL,
   `bank` tinytext,
@@ -1286,9 +1333,10 @@ CREATE TABLE IF NOT EXISTS `project_account` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `project_category`
+-- Estructura de tabla para la tabla `project_category`
 --
 
+DROP TABLE IF EXISTS `project_category`;
 CREATE TABLE IF NOT EXISTS `project_category` (
   `project` varchar(50) NOT NULL,
   `category` int(12) NOT NULL,
@@ -1298,9 +1346,10 @@ CREATE TABLE IF NOT EXISTS `project_category` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `project_image`
+-- Estructura de tabla para la tabla `project_image`
 --
 
+DROP TABLE IF EXISTS `project_image`;
 CREATE TABLE IF NOT EXISTS `project_image` (
   `project` varchar(50) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -1310,9 +1359,10 @@ CREATE TABLE IF NOT EXISTS `project_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `project_lang`
+-- Estructura de tabla para la tabla `project_lang`
 --
 
+DROP TABLE IF EXISTS `project_lang`;
 CREATE TABLE IF NOT EXISTS `project_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1331,9 +1381,10 @@ CREATE TABLE IF NOT EXISTS `project_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `promote`
+-- Estructura de tabla para la tabla `promote`
 --
 
+DROP TABLE IF EXISTS `promote`;
 CREATE TABLE IF NOT EXISTS `promote` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `node` varchar(50) NOT NULL,
@@ -1350,9 +1401,10 @@ CREATE TABLE IF NOT EXISTS `promote` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `promote_lang`
+-- Estructura de tabla para la tabla `promote_lang`
 --
 
+DROP TABLE IF EXISTS `promote_lang`;
 CREATE TABLE IF NOT EXISTS `promote_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -1364,9 +1416,10 @@ CREATE TABLE IF NOT EXISTS `promote_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `purpose`
+-- Estructura de tabla para la tabla `purpose`
 --
 
+DROP TABLE IF EXISTS `purpose`;
 CREATE TABLE IF NOT EXISTS `purpose` (
   `text` varchar(50) NOT NULL,
   `purpose` text NOT NULL,
@@ -1376,7 +1429,7 @@ CREATE TABLE IF NOT EXISTS `purpose` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Explicación del propósito de los textos';
 
 --
--- Bolcant dades de la taula `purpose`
+-- Volcado de datos para la tabla `purpose`
 --
 
 INSERT INTO `purpose` (`text`, `purpose`, `html`, `group`) VALUES
@@ -2181,9 +2234,10 @@ INSERT INTO `purpose` (`text`, `purpose`, `html`, `group`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `review`
+-- Estructura de tabla para la tabla `review`
 --
 
+DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `project` varchar(50) NOT NULL,
@@ -2199,9 +2253,10 @@ CREATE TABLE IF NOT EXISTS `review` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `review_comment`
+-- Estructura de tabla para la tabla `review_comment`
 --
 
+DROP TABLE IF EXISTS `review_comment`;
 CREATE TABLE IF NOT EXISTS `review_comment` (
   `review` bigint(20) unsigned NOT NULL,
   `user` varchar(50) NOT NULL,
@@ -2215,9 +2270,10 @@ CREATE TABLE IF NOT EXISTS `review_comment` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `review_score`
+-- Estructura de tabla para la tabla `review_score`
 --
 
+DROP TABLE IF EXISTS `review_score`;
 CREATE TABLE IF NOT EXISTS `review_score` (
   `review` bigint(20) unsigned NOT NULL,
   `user` varchar(50) NOT NULL,
@@ -2229,9 +2285,10 @@ CREATE TABLE IF NOT EXISTS `review_score` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `reward`
+-- Estructura de tabla para la tabla `reward`
 --
 
+DROP TABLE IF EXISTS `reward`;
 CREATE TABLE IF NOT EXISTS `reward` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `project` varchar(50) NOT NULL,
@@ -2251,9 +2308,10 @@ CREATE TABLE IF NOT EXISTS `reward` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `reward_lang`
+-- Estructura de tabla para la tabla `reward_lang`
 --
 
+DROP TABLE IF EXISTS `reward_lang`;
 CREATE TABLE IF NOT EXISTS `reward_lang` (
   `id` int(20) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -2266,9 +2324,10 @@ CREATE TABLE IF NOT EXISTS `reward_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `role`
+-- Estructura de tabla para la tabla `role`
 --
 
+DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
   `id` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -2276,7 +2335,7 @@ CREATE TABLE IF NOT EXISTS `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Bolcant dades de la taula `role`
+-- Volcado de datos para la tabla `role`
 --
 
 INSERT INTO `role` (`id`, `name`) VALUES
@@ -2290,9 +2349,10 @@ INSERT INTO `role` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `sponsor`
+-- Estructura de tabla para la tabla `sponsor`
 --
 
+DROP TABLE IF EXISTS `sponsor`;
 CREATE TABLE IF NOT EXISTS `sponsor` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -2306,9 +2366,10 @@ CREATE TABLE IF NOT EXISTS `sponsor` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `support`
+-- Estructura de tabla para la tabla `support`
 --
 
+DROP TABLE IF EXISTS `support`;
 CREATE TABLE IF NOT EXISTS `support` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `project` varchar(50) NOT NULL,
@@ -2323,9 +2384,10 @@ CREATE TABLE IF NOT EXISTS `support` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `support_lang`
+-- Estructura de tabla para la tabla `support_lang`
 --
 
+DROP TABLE IF EXISTS `support_lang`;
 CREATE TABLE IF NOT EXISTS `support_lang` (
   `id` int(20) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -2337,9 +2399,10 @@ CREATE TABLE IF NOT EXISTS `support_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `tag`
+-- Estructura de tabla para la tabla `tag`
 --
 
+DROP TABLE IF EXISTS `tag`;
 CREATE TABLE IF NOT EXISTS `tag` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -2350,9 +2413,10 @@ CREATE TABLE IF NOT EXISTS `tag` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `tag_lang`
+-- Estructura de tabla para la tabla `tag_lang`
 --
 
+DROP TABLE IF EXISTS `tag_lang`;
 CREATE TABLE IF NOT EXISTS `tag_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -2363,9 +2427,10 @@ CREATE TABLE IF NOT EXISTS `tag_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `template`
+-- Estructura de tabla para la tabla `template`
 --
 
+DROP TABLE IF EXISTS `template`;
 CREATE TABLE IF NOT EXISTS `template` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -2377,7 +2442,7 @@ CREATE TABLE IF NOT EXISTS `template` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Plantillas emails automáticos' AUTO_INCREMENT=33 ;
 
 --
--- Bolcant dades de la taula `template`
+-- Volcado de datos para la tabla `template`
 --
 
 INSERT INTO `template` (`id`, `name`, `purpose`, `title`, `text`) VALUES
@@ -2417,9 +2482,10 @@ INSERT INTO `template` (`id`, `name`, `purpose`, `title`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `template_lang`
+-- Estructura de tabla para la tabla `template_lang`
 --
 
+DROP TABLE IF EXISTS `template_lang`;
 CREATE TABLE IF NOT EXISTS `template_lang` (
   `id` bigint(20) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -2431,9 +2497,10 @@ CREATE TABLE IF NOT EXISTS `template_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `temporades`
+-- Estructura de tabla para la tabla `temporades`
 --
 
+DROP TABLE IF EXISTS `temporades`;
 CREATE TABLE IF NOT EXISTS `temporades` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `nom` varchar(20) NOT NULL,
@@ -2441,7 +2508,7 @@ CREATE TABLE IF NOT EXISTS `temporades` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Bolcant dades de la taula `temporades`
+-- Volcado de datos para la tabla `temporades`
 --
 
 INSERT INTO `temporades` (`id`, `nom`) VALUES
@@ -2454,9 +2521,10 @@ INSERT INTO `temporades` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `text`
+-- Estructura de tabla para la tabla `text`
 --
 
+DROP TABLE IF EXISTS `text`;
 CREATE TABLE IF NOT EXISTS `text` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL DEFAULT 'es',
@@ -2465,7 +2533,7 @@ CREATE TABLE IF NOT EXISTS `text` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Textos multi-idioma';
 
 --
--- Bolcant dades de la taula `text`
+-- Volcado de datos para la tabla `text`
 --
 
 INSERT INTO `text` (`id`, `lang`, `text`) VALUES
@@ -4051,9 +4119,10 @@ INSERT INTO `text` (`id`, `lang`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user`
+-- Estructura de tabla para la tabla `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -4080,20 +4149,22 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Bolcant dades de la taula `user`
+-- Volcado de datos para la tabla `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `location`, `email`, `password`, `about`, `keywords`, `active`, `avatar`, `contribution`, `twitter`, `facebook`, `google`, `identica`, `linkedin`, `worth`, `created`, `modified`, `token`, `hide`, `confirmed`) VALUES
 ('carles', 'carles', '', 'carlesvelasco@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', '', 1, NULL, '', '', '', '', '', '', NULL, '2012-11-28 11:55:20', '2012-11-28 11:56:28', '677c9c0c517c643b4563db1dfc160957', 0, 1),
 ('carlos', 'carlos', NULL, 'carlosvelasco69@hotmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2012-11-11 12:41:51', '2012-11-11 12:49:46', '2a2e06b92f7caf481a5d1dcf5257013e', 0, 1),
+('nurbigay', 'nurbigay', NULL, 'nurbigay@hotmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2012-12-01 22:38:44', '2012-12-01 22:38:44', '606396889d766567270d9f6430a9d438', 0, 1),
 ('root', 'Super administrador', '', 'root_goteo@doukeshi.org', 'f64dd0d8c9276d87c6d0ae24c5d12571c62ecf16', '', '', 1, 91, '', '', '', '', '', '', 0, '2011-08-31 17:54:11', '2011-12-21 21:45:39', '61aa85ea9169c68babfa5b8bdb44097broot_goteo@doukeshi.org', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_image`
+-- Estructura de tabla para la tabla `user_image`
 --
 
+DROP TABLE IF EXISTS `user_image`;
 CREATE TABLE IF NOT EXISTS `user_image` (
   `user` varchar(50) NOT NULL,
   `image` int(10) unsigned NOT NULL,
@@ -4103,9 +4174,10 @@ CREATE TABLE IF NOT EXISTS `user_image` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_interest`
+-- Estructura de tabla para la tabla `user_interest`
 --
 
+DROP TABLE IF EXISTS `user_interest`;
 CREATE TABLE IF NOT EXISTS `user_interest` (
   `user` varchar(50) NOT NULL,
   `interest` int(12) NOT NULL,
@@ -4115,9 +4187,10 @@ CREATE TABLE IF NOT EXISTS `user_interest` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_lang`
+-- Estructura de tabla para la tabla `user_lang`
 --
 
+DROP TABLE IF EXISTS `user_lang`;
 CREATE TABLE IF NOT EXISTS `user_lang` (
   `id` varchar(50) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -4130,9 +4203,10 @@ CREATE TABLE IF NOT EXISTS `user_lang` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_login`
+-- Estructura de tabla para la tabla `user_login`
 --
 
+DROP TABLE IF EXISTS `user_login`;
 CREATE TABLE IF NOT EXISTS `user_login` (
   `user` varchar(50) NOT NULL,
   `provider` varchar(50) NOT NULL,
@@ -4145,9 +4219,10 @@ CREATE TABLE IF NOT EXISTS `user_login` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_personal`
+-- Estructura de tabla para la tabla `user_personal`
 --
 
+DROP TABLE IF EXISTS `user_personal`;
 CREATE TABLE IF NOT EXISTS `user_personal` (
   `user` varchar(50) NOT NULL,
   `contract_name` varchar(255) DEFAULT NULL,
@@ -4165,9 +4240,10 @@ CREATE TABLE IF NOT EXISTS `user_personal` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_prefer`
+-- Estructura de tabla para la tabla `user_prefer`
 --
 
+DROP TABLE IF EXISTS `user_prefer`;
 CREATE TABLE IF NOT EXISTS `user_prefer` (
   `user` varchar(50) NOT NULL,
   `updates` int(1) NOT NULL DEFAULT '0',
@@ -4180,9 +4256,10 @@ CREATE TABLE IF NOT EXISTS `user_prefer` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_review`
+-- Estructura de tabla para la tabla `user_review`
 --
 
+DROP TABLE IF EXISTS `user_review`;
 CREATE TABLE IF NOT EXISTS `user_review` (
   `user` varchar(50) NOT NULL,
   `review` bigint(20) unsigned NOT NULL,
@@ -4193,9 +4270,10 @@ CREATE TABLE IF NOT EXISTS `user_review` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_role`
+-- Estructura de tabla para la tabla `user_role`
 --
 
+DROP TABLE IF EXISTS `user_role`;
 CREATE TABLE IF NOT EXISTS `user_role` (
   `user_id` varchar(50) NOT NULL,
   `role_id` varchar(50) NOT NULL,
@@ -4208,7 +4286,7 @@ CREATE TABLE IF NOT EXISTS `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Bolcant dades de la taula `user_role`
+-- Volcado de datos para la tabla `user_role`
 --
 
 INSERT INTO `user_role` (`user_id`, `role_id`, `node_id`, `datetime`) VALUES
@@ -4218,6 +4296,7 @@ INSERT INTO `user_role` (`user_id`, `role_id`, `node_id`, `datetime`) VALUES
 ('carlos', 'root', '*', '2012-11-11 12:45:06'),
 ('carlos', 'superadmin', '*', '2012-11-11 12:44:22'),
 ('carlos', 'user', '*', '2012-11-11 12:41:51'),
+('nurbigay', 'user', '*', '2012-12-01 22:38:44'),
 ('root', 'admin', '*', NULL),
 ('root', 'checker', '*', NULL),
 ('root', 'root', '*', NULL),
@@ -4228,9 +4307,10 @@ INSERT INTO `user_role` (`user_id`, `role_id`, `node_id`, `datetime`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_translate`
+-- Estructura de tabla para la tabla `user_translate`
 --
 
+DROP TABLE IF EXISTS `user_translate`;
 CREATE TABLE IF NOT EXISTS `user_translate` (
   `user` varchar(50) NOT NULL,
   `project` varchar(50) NOT NULL,
@@ -4241,9 +4321,10 @@ CREATE TABLE IF NOT EXISTS `user_translate` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user_web`
+-- Estructura de tabla para la tabla `user_web`
 --
 
+DROP TABLE IF EXISTS `user_web`;
 CREATE TABLE IF NOT EXISTS `user_web` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user` varchar(50) NOT NULL,
@@ -4255,9 +4336,10 @@ CREATE TABLE IF NOT EXISTS `user_web` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `video`
+-- Estructura de tabla para la tabla `video`
 --
 
+DROP TABLE IF EXISTS `video`;
 CREATE TABLE IF NOT EXISTS `video` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `temporada` varchar(50) NOT NULL,
@@ -4267,37 +4349,38 @@ CREATE TABLE IF NOT EXISTS `video` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
--- Bolcant dades de la taula `video`
+-- Volcado de datos para la tabla `video`
 --
 
 INSERT INTO `video` (`id`, `temporada`, `url`, `numero`) VALUES
-(4, '1', '<iframe width="560" height="315" src="http://www.youtube.com/embed/erZqsV5UJpM" frameborder="0" allowfullscreen></iframe>', 1),
-(5, '1', '<iframe width="560" height="315" src="http://www.youtube.com/embed/Y5MyxpYtVLg" frameborder="0" allowfullscreen></iframe>', 2),
-(6, '1', '<iframe width="560" height="315" src="http://www.youtube.com/embed/V8WekanqL7c" frameborder="0" allowfullscreen></iframe>', 3),
-(7, '1', '<iframe width="420" height="315" src="http://www.youtube.com/embed/EpxRc0Kzkmo" frameborder="0" allowfullscreen></iframe>', 4),
-(8, '2', '<iframe width="560" height="315" src="http://www.youtube.com/embed/7K2ywM4YyVo" frameborder="0" allowfullscreen></iframe>', 1),
-(9, '2', '<iframe width="560" height="315" src="http://www.youtube.com/embed/VxME8GYZXcA" frameborder="0" allowfullscreen></iframe>', 2),
-(10, '2', '<iframe width="560" height="315" src="http://www.youtube.com/embed/alFsfEUtDmQ" frameborder="0" allowfullscreen></iframe>', 3),
-(11, '2', '<iframe width="560" height="315" src="http://www.youtube.com/embed/QBeeJK0OTrQ" frameborder="0" allowfullscreen></iframe>', 4),
-(12, '3', '<iframe width="560" height="315" src="http://www.youtube.com/embed/bMzqiGG5Udg" frameborder="0" allowfullscreen></iframe>', 1),
-(13, '3', '<iframe width="560" height="315" src="http://www.youtube.com/embed/YWKY_3J-1tU" frameborder="0" allowfullscreen></iframe>', 2),
-(14, '3', '<iframe width="560" height="315" src="http://www.youtube.com/embed/84znak2CGos" frameborder="0" allowfullscreen></iframe>', 3),
-(15, '3', '<iframe width="560" height="315" src="http://www.youtube.com/embed/MYdqpw2NBJw" frameborder="0" allowfullscreen></iframe>', 4),
-(16, '4', '<iframe width="560" height="315" src="http://www.youtube.com/embed/Y7AvqD2loX4" frameborder="0" allowfullscreen></iframe>', 1),
-(17, '4', '<iframe width="560" height="315" src="http://www.youtube.com/embed/6lQkhpSFvxU" frameborder="0" allowfullscreen></iframe>', 2),
-(18, '4', '<iframe width="560" height="315" src="http://www.youtube.com/embed/6IJNOVLkaTg" frameborder="0" allowfullscreen></iframe>', 3),
-(19, '4', '<iframe width="560" height="315" src="http://www.youtube.com/embed/DAdA7CCepKA" frameborder="0" allowfullscreen></iframe>', 4),
-(20, '5', '<iframe width="560" height="315" src="http://www.youtube.com/embed/VlvsE8fMHP4" frameborder="0" allowfullscreen></iframe>', 1),
-(21, '5', '<iframe width="560" height="315" src="http://www.youtube.com/embed/OjFtBAd3lUk" frameborder="0" allowfullscreen></iframe>', 2),
-(22, '5', '<iframe width="560" height="315" src="http://www.youtube.com/embed/P-ZjG5jG5bg" frameborder="0" allowfullscreen></iframe>', 3),
-(23, '5', '<iframe width="560" height="315" src="http://www.youtube.com/embed/aJvFib5iOxE" frameborder="0" allowfullscreen></iframe>', 4);
+(4, '1', '<iframe  src="http://www.youtube.com/embed/erZqsV5UJpM" frameborder="0" allowfullscreen></iframe>', 1),
+(5, '1', '<iframe  src="http://www.youtube.com/embed/Y5MyxpYtVLg" frameborder="0" allowfullscreen></iframe>', 2),
+(6, '1', '<iframe  src="http://www.youtube.com/embed/V8WekanqL7c" frameborder="0" allowfullscreen></iframe>', 3),
+(7, '1', '<iframe  src="http://www.youtube.com/embed/EpxRc0Kzkmo" frameborder="0" allowfullscreen></iframe>', 4),
+(8, '2', '<iframe  src="http://www.youtube.com/embed/7K2ywM4YyVo" frameborder="0" allowfullscreen></iframe>', 1),
+(9, '2', '<iframe  src="http://www.youtube.com/embed/VxME8GYZXcA" frameborder="0" allowfullscreen></iframe>', 2),
+(10, '2', '<iframe  src="http://www.youtube.com/embed/alFsfEUtDmQ" frameborder="0" allowfullscreen></iframe>', 3),
+(11, '2', '<iframe  src="http://www.youtube.com/embed/QBeeJK0OTrQ" frameborder="0" allowfullscreen></iframe>', 4),
+(12, '3', '<iframe  src="http://www.youtube.com/embed/bMzqiGG5Udg" frameborder="0" allowfullscreen></iframe>', 1),
+(13, '3', '<iframe  src="http://www.youtube.com/embed/YWKY_3J-1tU" frameborder="0" allowfullscreen></iframe>', 2),
+(14, '3', '<iframe  src="http://www.youtube.com/embed/84znak2CGos" frameborder="0" allowfullscreen></iframe>', 3),
+(15, '3', '<iframe  src="http://www.youtube.com/embed/MYdqpw2NBJw" frameborder="0" allowfullscreen></iframe>', 4),
+(16, '4', '<iframe  src="http://www.youtube.com/embed/Y7AvqD2loX4" frameborder="0" allowfullscreen></iframe>', 1),
+(17, '4', '<iframe  src="http://www.youtube.com/embed/6lQkhpSFvxU" frameborder="0" allowfullscreen></iframe>', 2),
+(18, '4', '<iframe  src="http://www.youtube.com/embed/6IJNOVLkaTg" frameborder="0" allowfullscreen></iframe>', 3),
+(19, '4', '<iframe  src="http://www.youtube.com/embed/DAdA7CCepKA" frameborder="0" allowfullscreen></iframe>', 4),
+(20, '5', '<iframe  src="http://www.youtube.com/embed/VlvsE8fMHP4" frameborder="0" allowfullscreen></iframe>', 1),
+(21, '5', '<iframe  src="http://www.youtube.com/embed/OjFtBAd3lUk" frameborder="0" allowfullscreen></iframe>', 2),
+(22, '5', '<iframe  src="http://www.youtube.com/embed/P-ZjG5jG5bg" frameborder="0" allowfullscreen></iframe>', 3),
+(23, '5', '<iframe  src="http://www.youtube.com/embed/aJvFib5iOxE" frameborder="0" allowfullscreen></iframe>', 4);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `worthcracy`
+-- Estructura de tabla para la tabla `worthcracy`
 --
 
+DROP TABLE IF EXISTS `worthcracy`;
 CREATE TABLE IF NOT EXISTS `worthcracy` (
   `id` int(2) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
@@ -4306,7 +4389,7 @@ CREATE TABLE IF NOT EXISTS `worthcracy` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Niveles de meritocracia' AUTO_INCREMENT=6 ;
 
 --
--- Bolcant dades de la taula `worthcracy`
+-- Volcado de datos para la tabla `worthcracy`
 --
 
 INSERT INTO `worthcracy` (`id`, `name`, `amount`) VALUES
@@ -4319,9 +4402,10 @@ INSERT INTO `worthcracy` (`id`, `name`, `amount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `worthcracy_lang`
+-- Estructura de tabla para la tabla `worthcracy_lang`
 --
 
+DROP TABLE IF EXISTS `worthcracy_lang`;
 CREATE TABLE IF NOT EXISTS `worthcracy_lang` (
   `id` int(2) unsigned NOT NULL,
   `lang` varchar(2) NOT NULL,
