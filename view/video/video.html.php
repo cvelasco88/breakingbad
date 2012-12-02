@@ -46,16 +46,15 @@ $go_up = Text::get('regular-go_up');
 		<div class="about-page">
         <div class="video-page">
          
-            
 			<div>
             	<?php  foreach ($video as $v) {?>
             		<?php echo $v->url; ?>
             	<?php } ?>
             </div>
            <div>
-            <a href="/episodes"> + EPISODIS</a>
-            <a href="/photos"> + IMATGES</a>
-            <a href="/video"> + VIDEOS</a>
+                <a href="/episodes/<?php echo $temporada->id; ?>"> + EPISODIS </a>
+                <a href="/photos/<?php echo $temporada->id; ?>"> + IMATGES </a>
+                <a href="/video/<?php echo $temporada->id; ?>"> + VIDEOS</a>
            </div>
 
 		</div>

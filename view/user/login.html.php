@@ -122,7 +122,7 @@ jQuery(document).ready(function($) {
 				$openid = $_COOKIE['goteo_oauth_provider'];
 
 				//l'ordre que es vulgui...
-                $logins = array(
+                /*$logins = array(
 					'facebook' => '<a href="/user/oauth?provider=facebook">' . Text::get('login-signin-facebook') . '</a>',
 					'twitter' => '<a href="/user/oauth?provider=twitter">' . Text::get('login-signin-twitter') . '</a>',
 					'Google' => '<a href="/user/oauth?provider=Google">' . Text::get('login-signin-google') . '</a>',
@@ -133,7 +133,8 @@ jQuery(document).ready(function($) {
                 );
                 $is_openid = !array_key_exists($openid,$logins);
                 $logins['openid'] = '<form><input type="text"'.($is_openid ? ' class="used"' : '').' name="openid" value="' . htmlspecialchars( $is_openid ? $openid : Text::get('login-signin-openid')) . '" /><a href="/user/oauth" class="button">' . Text::get('login-signin-openid-go') . '&rarr;</a></form>';
-                //si se ha guardado la preferencia, lo ponemos primero
+                */
+				//si se ha guardado la preferencia, lo ponemos primero
                 $key = '';
                 if($openid) {
 					$key = array_key_exists($openid,$logins) ? $openid : 'openid';

@@ -33,7 +33,6 @@ $go_up = Text::get('regular-go_up');
 ?>
 <script src="/data/js/jquery.tools.min.js"></script>
 <script src="/data/js/jquery.overlay.min.js"></script>
-<head>
 
 <!-- same styling as in minimal setup -->
 
@@ -72,9 +71,9 @@ $go_up = Text::get('regular-go_up');
 				 	} 
 				 	?>		
            <div>>
-            <a href="/episodes"> + EPISODIS</a>
-            <a href="/photos"> + IMATGES</a>
-            <a href="/video"> + VIDEOS</a>
+                <a href="/episodes/<?php echo $temporada->id; ?>"> + EPISODIS </a>
+                <a href="/photos/<?php echo $temporada->id; ?>"> + IMATGES </a>
+                <a href="/video/<?php echo $temporada->id; ?>"> + VIDEOS</a>
            </div>
 
 		</div>

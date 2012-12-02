@@ -23,6 +23,9 @@ $bodyClass = 'cast';
 include 'view/prologue.html.php';
 include 'view/header.html.php'; ?>
 
+<script src="/data/js/jquery.tools.min.js"></script>
+<script src="/data/js/jquery.overlay.min.js"></script>
+
 	<div id="sub-header-secondary">
 		<div class="clearfix">
 			<h2><a href="/cast">Actors</a></h2>
@@ -43,18 +46,26 @@ include 'view/header.html.php'; ?>
 		                	<label><?php echo "Actor $actor->tipus"; ?></label>
 		               		</li>
 	                   		<li style="display:block;">
-			                	<div><img src="/data/images/cast/<?php echo $actor->id; ?>.jpg"></div>
+			                	<div><img rel="#mies<?php echo $actor->id; ?>" src="/data/images/cast/<?php echo $actor->id; ?>.jpg"></div>
 			                	<div><?php echo $actor->descripcio; ?></div>
 			               	</li>
 	                	</ul>  
 	                </div>              
            		</div> 
+           		<!-- first overlay. id attribute matches our selector -->
+						<div class="simple_overlay" id="mies<?php echo $actor->id; ?>">
+						  	<!-- large image -->
+            				<center><img src="/data/images/cast/<?php echo $actor->id; ?>.jpg"></center>
+						</div>
            		<?php
                		}
 	            ?>
 			</div>
 	</div>
+	<!-- make it happen -->
+	<script>
+	 $("img[rel]").overlay();
+	</script>
     
 <?php include 'view/footer.html.php' ?>
-
 <?php include 'view/epilogue.html.php' ?>

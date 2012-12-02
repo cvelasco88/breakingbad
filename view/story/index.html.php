@@ -43,13 +43,13 @@ $go_up = Text::get('regular-go_up');
             <h3 class="title">Sinopsi</h3>
     
                 <div class="about-page story-page">
-                <a href="#">Breaking Bad</a> és una sèrie de televisió dramàtica Estats Units creada i produïda per <a href="">Vince Gilligan</a>.
+                <a href="/">Breaking Bad</a> és una sèrie de televisió dramàtica Estats Units creada i produïda per <a href="/cast/actor/18">Vince Gilligan</a>.
                 Es va estrenar el 20 de gener del 2008 a la cadena de televisió per cable AMC. 
                 La sèrie es centra en la vida de <a href="/cast/actor/1">Walter White</a>, un professor de química que ha d'encarar diversos problemes als cinquanta
                 anys, com afrontar un càncer, la minusvalidesa del seu fill, l'arribada d'un nou membre a la seva família i la gran 
                 falta de diners que farà que es fiqui en un enorme embolic que canviarà la seva pacífica vida. Des que es va estrenar 
-                la sèrie ha rebut molt bona crítica i ha guanyat sis dels disset <a href="">premis</a> <a href="">Emmy</a> als que fou nominada.
-				<a href="#">Breaking Bad</a> ha estat doblada al català per Televisió de Catalunya, que la va estrenar al Canal 3XL l'any 2011 i hi va 
+                la sèrie ha rebut molt bona crítica i ha guanyat sis dels disset <a href="#">premis</a> <a href="#">Emmy</a> als que fou nominada.
+				<a href="/">Breaking Bad</a> ha estat doblada al català per Televisió de Catalunya, que la va estrenar al Canal 3XL l'any 2011 i hi va 
 				emetre les tres primeres <a href="/season">temporades</a>. La <a href="/season/4">quarta temporada</a> ha estat estrenada a TV3 l'any 2012.
                 </div>
 		</div>
@@ -59,8 +59,16 @@ $go_up = Text::get('regular-go_up');
             <h3 class="title">Premis i nominacions</h3>
     
                 <div class="about-page story-page">
-         La sèrie va obtenir quatre nominacions als premis Emmy del 2008, entre els que destaca el de millor actor en sèrie dramàtica per en Bryan Cranston i el de millor direcció en una sèrie dramàtica per Vince Gilligan, escriptor i creador de la sèrie, per l’episodi pilot. Finalment, la sèrie es va emportar el primer dels premis i el de millor muntatge en una sèrie dramàtica en mono càmera per Lynne Willigham. La sèrie va obtenir una nominació als premis Satellite i va tornar a guanyar a la categoria de millor actor en sèrie dramàtica per Cranston. La temporada va rebre tres nominacions per els Writer Guild of America Awards 2009, com a millor sèrie nova i millor episodi dramàtic per l’episodi pilot (resultat guanyador) i el titulat <<Grey Matter>>.
-Al 2009 i 2010 va obtenir l’Emmy al millor actor en sèrie dramàtica per en Bryan Cranston, i al 2010 i 2012 l’Emmy al millor actor de repartiment en sèrie dramàtica per en Aaron Paul.
+         		La sèrie va obtenir quatre nominacions als <a href="#">premis Emmy</a> del 2008, entre els que destaca el de millor actor en sèrie 
+         		dramàtica per en <a href="/cast/actor/1">Bryan Cranston</a> i el de millor direcció en una sèrie dramàtica per <a href="/cast/actor/18">Vince Gilligan</a>, escriptor i 
+         		creador de la sèrie, per l’<a href="/episodes/1">episodi pilot</a>. Finalment, la sèrie es va emportar el primer dels <a href="#">premis</a> i el de millor 
+         		muntatge en una sèrie dramàtica en mono càmera per Lynne Willigham. La sèrie va obtenir una nominació als <a href="#">premis 
+         		Satellite</a> i va tornar a guanyar a la categoria de millor <a href="/cast">actor</a> en sèrie dramàtica per Cranston. La <a href="/season">temporada</a> va rebre 
+         		tres nominacions per els Writer Guild of America Awards 2009, com a millor sèrie nova i millor episodi dramàtic per 
+         		l’<a href="/episodes/1">episodi pilot</a> (resultat guanyador) i el titulat <<Grey Matter>>.
+				Al 2009 i 2010 va obtenir l’<a href="#">Emmy</a> al millor actor en sèrie dramàtica per en <a href="/cast/actor/1">Bryan Cranston</a>, i al 2010 i 2012 l’<a href="#">Emmy</a> al
+				 millor actor 
+				de repartiment en sèrie dramàtica per en <a href="/cast/actor/3">Aaron Paul</a>.
          
                 </div>
 		</div>
