@@ -190,7 +190,7 @@ div.widget.blog-content-module .comments-num,
 }
 div.widget.blog-content-module .comments-num a,
 #blog-content .post .comments-num a {
-	color:#00ad4e;
+	color:#CEE712;
 	text-decoration:none;
 }
 /** Comments like messages **/
@@ -366,7 +366,7 @@ div.widget.blog-content-module ul.share-goteo li.facebook a:hover,
 }
 #blog-content div.widget.blog-comment textarea {
 	background-color: #DCEEDF;
-	border: 1px solid #2EAB58;
+	border: 1px solid #9FF71B;
 	clear: right;
 	display: block;
 	float: right;
@@ -386,7 +386,7 @@ div.widget.blog-content-module ul.share-goteo li.facebook a:hover,
 }
 
 #blog-content div.widget.blog-comment a.preview{
-	color: #2EAB58;
+	color: #CEE712;
 	font-weight: bold;
 	left: 52px;
 	position: relative;
