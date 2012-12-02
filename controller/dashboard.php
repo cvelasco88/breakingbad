@@ -1250,8 +1250,7 @@ namespace Goteo\Controller {
                     'label'   => Text::get('dashboard-menu-profile'),
                     'options' => array (
                         'profile'  => Text::get('dashboard-menu-profile-profile'),
-                        'personal' => Text::get('dashboard-menu-profile-personal'),
-                        'access'   => Text::get('dashboard-menu-profile-access'),
+                        'access'   => Text::get('dashboard-menu-profile-access')
                     )
                 )
             );

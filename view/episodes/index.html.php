@@ -33,7 +33,7 @@ $go_up = Text::get('regular-go_up');
 
 	<div id="sub-header-secondary">
 		<div class="clearfix">
-			<h2><a href="/season">Temporades</a></h2>
+			<h2><a href="/episodes">Episodis</a></h2>
             <?php echo new View('view/header/share.html.php'); ?>
 		</div>
 	</div>
