@@ -1,19 +1,21 @@
 
 Cal tenir Apache i MySQL
 
-per fer funcionar la web cal instalar dins d'una BD de mysql anomenada 'breaking' el fitxer de la carpeta /db.
+per fer funcionar la web cal instalar dins d'una BD de mysql anomenada 'breaking' el fitxer de la carpeta /db anomenat breaking.sql .
 Amb el phpmyadmin o el metode que es prefeireixi s'importen les taules i dades.
 
-Hi ha un fitxer anomenat config.php on si sorgeixen problemes, podran ser per el direccionament de les rutes:
+Hi ha un fitxer anomenat config.php on si sorgeixen problemes, podran ser per la configuració de les rutes:
 
 // url
 define('SITE_URL', '');
 define('SRC_URL', '');
 
 ---
-Si ocasionen algun problema s'haurà de posar el nom del host. Per exemple en el meu Pc: 
+Si ocasionen algun problema s'haurà de posar el nom del host. Per exemple en el meu Pc tinc un virtual host a la adreça http://p1.multimedia.com/ i l'hauria d'afegir així: 
 
 define('SITE_URL', 'http://p1.multimedia.com/');
 define('SRC_URL', 'http://p1.multimedia.com/');
+
+# Hem deixat un parell d'idees per millorar pendents, com l'ús de la pàgina en diversos idiomes. Per defecte l'hem deixat en català i, també haviem pensat de fer una pagina de preguntes freqüents, que s'utilitza en molts llocs.
 
 
