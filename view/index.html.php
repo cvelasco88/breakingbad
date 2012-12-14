@@ -120,7 +120,7 @@ include 'view/header.html.php';
 		</div>
 		
 		<div id="about-content">
-            <h3 class="title"><a href="/video">Imatges</a></h3>    
+            <h3 class="title"><a href="/photos">Imatges</a></h3>    
             <div class="about-page photos-page">
             	<div class="submain">
 			 		<center>
